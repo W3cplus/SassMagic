@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+//Thanks:https://github.com/jsw0528/base.sass/blob/master/stylesheets/base.sass/functions/_support.scss
+
+
+// Examples:
+// support-browser(ios)
+// support-browser(ie 8)
+@function support-browser($args) {
+  @if length($args) == 1 {
+    @return map-has-key($browser-supports, to-lower-case($args));
+  }
+  @else {
+    @return not not index(
+      map-get($browser-supports, to-lower-case(nth($args, 1))),
+      nth($args, 2)
+    );
+  }
+}

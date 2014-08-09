@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+//Thanks:https://github.com/jsw0528/base.sass/blob/master/stylesheets/base.sass/mixins
+
+@mixin ellipsis-overflow {
+  @include placeholder-wrapper('ellipsis-overflow') {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

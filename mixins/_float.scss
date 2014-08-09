@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+//Thanks:https://github.com/jsw0528/base.sass/blob/master/stylesheets/base.sass/mixins
+
+@mixin float($side, $important: false) {
+  $flag: if($important, ' !important', '');
+
+  float: unquote($side) + $flag;
+  @if support-browser(ie 6) {
+    _display: inline + $flag;
+  }
+}
