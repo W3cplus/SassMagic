@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+//Thanks:http://sassmeister.com/gist/5ede2ad94b87929db8fe
+
+@mixin parent-hover() {
+  $selector: &;
+  @each $list in & {
+    $parent: nth($list,length($list)-1);
+    $selector: selector-replace($selector,$parent,$parent+':hover');
+  }
+  @at-root #{$selector} {
+    @content;
+  }
+}
+
+/*=================Use=======================
+.nav-menu {
+  li {
+    float: left;
+    a {
+      color: blue;
+      @include parent-hover {
+        color: purple;
+      }
+    }
+    .sub-menu {
+      display: none;
+      @include parent-hover {
+        display: block;
+      }
+    }
+  }
+}
+
+=====================output===================
+.nav-menu li {
+  float: left;
+}
+.nav-menu li a {
+  color: blue;
+}
+.nav-menu li:hover a {
+  color: purple;
+}
+.nav-menu li .sub-menu {
+  display: none;
+}
+.nav-menu li:hover .sub-menu {
+  display: block;
+}
+============================================*/
