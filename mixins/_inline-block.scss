@@ -1,13 +1,25 @@
 @charset "UTF-8";
 
-//Thanks:https://github.com/jsw0528/base.sass/blob/master/stylesheets/base.sass/mixins
-
-
-@mixin inline-block {
+@mixin inline-block($alignment: middle,$support-for-ie:true) {
   display: inline-block;
-
-  @if support-browser(ie 7) {
+  @if $alignment and $alignment != none {
+    vertical-align: $alignment;
+  }
+  @if $support-for-ie {
+    *vertical-align: auto;
+    zoom: 1;
     *display: inline;
-    *zoom: 1;
   }
 }
+
+/*======================Use==================
+.inline-block{
+  @include inline-block(top,false);
+}
+
+=======================Output================
+.inline-block {
+  display: inline-block;
+  vertical-align: top;
+}
+============================================*/
