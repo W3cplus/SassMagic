@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@mixin opacity($opacity:.65,$support-for-ie:true) {
+  opacity: $opacity;
+  @if $support-for-ie{
+	$opacity-ie: $opacity * 100;
+  	filter: alpha(opacity=$opacity-ie); //IE8
+  }
+}
+
+/*===========================Use========================
+.opaticy{
+  @include opacity(.8,false);
+}
+============================Output======================
+.opaticy {
+  opacity: 0.8;
+}
+=======================================================*/
