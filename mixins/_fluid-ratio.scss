@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+// Fluid aspect rations for RWD background images
+// Thanks: http://voormedia.com/blog/2012/11/responsive-background-images-with-fixed-or-fluid-aspect-ratios
+
+@mixin fluid-ratio($large-size,$small-size) {
+	$width-large: nth($large-size,1); //背景图片大尺寸的宽度
+	$width-small: nth($small-size,1); //背景图片小尺寸的宽度
+	$height-large: nth($large-size,2); //背景图片大尺寸的高度
+	$height-small: nth($small-size,2); //背景图片小尺寸的高度
+	//计算slope => slope = (h2 - h1) / (w2 - w1)
+	//h1:背景图片大尺寸的高度　=> $height-large
+	//w1:背景图片大尺寸的宽度  => $width-large
+	//h2:背景图片小尺寸的高度　=> $height-small
+	//w2:背景图片小尺寸的宽度　=> $width-small
+	$slope: ($height-large - $height-small) / ($width-large - $width-small);
+	//计算元素的初始高度start Height => Start height = h1 - w1 * slope
+	$start-height: $height-small - $width-small * $slope;
+
+	padding-top: $slope * 100%; //你也可以将padding-top换成padding-bottom
+	height: $start-height;
+	background-size: cover;
+	background-position: center;
+}
+
+/*=================Use==============
+.fluid-ratio{
+  @include fluid-ratio(800 400,300 150);
+}
+
+===================Output===========
+.fluid-ratio {
+  padding-top: 50%;
+  height: 0;
+  background-size: cover;
+  background-position: center;
+}
+===================================*/
