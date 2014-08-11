@@ -1,0 +1,16 @@
+@charset "UTF-8";
+
+// calc-percent: calculate the percent using the target ÷ context
+@function calc-percent( $target, $context ) {
+	@return $target / $context * 100%;
+}
+
+/*=======================Use===========================
+.sidebar {
+  width:calc-percent(220px,960px);
+}
+========================Output=========================
+.sidebar {
+  width: 22.9166666667%;
+}
+=======================================================*/

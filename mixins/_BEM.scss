@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+//elements get appended with "__" and the $name 
+@mixin e($name){
+	&__#{$name}{
+		@content;
+	}
+}
+
+//modifiers get appended with "--" and the $name
+@mixin m($name){
+	&--#{$name}{
+		@content;
+	}
+}
+
+/*=============================Use=========================
+.block {
+  color:green;
+  @include e(header){
+    color:orange;
+    
+    @include m(title){
+      color:yellow;
+    }
+  }
+}
+==============================Output======================
+.block {
+  color: green;
+}
+.block__header {
+  color: orange;
+}
+.block__header--title {
+  color: yellow;
+}
+===========================================================*/

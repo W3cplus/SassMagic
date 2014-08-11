@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+@function px2em($px, $base-font-size: 16px) {
+    @if (unitless($px)) {
+        @warn "Assuming #{$px} to be in pixels, attempting to convert it into pixels for you";
+        @return px2em($px + 0px); // That may fail.
+    } @else if (unit($px) == em) {
+        @return $px;
+    }
+    @return ($px / $base-font-size) * 1em;
+}
+
+/*============================Use========================
+.container {
+  font-size: px2em(12px);
+}
+==============================Output======================
+.container {
+  font-size: 0.75em;
+}
+==========================================================*/
