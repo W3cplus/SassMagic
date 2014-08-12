@@ -1,4 +1,21 @@
-@mixin backgroundTransparent($color,$opacity){
+@charset "UTF-8";
+
+//Author：Janking　（https://github.com/Janking）
+
+@mixin backgroundTransparent($color,$opacity,$support-for-ie:true){
 	background-color:rgba($color,$opacity);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str(rgba($color,$opacity))},endColorstr=#{ie-hex-str(rgba($color,$opacity))})\9;
+	@if $support-for-ie{
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str(rgba($color,$opacity))},endColorstr=#{ie-hex-str(rgba($color,$opacity))})\9;
+	}
 }
+
+/*=============================Use==================================
+.rgba{
+  @include backgroundTransparent(#f36,.6);
+}
+===============================Output==============================
+.rgba {
+  background-color: rgba(255, 51, 102, 0.6);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99FF3366,endColorstr=#99FF3366) \9;
+}
+===================================================================*/
