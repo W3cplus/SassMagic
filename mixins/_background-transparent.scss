@@ -5,17 +5,24 @@
 @mixin backgroundTransparent($color,$opacity,$support-for-ie:true){
 	background-color:rgba($color,$opacity);
 	@if $support-for-ie{
-		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str(rgba($color,$opacity))},endColorstr=#{ie-hex-str(rgba($color,$opacity))})\9;
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str(rgba($color,$opacity))},endColorstr=#{ie-hex-str(rgba($color,$opacity))});
+		
+		:root & {
+			filter:none;
+		}
 	}
 }
 
 /*=============================Use==================================
-.rgba{
-  @include backgroundTransparent(#f36,.6);
+.backgroundtransparent{
+  @include backgroundTransparent(#f36,.5);
 }
 ===============================Output==============================
-.rgba {
-  background-color: rgba(255, 51, 102, 0.6);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99FF3366,endColorstr=#99FF3366) \9;
+.backgroundtransparent {
+  background-color: rgba(255, 51, 102, 0.5);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#80FF3366,endColorstr=#80FF3366);
+}
+:root .backgroundtransparent {
+  filter: none;
 }
 ===================================================================*/
