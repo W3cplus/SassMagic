@@ -892,7 +892,171 @@ input[type="radio"] {
   @include prefixer(column-span, $arg, webkit moz);
 }
 
+// Filter
+// http://www.w3cplus.com/css3/ten-effects-with-css3-filter
+// https://developer.mozilla.org/en-US/docs/Web/CSS/filter
 
+//filter
+// Value:filter: <filter-function> [<filter-function>]* | none
+// <filter-function> = url() | blur() | brightness() | contrast() | drop-shadow() | grayscale() | hue-rotate() | invert() | opacity() | saturate() | sepia()
+@mixin filter($arg){
+	@include prefixer(filter,$arg);
+}
+/*=============================Use============================
+.filter{
+  @include filter(grayscale(20%) contrast(2%));
+}
+===============================Output=========================
+.filter {
+  -webkit-filter: grayscale(20%) contrast(2%);
+  filter: grayscale(20%) contrast(2%);
+}
+=============================================================*/
 
+//filert-url
+// url()仅能用于SVG元素
+@mixin filter-url($resSvg){
+	@include prefixer(filter,url(unquote($resSvg));
+}
+/*==============================Use===========================
+.filter-url{
+  @include filter-url("resources.svg#c1");
+}
+================================Output========================
+.filter-url {
+  -webkit-filter: url(resources.svg#c1);
+  filter: url(resources.svg#c1);
+}
+==============================================================*/
+// Apply a gaussian blur to an image in px, em, rem
+// @include filter-blur(RADIUS);
+@mixin filter-blur($radius) {
+	@include prefixer(filter,blur($radius));
+}
+// Alter the brightness of an image
+// Min: 0, Max: n%, Default: 100% (no change at 100%)
+// @include filter-brightness(PERCENT);
+@mixin filter-brightness($percent: 100%) {
+	@include prefixer(filter,brightness($percent));
+}
+// Increase or decrease the contrast of an image.
+// Min: 0, Max: n%, Default: 100% (no change at 100%)
+// @include filter-contrast(PERCENT);
+@mixin filter-contrast($percent: 100%) {
+	@include prefixer(filter,contrast($percent));
+}
+// Add drop shadow for an image
+// value: <offset-x> <offset-y> | <blur-radius> | <spread-radius> | <color> 
+// @include filter-drop-shadow($dropShadow...)
+@mixin filter-drop-shadow($dropShadow...){
+	@include prefixer(filter,drop-shadow($dropShadow));
+}
+// Change the grayscale of an image
+// Min: 0, Max: 100%, Default: 0 (full color at 0)
+// @include filter-grayscale(PERCENTAGE);
+@mixin filter-grayscale($percent) {
+	@include prefixer(filter,grayscale($percent));
+}
+// Rotate the hue of an image
+// @include filter-hue-rotate(INT);
+@mixin filter-hue-rotate($rotate) {
+	@include prefixer(filter,hue-rotate($rotate));
+}
+// Invert the colors of an image
+// Min: 0, Max: 100%, Default: 0 (no change at 0)
+// @include filter-invert(PERCENT);
+@mixin filter-invert($percent: 0) {
+	@include prefixer(filter,invert($percent));
+}
+// Increase or decrease the color saturation of an image.
+// Min: 0, Max: n%, Default: 100% (no change at 100%)
+// @include filter-saturate(PERCENT);
+@mixin filter-saturate($percent: 100%) {
+	@include prefixer(filter,saturate($percent));
+}
+// Apply a sepia filter
+// Min: 0, Max: 100%, Default: 0 (full color, no sepia at 0)
+// @include filter-sepia(PERCENT);
+@mixin filter-sepia($percent) {
+	@include prefixer(filter,sepia($percent));
+}
+// Apply a opacity filter
+// Min:0,Max:100%, Default:0 
+// @include filter-opacity(PERCENT)
+@mixin filter-opacity($percent){
+	@include prefixer(filter,opacity($percent));
+}
+/*=================================Use===============================
+.filter-blur{
+  @include filter-blur(20px);
+}
+.filter-brightness{
+  @include filter-brightness(20%);
+}
+.filter-drop-shadow{
+  @include filter-drop-shadow(10px 10px 20px #ffe4c4);
+}
+.filter-grayscale{
+  @include filter-grayscale(100%);
+}
+.filter-hue-rotate{
+  @include filter-hue-rotate(30deg);
+}
+.filter-invert{
+  @include filter-invert(100%);
+}
+.filter-saturate{
+  @include filter-saturate(30%);
+}
+.filter-sepia{
+  @include filter-sepia(20%);
+}
+.filter-opacity{
+  @include filter-opacity(30%);
+}
+=================================Output=============================
+.filter-blur {
+  -webkit-filter: blur(20px);
+  filter: blur(20px);
+}
 
+.filter-brightness {
+  -webkit-filter: brightness(20%);
+  filter: brightness(20%);
+}
 
+.filter-drop-shadow {
+  -webkit-filter: drop-shadow(10px 10px 20px #ffe4c4);
+  filter: drop-shadow(10px 10px 20px #ffe4c4);
+}
+
+.filter-grayscale {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.filter-hue-rotate {
+  -webkit-filter: hue-rotate(30deg);
+  filter: hue-rotate(30deg);
+}
+
+.filter-invert {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
+}
+
+.filter-saturate {
+  -webkit-filter: saturate(30%);
+  filter: saturate(30%);
+}
+
+.filter-sepia {
+  -webkit-filter: sepia(20%);
+  filter: sepia(20%);
+}
+
+.filter-opacity {
+  -webkit-filter: opacity(30%);
+  filter: opacity(30%);
+}
+===============================================================*/
