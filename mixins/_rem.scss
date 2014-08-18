@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+//Thanks: https://github.com/bitmanic/rem/blob/master/stylesheets/_rem.scss by @benfrain (https://github.com/benfrain)
+
+@mixin rem($property,$px-values,$baseline-px:16px){
+	//Conver the baseline into rems
+	$baseline-rem: $baseline-px / 1rem * 1;
+	//Print the first line in pixel values
+	#{$property}: $px-values;
+	//if there is only one (numeric) value, return the property/value line for it.
+	@if type-of($px-values) == "number"{
+		#{$property}: $px-values / $baseline-rem;
+	}
+	@else {
+		//Create an empty list that we can dump values into
+		$rem-values:();
+		@each $value in $px-values{
+			// If the value is zero or not a number, return it
+			@if $value == 0 or type-of($value) != "number"{
+				$rem-values: append($rem-values, $value / $baseline-rem);
+			}
+		}
+		// Return the property and its list of converted values
+		#{$property}: $rem-values;
+	}
+}
+/*=======================Use=================================
+.rem {
+  @include rem(width,20px);
+}
+.rem-new {
+  @include rem(font-size,32px,12px);
+}
+==========================Output=============================
+.rem {
+  width: 20px;
+  width: 1.25rem;
+}
+
+.rem-new {
+  font-size: 32px;
+  font-size: 2.66667rem;
+}
+============================================================*/
