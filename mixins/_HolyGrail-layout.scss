@@ -1,0 +1,197 @@
+@charset "UTF-8";
+
+//Thanks: http://lifesinger.googlecode.com/svn/trunk/lab/2008/grids_test1.html
+//Demo: http://codepen.io/airen/pen/HaiFu and http://codepen.io/airen/pen/bwBzq
+//HTML结构
+//Two Columns
+// <div class="container">
+//   <div class="col-main">
+//     <div class="main-wrapper">main</div>
+//   </div>
+//   <div class="col-sub">sidebar</div>
+// </div>
+//Three Columns
+// <div class="container">
+//   <div class="col-main">
+//     <div class="main-wrapper">main</div>
+//   </div>
+//   <div class="col-sub">sidebar</div>
+//   <div class="col-extra">extra</div>
+// </div>
+//Use
+// Fixed Width
+// @include HolyGrail-layout(2,960px,190px,null,10px,".container",".col-main",".main-wrapper",".col-sub",null,"left",null);
+// @include HolyGrail-layout(2,960px,190px,null,10px,".container",".col-main",".main-wrapper-right",".col-sub-right",null,"right",null);
+// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper-3",".col-sub-3",".col-extra-3","left","right");
+// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper-4",".col-sub-4",".col-extra-4","right","left");
+// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper-5",".col-sub-5",".col-extra-5","right","center");
+// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper-6",".col-sub-6",".col-extra-6","center","right");
+// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper-7",".col-sub-7",".col-extra-7","left","center");
+// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper-8",".col-sub-8",".col-extra-8","center","left");
+// Fuild Width
+// @include HolyGrail-layout(2,100%,190px,null,10px,".container",".col-main",".main-wrapper",".col-sub",null,"left",null);
+// @include HolyGrail-layout(3,100%,190px,320px,10px,".container",".col-main",".main-wrapper-3",".col-sub-3",".col-extra-3","right","left");
+
+@mixin HolyGrail-layout(
+  $colNum,//定义列数
+  $container-width,//容器宽度，如果是自适应，取值为100%
+  $col-sub-width,//sub侧栏宽度
+  $col-extra-width,//extra侧栏宽度
+  $col-gutter,//列与列间距
+  $container-selector:unquote(".container"),//外容器容器名称
+  $col-main-selector:unquote(".col-main"),//主内容容器名称
+  $col-main-wrapper-selector:unquote(".main-wrapper"),//主内容包裹容器名称
+  $col-sub-selector:unquote(".col-sub"),//sub侧边栏容器名称
+  $col-extra-selector:unquote(".col-extra"),//extra侧边栏容器名称
+  $col-sub-direction:"left", //默认sub侧边栏居左
+  $col-extra-direction:null //默认extra侧边栏不存在
+){
+  %pull-left-helper{
+    position:relative;
+    float:left;
+  }
+  %container-selector-helper{
+    &:after,
+    &:before{
+      content:"";
+      display:table;
+    }
+    &:after {
+      clear:both;
+    }
+    &{
+      width:$container-width;
+      margin-left:auto;
+      margin-right: auto;
+      zoom:1;
+    }
+  }
+ 
+  %col-sub-selector-helper {
+    width: $col-sub-width;
+    @extend %pull-left-helper;
+  }  
+  
+  %col-main-wrapper-selector-helper{
+    min-height: 1%;
+  }
+  %col-extra-helper{
+    width: $col-extra-width;
+    @extend %pull-left-helper;
+  }
+  #{$container-selector}{
+    @extend %container-selector-helper;
+  }
+  #{$col-main-selector}{
+    width: 100%;
+    @extend %pull-left-helper;
+  }
+  #{$col-main-wrapper-selector}{
+    @extend %col-main-wrapper-selector-helper;
+  }
+  //两列布局
+  @if $colNum == 2 {
+    #{$col-sub-selector} {
+      @extend %col-sub-selector-helper;
+      @if $col-sub-direction == "left" {
+        margin-left: -100%;
+      }
+      @else {
+        margin-left: -$col-sub-width;
+      }
+    }
+    
+    #{$col-main-wrapper-selector}{
+      @if $col-sub-direction == "left" {
+        margin-left: $col-sub-width + $col-gutter;
+      }
+      @else {
+        margin-right: $col-sub-width + $col-gutter;
+      }
+    }
+  }
+  //extra边栏存在
+  @if $col-extra-direction != "null" {
+    @if $colNum == 3 {
+      #{$col-sub-selector}{
+        @extend %col-sub-selector-helper;
+      }
+      #{$col-extra-selector}{
+        @extend %col-extra-helper;
+      }
+      @if $col-sub-direction == "left" and $col-extra-direction == "right"{
+        #{$col-sub-selector}{
+          margin-left: -100%;
+        }
+        #{$col-extra-selector}{
+          margin-left:-$col-extra-width;
+        }
+        #{$col-main-wrapper-selector}{
+          margin-left: $col-sub-width + $col-gutter;
+          margin-right: $col-extra-width + $col-gutter;
+        }
+      }
+      @else if $col-sub-direction == "right" and $col-extra-direction == "left"{
+        #{$col-sub-selector}{
+          margin-left: -$col-sub-width;
+        }
+        #{$col-extra-selector}{
+          margin-left:-100%;
+        }
+        #{$col-main-wrapper-selector}{
+          margin-right: $col-sub-width + $col-gutter;
+          margin-left: $col-extra-width + $col-gutter;
+        }
+      }
+      @else if $col-sub-direction == "right" and $col-extra-direction == "center"{
+        #{$col-sub-selector}{
+          margin-left: -$col-sub-width;
+        }
+        #{$col-extra-selector}{
+          margin-left:-($col-sub-width + $col-extra-width + $col-gutter);
+        }
+        #{$col-main-wrapper-selector}{
+          margin-right: $col-sub-width + $col-extra-width + $col-gutter * 2;
+        }
+      }
+      @else if $col-sub-direction == "center" and $col-extra-direction == "right"{
+        #{$col-sub-selector}{
+          margin-left: -($col-sub-width + $col-extra-width + $col-gutter);
+        }
+        #{$col-extra-selector}{
+          margin-left:-$col-extra-width;
+        }
+        #{$col-main-wrapper-selector}{
+          margin-right: $col-sub-width + $col-extra-width + $col-gutter * 2;
+        }
+      }
+      @else if $col-sub-direction == "left" and $col-extra-direction == "center"{
+        #{$col-sub-selector}{
+          margin-left: -100%;
+        }
+        #{$col-extra-selector}{
+          left: $col-sub-width + $col-gutter;
+          margin-left: -100%;
+        }
+        #{$col-main-wrapper-selector}{
+          margin-left: $col-sub-width + $col-extra-width + $col-gutter * 2;
+        }
+      }
+      @else if $col-sub-direction == "center" and $col-extra-direction == "left"{
+        #{$col-sub-selector}{
+          left: $col-extra-width + $col-gutter;
+          margin-left: -100%;
+        }
+        #{$col-extra-selector}{
+          margin-left:-100%;
+        }
+        #{$col-main-wrapper-selector}{
+          margin-left: $col-sub-width + $col-extra-width + $col-gutter * 2;
+        }
+      }
+      @else {
+        @warn "Don't Output Layout!";
+      }
+    }
+  }
+}
