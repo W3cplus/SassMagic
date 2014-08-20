@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+//Thanks: http://blog.teamtreehouse.com/modular-pseudo-elements-sass by @Guil Hernandez(http://blog.teamtreehouse.com/author/guillermohernandez)
+//Demo: http://sassmeister.com/gist/862192bd554fdc572cfc
+
+@mixin pseudo-elements($el,$el-width,$el-height){
+	@if $el == "before" or $el == "after"{
+		&:#{$el}{
+			content: "";
+			position: absolute;
+			width: $el-width;
+			height: $el-height;
+			@content;
+		}
+	}
+	@else {
+		@warn "`#{$el}` is not a valid pseudo-element.";
+	}
+}
+
+/*================================Use======================
+.icon-toggle {
+  width: 1.56em;
+  height: 0.75em;
+  position: relative;
+  display: inline-block;
+  border-top: solid .125em #60666c;
+
+  @include pseudo-elements(before, 1.56em, .125em) {
+    background: #888c91;
+    top: .25em;
+  }
+  @include pseudo-elements(after, 1.56em, .125em) {
+    background: #afb3b5;
+    bottom: 0;
+  }
+}
+=============================Output========================
+.icon-toggle {
+  width: 1.56em;
+  height: 0.75em;
+  position: relative;
+  display: inline-block;
+  border-top: solid .125em #60666c;
+}
+.icon-toggle:before {
+  content: "";
+  position: absolute;
+  width: 1.56em;
+  height: 0.125em;
+  background: #888c91;
+  top: .25em;
+}
+.icon-toggle:after {
+  content: "";
+  position: absolute;
+  width: 1.56em;
+  height: 0.125em;
+  background: #afb3b5;
+  bottom: 0;
+}
+============================================================*/
