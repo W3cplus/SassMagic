@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+//Thanks https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_alerts.scss
+
+@mixin alert-variant($background, $border, $text-color) {
+  background-color: $background;
+  border-color: $border;
+  color: $text-color;
+
+  a {
+    color: darken($text-color, 10%);
+  }
+}
+/*=============================Use=============================
+.alter{
+  @include alert-variant(#f36,darken(#f36,5%),#333);
+}
+===============================Output==========================
+.alter {
+  background-color: #ff3366;
+  border-color: #ff1a53;
+  color: #333333;
+}
+.alter a {
+  color: #1a1a1a;
+}
+===============================================================*/
