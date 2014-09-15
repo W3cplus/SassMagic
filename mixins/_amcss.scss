@@ -1,0 +1,43 @@
+@charset "UTF-8";
+
+//AMCSS:http://amcss.github.io/
+//Thanks:http://sassmeister.com/gist/2709da070d6aac25a9f5
+
+@mixin am($module, $trait: null) {
+  @if $trait != null {
+    [am-#{$module}~="#{$trait}"]{
+      @content;
+    }
+  }
+  @else {
+    [am-#{$module}]{
+      @content;
+    }
+  }
+}
+
+/*===============================use=============================
+@include am(module) {
+  color: red;
+}
+
+@include am(module, blue) {
+  color: blue;
+}
+
+@include am(module, large) {
+  font-size: 2em;
+}
+==================================Output==========================
+[am-module] {
+  color: red;
+}
+
+[am-module~="blue"] {
+  color: blue;
+}
+
+[am-module~="large"] {
+  font-size: 2em;
+}
+==================================================================*/
