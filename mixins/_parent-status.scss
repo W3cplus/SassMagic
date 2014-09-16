@@ -3,6 +3,11 @@
 //Thanks:https://disqus.com/home/user/zlqiu
 //From:http://sassmeister.com/gist/d6a06d90749fc38052c6
 
+//   parent-nth-status($index, $status, $place: suffix)
+//   $index: [number]
+//   $status: [string]
+//   $place: prefix/suffix/prepend/append
+
 @mixin parent-nth-status($index, $status, $place: suffix) {
   $func-name: parent-nth-status;
   $new-selectors: ();
