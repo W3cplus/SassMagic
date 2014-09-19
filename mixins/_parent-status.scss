@@ -34,20 +34,17 @@
 
       @if $i == $index {
         @if $place == suffix {
-          $item: $item + $status;
+          $result: $item + $status;
         } @else if $place == prefix {
-          $item: $status + $item;
+          $result: $status + $item;
         } @else if $place == prepend {
-          $result: append($result, $status);
+          $result: append($status, $item);
+        } @else if $place == append {
+          $result: append($item, $status);
         }
       }
-
-      $result: append($result, $item);
-
-      @if $i == $index {
-        @if $place == append {
-          $result: append($result, $status);
-        }
+      @else {
+        $result: append($result, $item);
       }
 
     }
@@ -95,22 +92,22 @@
   a {
     display: inline-block;
     padding: 10px 60px;
-    cursor: pointer;    
-    
+    cursor: pointer;
+
     &:hover {
       background: #AAA;
     }
-    
+
     i {
       margin-left: 10px;
-      
+
       @include parent-status(':hover') { color: red; }
 
       @include parent-status('.home-link') { background: blue; }
 
       @include parent-status('.about-link') { background: green; }
     }
-  }  
+  }
 }
 ==================================Output===============================
 .tab a {
