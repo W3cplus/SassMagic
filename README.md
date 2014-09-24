@@ -10,9 +10,10 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Sass 3.4 is Out!](http://www.sitepoint.com/sass-3-4-is-out/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
 - [Everything you need to know about Sass 3.4](http://www.phase2technology.com/blog/everything-you-need-to-know-about-sass-3-4/) by [@Micah Godbolt](http://www.phase2technology.com/author/mgodbolt)——[译文](http://www.w3cplus.com/preprocessor/everything-you-need-to-know-about-sass-3-4.html) by [@大漠](http://www.w3cplus.com)
 
-###Sass Architectures
+###Workflow
 
 - [A Look at Different Sass Architectures](http://www.sitepoint.com/look-different-sass-architectures/) by [@Vinay Raghu](http://www.sitepoint.com/author/vraghu/)
+- [HOW I IMPROVED MY WORKFLOW WITH SMACSS & SASS](http://bramsmulders.com/how-i-improved-my-workflow-with-smacss-sass.html) by [@bramsmulders](http://twitter.com/bramsmulders)
 
 ###Mixins
 
@@ -45,6 +46,11 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 ###Colors
 
 - [HSB Colors with Sass](http://www.sitepoint.com/hsb-colors-with-sass/) by [@Alexander Futekov](http://www.sitepoint.com/hsb-colors-with-sass/)
+- [Quick Color with SASS](http://blog.revelry.co/post/97873761305/quick-color-with-sass) 
+
+###@import
+
+- [Import Once in Sass the 'Foundation Way'](http://4waisenkinder.de/blog/2014/03/06/import-once-in-sass-the-foundation-way/) by [@stefanjudis](http://4waisenkinder.de/blog/2014/03/06/import-once-in-sass-the-foundation-way/)
 
 ###RWD
 
@@ -53,6 +59,12 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 ###Sass Framework
 
 - [5 Ways to Improve Your Sass with Bourbon](http://www.sitepoint.com/5-ways-improve-sass-bourbon/) by [@M. David Green](http://www.sitepoint.com/author/mdavidgreen/)
+- [Sass & CSS Style Guide](http://www.liveeditorcms.com/gc/playbook/sass-css-style-guide/) by [@liveeditorcms](http://twitter.com/liveeditorcms)
+
+###Step by Step
+
+- [Getting Started with Sass, Part 1](http://webstandardssherpa.com/reviews/getting-started-with-sass-part-1) by [@Laura Kalbag](http://webstandardssherpa.com/about/authors/laura-kalbag/)
+- [Getting Started with Sass, Part 2](http://webstandardssherpa.com/reviews/getting-started-with-sass-part-2) by [@Laura Kalbag](http://webstandardssherpa.com/about/authors/laura-kalbag/)
 
 ###Sass Tools & Compile
 
