@@ -70,6 +70,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 - [Gulpin SASS to CSS](http://rikschennink.nl/thoughts/gulpin-sass-to-css/) by [@Rik Schennink](http://rikschennink.nl)
 - [Using Grunt, bootstrap, Compass and SASS in a Drupal sub theme](http://deeson-online.co.uk/labs/using-grunt-bootstrap-compass-and-sass-drupal-sub-theme) by [@David Allard](http://deeson-online.co.uk/category/author/david-allard)
+- [Using Source Maps to Debug Sass in Chrome](http://www.sitepoint.com/using-source-maps-debug-sass-chrome/) by [＠Vinay Raghu](http://www.sitepoint.com/author/vraghu/)
 
 ###Video
 
