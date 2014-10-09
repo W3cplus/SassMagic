@@ -14,6 +14,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 - [A Look at Different Sass Architectures](http://www.sitepoint.com/look-different-sass-architectures/) by [@Vinay Raghu](http://www.sitepoint.com/author/vraghu/)
 - [HOW I IMPROVED MY WORKFLOW WITH SMACSS & SASS](http://bramsmulders.com/how-i-improved-my-workflow-with-smacss-sass.html) by [@bramsmulders](http://twitter.com/bramsmulders)
+- [Writing CSS (and Sass) that doesn’t suck](http://ashleynolan.co.uk/blog/writing-css-and-sass-that-doesnt-suck) by [@Ashley Nolan](http://twitter.com/AshNolan_)
 
 ###Mixins
 
@@ -47,6 +48,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 - [HSB Colors with Sass](http://www.sitepoint.com/hsb-colors-with-sass/) by [@Alexander Futekov](http://www.sitepoint.com/hsb-colors-with-sass/)
 - [Quick Color with SASS](http://blog.revelry.co/post/97873761305/quick-color-with-sass) 
+- [Managing Color Values with Sass](http://www.sitepoint.com/managing-color-values-with-sass/) by [@James Steinbach](http://www.sitepoint.com/author/jsteinbach/)
 
 ###@import
 
