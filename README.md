@@ -9,6 +9,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 ###Sass Features
 - [Sass 3.4 is Out!](http://www.sitepoint.com/sass-3-4-is-out/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
 - [Everything you need to know about Sass 3.4](http://www.phase2technology.com/blog/everything-you-need-to-know-about-sass-3-4/) by [@Micah Godbolt](http://www.phase2technology.com/author/mgodbolt)——[译文](http://www.w3cplus.com/preprocessor/everything-you-need-to-know-about-sass-3-4.html) by [@大漠](http://www.w3cplus.com)
+- [Emulate the Invert Filter Effect with Sass](http://davidwalsh.name/invert-color-sass) by [@Ana Tudor](http://about.me/thebabydino)
 
 ###Workflow
 
@@ -19,6 +20,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 ###Mixins
 
 - [Smarter Sass Mixins with Null](http://blog.teamtreehouse.com/smarter-sass-mixins-null) by [@Guil Hernandez](http://blog.teamtreehouse.com/author/guillermohernandez)
+- [The Self-Aware Sass Mixin](http://lunelson.roughdraft.io/cc1b431a69360949dc01-the-self-aware-sass-mixin) by [@Lunelson](https://github.com/lunelson)
 
 ###Function
 
@@ -54,9 +56,14 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 - [Import Once in Sass the 'Foundation Way'](http://4waisenkinder.de/blog/2014/03/06/import-once-in-sass-the-foundation-way/) by [@stefanjudis](http://4waisenkinder.de/blog/2014/03/06/import-once-in-sass-the-foundation-way/)
 
+###Maps
+
+- [Debugging Sass Maps](http://www.sitepoint.com/debugging-sass-maps/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
+
 ###RWD
 
 - [Tutorial on Sass media queries : Creating responsive layouts easily](http://www.htmlxprs.com/post/15/tutorial-on-sass-media-queries-creating-responsive-layouts-easily) by [@Syed Fazle Rahman](http://www.htmlxprs.com/author/fazlerocks)
+- [Scaling Values Across Breakpoints Using Sass](http://www.sitepoint.com/scaling-values-across-breakpoints-using-sass/) by [@James Steinbach](http://www.sitepoint.com/author/jsteinbach/)
 
 ###Sass Framework
 
@@ -67,6 +74,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 - [Getting Started with Sass, Part 1](http://webstandardssherpa.com/reviews/getting-started-with-sass-part-1) by [@Laura Kalbag](http://webstandardssherpa.com/about/authors/laura-kalbag/)
 - [Getting Started with Sass, Part 2](http://webstandardssherpa.com/reviews/getting-started-with-sass-part-2) by [@Laura Kalbag](http://webstandardssherpa.com/about/authors/laura-kalbag/)
+- [Getting Started with Sass, Part 3](http://webstandardssherpa.com/reviews/getting-started-with-sass-part-3/) by [@Laura Kalbag](http://webstandardssherpa.com/about/authors/laura-kalbag/)
 
 ###Sass Tools & Compile
 
