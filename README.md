@@ -21,6 +21,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 - [Smarter Sass Mixins with Null](http://blog.teamtreehouse.com/smarter-sass-mixins-null) by [@Guil Hernandez](http://blog.teamtreehouse.com/author/guillermohernandez)
 - [The Self-Aware Sass Mixin](http://lunelson.roughdraft.io/cc1b431a69360949dc01-the-self-aware-sass-mixin) by [@Lunelson](https://github.com/lunelson)
+- [How to use ampersands to simplifiy your sass](http://seesparkbox.com/foundry/how_to_use_ampersands_to_simplifiy_your_sass) by [@Hearsparkbox](https://twitter.com/hearsparkbox)
 
 ###Function
 
@@ -59,6 +60,10 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 ###Maps
 
 - [Debugging Sass Maps](http://www.sitepoint.com/debugging-sass-maps/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
+
+###OOCSS with Sass
+
+- [Using Object-Oriented CSS with Sass](http://thesassway.com/intermediate/using-object-oriented-css-with-sass) by [@aime Caballero](http://twitter.com/jaicab_)
 
 ###RWD
 
