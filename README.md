@@ -26,6 +26,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 ###Function
 
 - [A Bulletproof Function to Validate Length Values in Sass](http://www.sitepoint.com/bulletproof-function-validate-length-values-sass/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
+- [Cubic Bézier representation in Sass](http://thesassway.com/advanced/cubic-bezier-representation-in-sass) by [@Tim Severien](http://twitter.com/timseverien) and [@Hugo Giraudel](http://twitter.com/hugogiraudel)
 
 ###Typography
 
