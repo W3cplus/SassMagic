@@ -62,6 +62,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 ###Maps
 
 - [Debugging Sass Maps](http://www.sitepoint.com/debugging-sass-maps/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
+- [SASS Maps != Source Maps](http://www.matrixgroup.net/snackoclock/2014/10/sass-maps-source-maps/) by [@Jaime Quiroz](http://www.matrixgroup.net/snackoclock/author/jquiroz/)
 
 ###OOCSS with Sass
 
@@ -71,6 +72,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 - [Tutorial on Sass media queries : Creating responsive layouts easily](http://www.htmlxprs.com/post/15/tutorial-on-sass-media-queries-creating-responsive-layouts-easily) by [@Syed Fazle Rahman](http://www.htmlxprs.com/author/fazlerocks)
 - [Scaling Values Across Breakpoints Using Sass](http://www.sitepoint.com/scaling-values-across-breakpoints-using-sass/) by [@James Steinbach](http://www.sitepoint.com/author/jsteinbach/)
+- [Sass-based Media Queries With Breakpoint](http://www.sitepoint.com/sass-based-media-queries-with-breakpoint/) by [@James Steinbach](http://www.sitepoint.com/author/jsteinbach/)
 
 ###Sass Framework
 
