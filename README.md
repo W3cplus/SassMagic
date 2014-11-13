@@ -42,6 +42,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [BEM modifiers: multiple classes vs @extend](http://bensmithett.com/bem-modifiers-multiple-classes-vs-extend/) by [@bensmithett](https://twitter.com/bensmithett)——[译文](http://www.w3cplus.com/preprocessor/bem-modifiers-multiple-classes-vs-extend.html) by [@大漠](http://www.w3cplus.com)
 - [BEM, SASS and Bootstrap: how to mix everything up in a smart way?](https://medium.com/@andersonorui_/bem-sass-and-bootstrap-9f89dc07d20f) by [@OruiAnderson](https://medium.com/@andersonorui_)
 - [Pushing BEM to the next level with Sass 3.4](https://medium.com/@marcmintel/pushing-bem-to-the-next-level-with-sass-3-4-5239d2371321) by [@MintelMarc](https://medium.com/@marcmintel/pushing-bem-to-the-next-level-with-sass-3-4-5239d2371321)——[译文](http://www.w3cplus.com/preprocessor/pushing-bem-to-the-next-level-with-sass-3-4.html) by [@大漠](http://www.w3cplus.com)
+- [Modular CSS with Sass & BEM](http://www.mathayward.com/modular-css-with-sass-and-bem/) by [@Mat Hayward](http://www.twitter.com/mathaywarduk)
 
 ###Icon
 
