@@ -6,6 +6,10 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 ##Sass Resources
 
+###Beginner
+
+- [Getting Started with SASS (with interactive examples)](http://scotch.io/tutorials/css/getting-started-with-sass) by [@Ken Wheeler](http://scotch.io/author/kenwheeler)
+
 ###Sass Features
 - [Sass 3.4 is Out!](http://www.sitepoint.com/sass-3-4-is-out/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
 - [Everything you need to know about Sass 3.4](http://www.phase2technology.com/blog/everything-you-need-to-know-about-sass-3-4/) by [@Micah Godbolt](http://www.phase2technology.com/author/mgodbolt)——[译文](http://www.w3cplus.com/preprocessor/everything-you-need-to-know-about-sass-3-4.html) by [@大漠](http://www.w3cplus.com)
@@ -31,6 +35,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 ###Typography
 
 - [Using Sass to Build a Custom Type Scale with Vertical Rhythm](http://www.sitepoint.com/using-sass-build-custom-type-scale-vertical-rhythm/) by [@James Steinbach](http://www.sitepoint.com/author/jsteinbach/)
+- [Managing responsive typography with Sass](http://maketea.co.uk/2014/11/05/managing-responsive-typography-with-sass.html) by [@Matt Hinchliffe](https://twitter.com/i_like_robots)
 
 ###BEM
 
@@ -90,6 +95,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Gulpin SASS to CSS](http://rikschennink.nl/thoughts/gulpin-sass-to-css/) by [@Rik Schennink](http://rikschennink.nl)
 - [Using Grunt, bootstrap, Compass and SASS in a Drupal sub theme](http://deeson-online.co.uk/labs/using-grunt-bootstrap-compass-and-sass-drupal-sub-theme) by [@David Allard](http://deeson-online.co.uk/category/author/david-allard)
 - [Using Source Maps to Debug Sass in Chrome](http://www.sitepoint.com/using-source-maps-debug-sass-chrome/) by [＠Vinay Raghu](http://www.sitepoint.com/author/vraghu/)
+- [Creating SVG Sprites using Gulp and Sass](https://www.liquidlight.co.uk/blog/article/creating-svg-sprites-using-gulp-and-sass/) by [@Mike Street](https://www.liquidlight.co.uk/team/mike-street/)
 
 ###Video
 
@@ -99,6 +105,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 ###Compass
 
 - [Compass Sourcemaps](http://web-design-weekly.com/2014/09/12/compass-sourcemaps/) by [@Dennis Gaebel](http://grayghostvisuals.com/)
+- [An Overview Of Compass 1.0](http://www.sitepoint.com/an-overview-compass-1-0/) by [@Reggie Dawson](http://www.sitepoint.com/author/rdawson/)
 
 ###Sass & CMS
 
