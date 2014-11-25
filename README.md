@@ -26,6 +26,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Smarter Sass Mixins with Null](http://blog.teamtreehouse.com/smarter-sass-mixins-null) by [@Guil Hernandez](http://blog.teamtreehouse.com/author/guillermohernandez)
 - [The Self-Aware Sass Mixin](http://lunelson.roughdraft.io/cc1b431a69360949dc01-the-self-aware-sass-mixin) by [@Lunelson](https://github.com/lunelson)
 - [How to use ampersands to simplifiy your sass](http://seesparkbox.com/foundry/how_to_use_ampersands_to_simplifiy_your_sass) by [@Hearsparkbox](https://twitter.com/hearsparkbox)
+- [When to use @⁠extend; when to use a mixin](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/) by@[award-winning](https://thenetawards.com/)
 
 ###Function
 
