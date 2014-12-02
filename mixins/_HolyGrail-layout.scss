@@ -22,15 +22,15 @@
 // Fixed Width
 // @include HolyGrail-layout(2,960px,190px,null,10px,".container",".col-main",".main-wrapper",".col-sub",null,"left",null);
 // @include HolyGrail-layout(2,960px,190px,null,10px,".container",".col-main",".main-wrapper-right",".col-sub-right",null,"right",null);
-// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper-3",".col-sub-3",".col-extra-3","left","right");
-// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper-4",".col-sub-4",".col-extra-4","right","left");
-// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper-5",".col-sub-5",".col-extra-5","right","center");
-// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper-6",".col-sub-6",".col-extra-6","center","right");
-// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper-7",".col-sub-7",".col-extra-7","left","center");
-// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper-8",".col-sub-8",".col-extra-8","center","left");
+// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper",".col-sub",".col-extra","left","right");
+// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper",".col-sub",".col-extra","right","left");
+// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper",".col-sub",".col-extra","right","center");
+// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper",".col-sub",".col-extra","center","right");
+// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper",".col-sub",".col-extra","left","center");
+// @include HolyGrail-layout(3,960px,190px,230px,10px,".container",".col-main",".main-wrapper",".col-sub",".col-extra","center","left");
 // Fuild Width
 // @include HolyGrail-layout(2,100%,190px,null,10px,".container",".col-main",".main-wrapper",".col-sub",null,"left",null);
-// @include HolyGrail-layout(3,100%,190px,320px,10px,".container",".col-main",".main-wrapper-3",".col-sub-3",".col-extra-3","right","left");
+// @include HolyGrail-layout(3,100%,190px,320px,10px,".container",".col-main",".main-wrapper",".col-sub",".col-extra","right","left");
 
 @mixin HolyGrail-layout(
   $colNum,//定义列数
