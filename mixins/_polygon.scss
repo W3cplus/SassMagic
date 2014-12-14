@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+//Thanks http://codepen.io/zhouwenbin/pen/NPNXZe
+
+@mixin polygon($radius,$border-num,$background){
+  //$radius:      顶点到重心的半径
+  //$border-num:   边数
+  //$background:   背景颜色
+
+  $coordinate:();
+  @for $j from 1 through $border-num{
+    $coordinate:$coordinate , $radius * cos(2 * pi() /$border-num * $j) + $radius  $radius * sin(2 * pi() /$border-num * $j) + $radius
+  }
+  -webkit-clip-path:polygon($coordinate);
+  clip-path:polygon($coordinate);
+  &:before{
+    content: '';
+    width: 2 * $radius;
+    height: 2 * $radius;
+    background: $background;
+    display: inline-block;
+  }
+}
+/*=============================Use=============================
+.polygon{
+  @include polygon(200px,5,#333);
+}
+===============================Output==========================
+.polygon {
+  -webkit-clip-path: polygon(261.8034px 390.2113px, 38.1966px 317.55705px, 38.1966px 82.44295px, 261.8034px 9.7887px, 400px 200.0px);
+}
+.polygon:before {
+  content: '';
+  width: 400px;
+  height: 400px;
+  background: #333;
+  display: inline-block;
+}
+===============================================================*/

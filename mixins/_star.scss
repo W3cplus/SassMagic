@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+//Thanks http://codepen.io/zhouwenbin/pen/ogxpRZ
+
+@mixin star($radius,$border-num,$background){
+  //$radius:      顶点到重心的半径
+  //$border-num:   边数,只能取奇数
+  //$background:   背景颜色
+  $coordinate:();
+  $coordinate1:();
+  $coordinate2:();
+  @for $j from 1 through $border-num{
+    @if($j % 2 == 0){
+      $coordinate1:$coordinate1,$radius * cos(2 * pi() /$border-num * $j) + $radius  $radius * sin(2 * pi() /$border-num * $j) + $radius
+    }
+    @else{
+      $coordinate2:$coordinate2,$radius * cos(2 * pi() /$border-num *$j) + $radius  $radius * sin(2 * pi() /$border-num * $j) + $radius
+    }
+    $coordinate:$coordinate1,$coordinate2;
+ 
+  }
+  -webkit-clip-path:polygon($coordinate);
+  clip-path:polygon($coordinate);
+  &:before{
+    content:'';
+    width: 2 * $radius;
+    height: 2 * $radius;
+    background:$background;
+    display:inline-block;
+  }
+}
+/*=============================Use=============================
+.star{
+  @include star(200px,5,#333);
+}
+===============================Output==========================
+.star {
+  -webkit-clip-path: polygon(38.1966px 317.55705px, 261.8034px 9.7887px, 261.8034px 390.2113px, 38.1966px 82.44295px, 400px 200.0px);
+}
+.star:before {
+  content: '';
+  width: 400px;
+  height: 400px;
+  background: #333;
+  display: inline-block;
+}
+===============================================================*/
