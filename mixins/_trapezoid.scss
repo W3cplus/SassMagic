@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+//Thanks http://codepen.io/zhouwenbin/pen/RNaQaM
+
+@mixin trapezoid($base-up,$base-down,$height,$color,$direction){
+  //$base-up:   上底
+  //$base-down:  下底
+  //$height:    高度
+  //$color:     颜色
+  //$direction:  方向(top,bottom,left,right)
+  display:inline-block;
+  border-style:solid;
+  @if($direction == top){
+    border-width: $height ($base-down - $base-up) / 2;
+    border-color:transparent transparent $color transparent;
+    margin-top:-$height;
+    width:$base-up ;
+  }
+  @if($direction == bottom){
+    border-width: $height ($base-down - $base-up) / 2;
+    border-color: $color transparent transparent transparent;
+    margin-bottom:-$height;
+    width:$base-up ;
+ 
+  }
+  @if($direction == left){
+    border-width: ($base-down - $base-up) / 2 $height ;
+    border-color:transparent transparent transparent $color;
+    margin-right:-$height;
+    height:$base-up ;
+  }
+  @if($direction == right){
+    border-width: ($base-down - $base-up) / 2 $height ;
+    border-color:transparent $color transparent transparent;
+    margin-left:-$height;
+    height:$base-up ;
+  }
+}
+/*=============================Use=============================
+.trapezoid-top{
+  @include trapezoid(100px,200px,100px,#333,top);
+}
+.trapezoid-bottom{
+  @include trapezoid(100px,200px,100px,#333,bottom);
+}
+.trapezoid-left{
+  @include trapezoid(100px,200px,100px,#333,left);
+}
+.trapezoid-right{
+  @include trapezoid(100px,200px,100px,#333,right);
+}
+===============================Output==========================
+.trapezoid-top {
+  display: inline-block;
+  border-style: solid;
+  border-width: 100px 50px;
+  border-color: transparent transparent #333 transparent;
+  margin-top: -100px;
+  width: 100px;
+}
+ 
+.trapezoid-bottom {
+  display: inline-block;
+  border-style: solid;
+  border-width: 100px 50px;
+  border-color: #333 transparent transparent transparent;
+  margin-bottom: -100px;
+  width: 100px;
+}
+ 
+.trapezoid-left {
+  display: inline-block;
+  border-style: solid;
+  border-width: 50px 100px;
+  border-color: transparent transparent transparent #333;
+  margin-right: -100px;
+  height: 100px;
+}
+ 
+.trapezoid-right {
+  display: inline-block;
+  border-style: solid;
+  border-width: 50px 100px;
+  border-color: transparent #333 transparent transparent;
+  margin-left: -100px;
+  height: 100px;
+}
+===============================================================*/

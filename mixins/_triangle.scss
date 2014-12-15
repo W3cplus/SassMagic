@@ -1,0 +1,89 @@
+@charset "UTF-8";
+
+//Thanks http://codepen.io/zhouwenbin/pen/emZVZp
+
+@mixin triangle($base,$height,$color,$direction){
+  //$base:     底边
+  //$height:    高度
+  //$color:     颜色
+  //$direction:  方向(top,bottom,left,right)
+  display:inline-block;
+  width:0;
+  height:0;
+  border-style:solid;
+  @if($direction == top){
+    border-width: $height $base / 2 ;
+    border-color:transparent transparent $color transparent;
+    margin-top:-$height;
+  }
+  @if($direction == bottom){
+    border-width: $height $base / 2 ;
+    border-color: $color transparent transparent transparent;
+    margin-bottom:-$height;
+ 
+  }
+  @if($direction == left){
+    border-width: $base / 2 $height ;
+    border-color:transparent transparent transparent $color;
+    margin-right:-$height;
+  }
+  @if($direction == right){
+    border-width: $base / 2 $height ;
+    border-color:transparent $color transparent transparent;
+    margin-left:-$height;
+  }
+}
+/*=============================Use=============================
+.triangle-top{
+  @include triangle(200px,200px,#333,top);
+}
+.triangle-bottom{
+  @include triangle(200px,200px,#333,bottom);
+}
+.triangle-left{
+  @include triangle(200px,200px,#333,left);
+}
+.triangle-right{
+  @include triangle(200px,200px,#333,right);
+}
+===============================Output==========================
+.triangle-top {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 200px 100px;
+  border-color: transparent transparent #333 transparent;
+  margin-top: -200px;
+}
+ 
+.triangle-bottom {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 200px 100px;
+  border-color: #333 transparent transparent transparent;
+  margin-bottom: -200px;
+}
+ 
+.triangle-left {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 100px 200px;
+  border-color: transparent transparent transparent #333;
+  margin-right: -200px;
+}
+ 
+.triangle-right {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 100px 200px;
+  border-color: transparent #333 transparent transparent;
+  margin-left: -200px;
+}
+===============================================================*/
