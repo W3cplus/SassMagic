@@ -8,7 +8,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 ###Beginner
 
-- [Getting Started with SASS (with interactive examples)](http://scotch.io/tutorials/css/getting-started-with-sass) by [@Ken Wheeler](http://scotch.io/author/kenwheeler)
+- [Getting Started with Sass (with interactive examples)](http://scotch.io/tutorials/css/getting-started-with-sass) by [@Ken Wheeler](http://scotch.io/author/kenwheeler)
 
 ###Sass Features
 - [Sass 3.4 is Out!](http://www.sitepoint.com/sass-3-4-is-out/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
@@ -41,13 +41,13 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 ###BEM
 
 - [BEM modifiers: multiple classes vs @extend](http://bensmithett.com/bem-modifiers-multiple-classes-vs-extend/) by [@bensmithett](https://twitter.com/bensmithett)——[译文](http://www.w3cplus.com/preprocessor/bem-modifiers-multiple-classes-vs-extend.html) by [@大漠](http://www.w3cplus.com)
-- [BEM, SASS and Bootstrap: how to mix everything up in a smart way?](https://medium.com/@andersonorui_/bem-sass-and-bootstrap-9f89dc07d20f) by [@OruiAnderson](https://medium.com/@andersonorui_)
+- [BEM, Sass and Bootstrap: how to mix everything up in a smart way?](https://medium.com/@andersonorui_/bem-sass-and-bootstrap-9f89dc07d20f) by [@OruiAnderson](https://medium.com/@andersonorui_)
 - [Pushing BEM to the next level with Sass 3.4](https://medium.com/@marcmintel/pushing-bem-to-the-next-level-with-sass-3-4-5239d2371321) by [@MintelMarc](https://medium.com/@marcmintel/pushing-bem-to-the-next-level-with-sass-3-4-5239d2371321)——[译文](http://www.w3cplus.com/preprocessor/pushing-bem-to-the-next-level-with-sass-3-4.html) by [@大漠](http://www.w3cplus.com)
 - [Modular CSS with Sass & BEM](http://www.mathayward.com/modular-css-with-sass-and-bem/) by [@Mat Hayward](http://www.twitter.com/mathaywarduk)
 
 ###Icon
 
-- [Generate icon classes from sprite using SASS](https://medium.com/@naturailycom/generate-icon-classes-from-sprite-using-sass-2be74309e50c) by [@Naturaily](https://medium.com/@naturailycom)
+- [Generate icon classes from sprite using Sass](https://medium.com/@naturailycom/generate-icon-classes-from-sprite-using-sass-2be74309e50c) by [@Naturaily](https://medium.com/@naturailycom)
 
 ###Grids
 
@@ -95,8 +95,8 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 ###Sass Tools & Compile
 
-- [Gulpin SASS to CSS](http://rikschennink.nl/thoughts/gulpin-sass-to-css/) by [@Rik Schennink](http://rikschennink.nl)
-- [Using Grunt, bootstrap, Compass and SASS in a Drupal sub theme](http://deeson-online.co.uk/labs/using-grunt-bootstrap-compass-and-sass-drupal-sub-theme) by [@David Allard](http://deeson-online.co.uk/category/author/david-allard)
+- [Gulpin Sass to CSS](http://rikschennink.nl/thoughts/gulpin-sass-to-css/) by [@Rik Schennink](http://rikschennink.nl)
+- [Using Grunt, bootstrap, Compass and Sass in a Drupal sub theme](http://deeson-online.co.uk/labs/using-grunt-bootstrap-compass-and-sass-drupal-sub-theme) by [@David Allard](http://deeson-online.co.uk/category/author/david-allard)
 - [Using Source Maps to Debug Sass in Chrome](http://www.sitepoint.com/using-source-maps-debug-sass-chrome/) by [＠Vinay Raghu](http://www.sitepoint.com/author/vraghu/)
 - [Creating SVG Sprites using Gulp and Sass](https://www.liquidlight.co.uk/blog/article/creating-svg-sprites-using-gulp-and-sass/) by [@Mike Street](https://www.liquidlight.co.uk/team/mike-street/)
 
