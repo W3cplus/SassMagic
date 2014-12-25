@@ -92,6 +92,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Getting Started with Sass, Part 1](http://webstandardssherpa.com/reviews/getting-started-with-sass-part-1) by [@Laura Kalbag](http://webstandardssherpa.com/about/authors/laura-kalbag/)
 - [Getting Started with Sass, Part 2](http://webstandardssherpa.com/reviews/getting-started-with-sass-part-2) by [@Laura Kalbag](http://webstandardssherpa.com/about/authors/laura-kalbag/)
 - [Getting Started with Sass, Part 3](http://webstandardssherpa.com/reviews/getting-started-with-sass-part-3/) by [@Laura Kalbag](http://webstandardssherpa.com/about/authors/laura-kalbag/)
+- [Sass for Big Sites, Part 1](http://webstandardssherpa.com/reviews/sass-for-big-sites-part-1) by [@Jackie Balzer](http://webstandardssherpa.com/about/authors/jackie-balzer/)
 
 ###Sass Tools & Compile
 
