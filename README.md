@@ -20,6 +20,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [A Look at Different Sass Architectures](http://www.sitepoint.com/look-different-sass-architectures/) by [@Vinay Raghu](http://www.sitepoint.com/author/vraghu/)
 - [HOW I IMPROVED MY WORKFLOW WITH SMACSS & SASS](http://bramsmulders.com/how-i-improved-my-workflow-with-smacss-sass.html) by [@bramsmulders](http://twitter.com/bramsmulders)
 - [Writing CSS (and Sass) that doesn’t suck](http://ashleynolan.co.uk/blog/writing-css-and-sass-that-doesnt-suck) by [@Ashley Nolan](http://twitter.com/AshNolan_)
+- [Recommendations for a Faster Workflow with Sass](http://webdesign.tutsplus.com/articles/recommendations-for-a-faster-workflow-with-sass--cms-21616) by [@Tim Hartmann](http://tutsplus.com/authors/tim-hartmann)
 
 ###Mixins
 
@@ -72,6 +73,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Debugging Sass Maps](http://www.sitepoint.com/debugging-sass-maps/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
 - [SASS Maps != Source Maps](http://www.matrixgroup.net/snackoclock/2014/10/sass-maps-source-maps/) by [@Jaime Quiroz](http://www.matrixgroup.net/snackoclock/author/jquiroz/)
 - [Real Sass, Real Maps](http://blog.grayghostvisuals.com/sass/real-sass-real-maps/) by [@gryghostvisuals](http://twitter.com/gryghostvisuals)
+- [An Introduction to Sass Maps: Usage and Examples](http://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184) by [@Tim Hartmann](http://tutsplus.com/authors/tim-hartmann)
 
 ###OOCSS with Sass
 
@@ -82,6 +84,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Tutorial on Sass media queries : Creating responsive layouts easily](http://www.htmlxprs.com/post/15/tutorial-on-sass-media-queries-creating-responsive-layouts-easily) by [@Syed Fazle Rahman](http://www.htmlxprs.com/author/fazlerocks)
 - [Scaling Values Across Breakpoints Using Sass](http://www.sitepoint.com/scaling-values-across-breakpoints-using-sass/) by [@James Steinbach](http://www.sitepoint.com/author/jsteinbach/)
 - [Sass-based Media Queries With Breakpoint](http://www.sitepoint.com/sass-based-media-queries-with-breakpoint/) by [@James Steinbach](http://www.sitepoint.com/author/jsteinbach/)
+- [Approaches to Media Queries in Sass](http://css-tricks.com/approaches-media-queries-sass/)
 
 ###Sass Framework
 
