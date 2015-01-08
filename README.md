@@ -6,9 +6,17 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 ##Sass Resources
 
+###Guide Line
+
+- [Sass Guidelines](http://sass-guidelin.es/)
+
 ###Beginner
 
 - [Getting Started with Sass (with interactive examples)](http://scotch.io/tutorials/css/getting-started-with-sass) by [@Ken Wheeler](http://scotch.io/author/kenwheeler)
+
+###Sass Variables
+
+- [Better Sass variables through abstraction](http://craigmdennis.com/articles/better-sass-variables) by [@Craig](http://craigmdennis.com/about)
 
 ###Sass Features
 - [Sass 3.4 is Out!](http://www.sitepoint.com/sass-3-4-is-out/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
@@ -21,6 +29,8 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [HOW I IMPROVED MY WORKFLOW WITH SMACSS & SASS](http://bramsmulders.com/how-i-improved-my-workflow-with-smacss-sass.html) by [@bramsmulders](http://twitter.com/bramsmulders)
 - [Writing CSS (and Sass) that doesn’t suck](http://ashleynolan.co.uk/blog/writing-css-and-sass-that-doesnt-suck) by [@Ashley Nolan](http://twitter.com/AshNolan_)
 - [Recommendations for a Faster Workflow with Sass](http://webdesign.tutsplus.com/articles/recommendations-for-a-faster-workflow-with-sass--cms-21616) by [@Tim Hartmann](http://tutsplus.com/authors/tim-hartmann)
+- [Sinatra and Bourbon – Web Development My Way](http://www.sitepoint.com/sinatra-bourbon-web-development-way/) by [@M. David Green](http://www.sitepoint.com/author/mdavidgreen/)
+- [Working with Sass style sheets in Office 365 / SharePoint 2013](http://tommdaly.wordpress.com/2015/01/03/working-with-sass-style-sheets-in-office-365-sharepoint-2013/) by [@Thomas Daly](http://tommdaly.wordpress.com/author/tommdaly/)
 
 ###Mixins
 
@@ -85,11 +95,13 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Scaling Values Across Breakpoints Using Sass](http://www.sitepoint.com/scaling-values-across-breakpoints-using-sass/) by [@James Steinbach](http://www.sitepoint.com/author/jsteinbach/)
 - [Sass-based Media Queries With Breakpoint](http://www.sitepoint.com/sass-based-media-queries-with-breakpoint/) by [@James Steinbach](http://www.sitepoint.com/author/jsteinbach/)
 - [Approaches to Media Queries in Sass](http://css-tricks.com/approaches-media-queries-sass/)
+- [Write Simple, Elegant and Maintainable Media Queries with Sass](http://davidwalsh.name/sass-media-query) by [@Eduardo Bouças](http://eduardoboucas.com/)
 
 ###Sass Framework
 
 - [5 Ways to Improve Your Sass with Bourbon](http://www.sitepoint.com/5-ways-improve-sass-bourbon/) by [@M. David Green](http://www.sitepoint.com/author/mdavidgreen/)
 - [Sass & CSS Style Guide](http://www.liveeditorcms.com/gc/playbook/sass-css-style-guide/) by [@liveeditorcms](http://twitter.com/liveeditorcms)
+- [Increasing SASS Compiling Performance or "When Every Second Counts”](https://www.devbridge.com/articles/increasing-sass-compiling-performance-or-when-every-second-counts/) by [@Vaclovas Vicius](https://www.devbridge.com/about-us/vaclovas-vicius)
 
 ###Step by Step
 
@@ -119,4 +131,4 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 - [Sass for WordPress Developers](http://www.sitepoint.com/sass-for-wordpress-developers/) by [@James Steinbach](http://www.sitepoint.com/author/jsteinbach/)
 
- © [w3cplus](http://www.w3cplus.com),作者:大漠。QQ讨论群：78142855
+ © [w3cplus](http://www.w3cplus.com),[Sass中国](http://cn-sass.com/).作者:大漠。QQ讨论群：78142855
