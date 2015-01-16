@@ -38,6 +38,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [The Self-Aware Sass Mixin](http://lunelson.roughdraft.io/cc1b431a69360949dc01-the-self-aware-sass-mixin) by [@Lunelson](https://github.com/lunelson)
 - [How to use ampersands to simplifiy your sass](http://seesparkbox.com/foundry/how_to_use_ampersands_to_simplifiy_your_sass) by [@Hearsparkbox](https://twitter.com/hearsparkbox)
 - [When to use @⁠extend; when to use a mixin](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/) by@[award-winning](https://thenetawards.com/)
+- [Sass Basics: The Mixin Directive](http://www.sitepoint.com/sass-basics-the-mixin-directive/) by [@Reggie Dawson](http://www.sitepoint.com/author/rdawson/)
 
 ###Function
 
@@ -67,6 +68,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Build Web Layouts Easily with Susy](http://css-tricks.com/build-web-layouts-easily-susy/) by @Guest Author
 - [Sass Grids: From Neat To Susy](http://www.sitepoint.com/sass-grids-neat-susy/) by [@James Steinbach](http://www.sitepoint.com/author/jsteinbach/)
 - [How to Use Susy: Superpowered Sass Grids](http://webdesign.tutsplus.com/tutorials/how-to-use-susy-superpowered-sass-grids--cms-22744) by [@Jonathan Cutrell](http://tutsplus.com/authors/jonathan-cutrell)
+- [Based on The Golden Grid System Implemented with Compass SASS](http://jellyvision.github.io/spread/)
 
 ###Colors
 
@@ -84,6 +86,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [SASS Maps != Source Maps](http://www.matrixgroup.net/snackoclock/2014/10/sass-maps-source-maps/) by [@Jaime Quiroz](http://www.matrixgroup.net/snackoclock/author/jquiroz/)
 - [Real Sass, Real Maps](http://blog.grayghostvisuals.com/sass/real-sass-real-maps/) by [@gryghostvisuals](http://twitter.com/gryghostvisuals)
 - [An Introduction to Sass Maps: Usage and Examples](http://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184) by [@Tim Hartmann](http://tutsplus.com/authors/tim-hartmann)
+- [Magical Config Objects with Sass Maps](http://codepen.io/AdamBlum/blog/config-objects-with-sass-maps) by [@Adam Blum ](http://codepen.io/AdamBlum/)
 
 ###OOCSS with Sass
 
@@ -96,6 +99,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Sass-based Media Queries With Breakpoint](http://www.sitepoint.com/sass-based-media-queries-with-breakpoint/) by [@James Steinbach](http://www.sitepoint.com/author/jsteinbach/)
 - [Approaches to Media Queries in Sass](http://css-tricks.com/approaches-media-queries-sass/)
 - [Write Simple, Elegant and Maintainable Media Queries with Sass](http://davidwalsh.name/sass-media-query) by [@Eduardo Bouças](http://eduardoboucas.com/)
+- [Smoothing Responsive Designs with +spread](http://viget.com/inspire/responsive-design-with-spread) by [@DOUG AVERY](http://viget.com/about/team/davery)
 
 ###Sass Framework
 
@@ -116,6 +120,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Using Grunt, bootstrap, Compass and Sass in a Drupal sub theme](http://deeson-online.co.uk/labs/using-grunt-bootstrap-compass-and-sass-drupal-sub-theme) by [@David Allard](http://deeson-online.co.uk/category/author/david-allard)
 - [Using Source Maps to Debug Sass in Chrome](http://www.sitepoint.com/using-source-maps-debug-sass-chrome/) by [＠Vinay Raghu](http://www.sitepoint.com/author/vraghu/)
 - [Creating SVG Sprites using Gulp and Sass](https://www.liquidlight.co.uk/blog/article/creating-svg-sprites-using-gulp-and-sass/) by [@Mike Street](https://www.liquidlight.co.uk/team/mike-street/)
+- [Converting CSS to SASS (And Cleaning Things Up in the Process)](http://terrificwebdesign.net/converting-css-sass/)
 
 ###Video
 
