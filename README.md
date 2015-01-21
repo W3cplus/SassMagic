@@ -13,6 +13,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 ###Beginner
 
 - [Getting Started with Sass (with interactive examples)](http://scotch.io/tutorials/css/getting-started-with-sass) by [@Ken Wheeler](http://scotch.io/author/kenwheeler)
+- [Themed Styles With Sass](http://seesparkbox.com/foundry/themed_styles_with_sass) by [@ETHAN MULLER](http://seesparkbox.com/foundry/author/ethan_muller)
 
 ###Sass Variables
 
@@ -22,6 +23,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Sass 3.4 is Out!](http://www.sitepoint.com/sass-3-4-is-out/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
 - [Everything you need to know about Sass 3.4](http://www.phase2technology.com/blog/everything-you-need-to-know-about-sass-3-4/) by [@Micah Godbolt](http://www.phase2technology.com/author/mgodbolt)——[译文](http://www.w3cplus.com/preprocessor/everything-you-need-to-know-about-sass-3-4.html) by [@大漠](http://www.w3cplus.com)
 - [Emulate the Invert Filter Effect with Sass](http://davidwalsh.name/invert-color-sass) by [@Ana Tudor](http://about.me/thebabydino)
+- [A Vision for Our Sass](http://alistapart.com/article/a-vision-for-our-sass) by [@FELICITY EVANS](http://alistapart.com/author/fevans)
 
 ###Workflow
 
@@ -69,6 +71,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Sass Grids: From Neat To Susy](http://www.sitepoint.com/sass-grids-neat-susy/) by [@James Steinbach](http://www.sitepoint.com/author/jsteinbach/)
 - [How to Use Susy: Superpowered Sass Grids](http://webdesign.tutsplus.com/tutorials/how-to-use-susy-superpowered-sass-grids--cms-22744) by [@Jonathan Cutrell](http://tutsplus.com/authors/jonathan-cutrell)
 - [Based on The Golden Grid System Implemented with Compass SASS](http://jellyvision.github.io/spread/)
+- [Super-fast Responsive Layouts with Jeet](http://www.sitepoint.com/super-fast-responsive-layouts-jeet/) by [@George Martsoukos](http://www.sitepoint.com/author/gmartsoukos/)
 
 ###Colors
 
@@ -87,6 +90,8 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Real Sass, Real Maps](http://blog.grayghostvisuals.com/sass/real-sass-real-maps/) by [@gryghostvisuals](http://twitter.com/gryghostvisuals)
 - [An Introduction to Sass Maps: Usage and Examples](http://webdesign.tutsplus.com/tutorials/an-introduction-to-sass-maps-usage-and-examples--cms-22184) by [@Tim Hartmann](http://tutsplus.com/authors/tim-hartmann)
 - [Magical Config Objects with Sass Maps](http://codepen.io/AdamBlum/blog/config-objects-with-sass-maps) by [@Adam Blum ](http://codepen.io/AdamBlum/)
+- [Extra Map Functions in Sass](http://www.sitepoint.com/extra-map-functions-sass/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
+- [Update single value in a Sass map](http://blackfalcon.roughdraft.io/8943fdfd94463467a41e-update-single-value-in-a-sass-map)
 
 ###OOCSS with Sass
 
