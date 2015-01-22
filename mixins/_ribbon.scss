@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+//Thanks http://codepen.io/zhouwenbin/pen/bNpMov
+
+@mixin labels($background,$color,$font-size,$direction){
+  //$background:  背景色
+  //$color:     文字颜色
+  //$font-size   文字大小
+  //$direction   方向
+  display:inline-block;
+  vertical-align:middle;
+  padding:16px;
+  line-height:1; 
+  background: $background;
+  color: $color;
+  font-size: $font-size;
+  position: relative;
+  &:before,
+  & .before{
+    content:'';
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-style: solid;   
+  }
+  @if($direction == right){
+    height:$font-size;
+    &:before,
+    & .before{
+      border-color: transparent #fff transparent transparent;
+      border-width: ($font-size + 32) / 2 9px;
+      right:0;
+      top:0;
+    }    
+  }
+  @if($direction == left){
+    height:$font-size;
+    &:before,
+    & .before{
+      border-width: ($font-size + 32) / 2 9px;
+      border-color: transparent transparent transparent #fff;
+      left:0;
+      top:0;
+    }     
+  }
+  @if($direction == top){
+    width: $font-size / 2;     
+    word-wrap:break-word;
+    word-break:break-all;
+    &:before,
+    & .before{
+      border-color: #fff transparent transparent transparent;
+      left:0;
+      top:0;
+      border-width: 9px ($font-size / 2 + 32) / 2;
+    }   
+  }
+  @if($direction == bottom){
+    width: $font-size / 2;
+    word-wrap:break-word;
+    word-break:break-all;
+    &:before,
+    & .before{
+      border-color: transparent transparent #fff transparent;
+      left:0;
+      bottom:0;
+      border-width: 9px ($font-size / 2 + 32) / 2;   
+    }   
+  }
+}
+// =============================Use=============================
+// .labels-right{
+//   @include labels(#425164,#fff,16px,right);
+// }
+// .labels-left{
+//   @include labels(#425164,#fff,16px,left);
+// }
+// .labels-top{
+//   @include labels(#425164,#fff,16px,top);
+// }
+// .labels-bottom{
+//   @include labels(#425164,#fff,16px,bottom);
+// }
+// ===============================Output==========================
+// .labels-right {
+//   display: inline-block;
+//   vertical-align: middle;
+//   padding: 16px;
+//   line-height: 1;
+//   background: #425164;
+//   color: #fff;
+//   font-size: 16px;
+//   position: relative;
+//   height: 16px;
+// }
+// .labels-right:before, .labels-right .before {
+//   content: '';
+//   position: absolute;
+//   height: 0;
+//   width: 0;
+//   border-style: solid;
+// }
+// .labels-right:before, .labels-right .before {
+//   border-color: transparent #fff transparent transparent;
+//   border-width: 24px 9px;
+//   right: 0;
+//   top: 0;
+// }
+
+// .labels-left {
+//   display: inline-block;
+//   vertical-align: middle;
+//   padding: 16px;
+//   line-height: 1;
+//   background: #425164;
+//   color: #fff;
+//   font-size: 16px;
+//   position: relative;
+//   height: 16px;
+// }
+// .labels-left:before, .labels-left .before {
+//   content: '';
+//   position: absolute;
+//   height: 0;
+//   width: 0;
+//   border-style: solid;
+// }
+// .labels-left:before, .labels-left .before {
+//   border-width: 24px 9px;
+//   border-color: transparent transparent transparent #fff;
+//   left: 0;
+//   top: 0;
+// }
+
+// .labels-top {
+//   display: inline-block;
+//   vertical-align: middle;
+//   padding: 16px;
+//   line-height: 1;
+//   background: #425164;
+//   color: #fff;
+//   font-size: 16px;
+//   position: relative;
+//   width: 8px;
+//   word-wrap: break-word;
+//   word-break: break-all;
+// }
+// .labels-top:before, .labels-top .before {
+//   content: '';
+//   position: absolute;
+//   height: 0;
+//   width: 0;
+//   border-style: solid;
+// }
+// .labels-top:before, .labels-top .before {
+//   border-color: #fff transparent transparent transparent;
+//   left: 0;
+//   top: 0;
+//   border-width: 9px 20px;
+// }
+
+// .labels-bottom {
+//   display: inline-block;
+//   vertical-align: middle;
+//   padding: 16px;
+//   line-height: 1;
+//   background: #425164;
+//   color: #fff;
+//   font-size: 16px;
+//   position: relative;
+//   width: 8px;
+//   word-wrap: break-word;
+//   word-break: break-all;
+// }
+// .labels-bottom:before, .labels-bottom .before {
+//   content: '';
+//   position: absolute;
+//   height: 0;
+//   width: 0;
+//   border-style: solid;
+// }
+// .labels-bottom:before, .labels-bottom .before {
+//   border-color: transparent transparent #fff transparent;
+//   left: 0;
+//   bottom: 0;
+//   border-width: 9px 20px;
+// }
+// ===============================================================
