@@ -13,39 +13,39 @@
   }
 }
 
-/*=================Use=======================
-.nav-menu {
-  li {
-    float: left;
-    a {
-      color: blue;
-      @include parent-hover {
-        color: purple;
-      }
-    }
-    .sub-menu {
-      display: none;
-      @include parent-hover {
-        display: block;
-      }
-    }
-  }
-}
+// =================Use=======================
+// .nav-menu {
+//   li {
+//     float: left;
+//     a {
+//       color: blue;
+//       @include parent-hover {
+//         color: purple;
+//       }
+//     }
+//     .sub-menu {
+//       display: none;
+//       @include parent-hover {
+//         display: block;
+//       }
+//     }
+//   }
+// }
 
-=====================output===================
-.nav-menu li {
-  float: left;
-}
-.nav-menu li a {
-  color: blue;
-}
-.nav-menu li:hover a {
-  color: purple;
-}
-.nav-menu li .sub-menu {
-  display: none;
-}
-.nav-menu li:hover .sub-menu {
-  display: block;
-}
-============================================*/
+// =====================output===================
+// .nav-menu li {
+//   float: left;
+// }
+// .nav-menu li a {
+//   color: blue;
+// }
+// .nav-menu li:hover a {
+//   color: purple;
+// }
+// .nav-menu li .sub-menu {
+//   display: none;
+// }
+// .nav-menu li:hover .sub-menu {
+//   display: block;
+// }
+// ============================================

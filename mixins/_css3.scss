@@ -105,15 +105,15 @@ $prefixNo:                    true !default;
 @mixin border-radius($radius: 3px) {
   border-radius:$radius;
 }
-/*=========================Use=======================
-.border-radius{
-  @include border-radius(5px);
-}
-==========================Output====================
-.border-radius {
-  border-radius: 5px;
-}
-===================================================*/
+// =========================Use=======================
+// .border-radius{
+//   @include border-radius(5px);
+// }
+// ==========================Output====================
+// .border-radius {
+//   border-radius: 5px;
+// }
+// ===================================================
 
 // border-image
 // Value:<‘border-image-source’> || <‘border-image-slice’> [ / <‘border-image-width’> | / <‘border-image-width’>? / <‘border-image-outset’> ]? || <‘border-image-repeat’>
@@ -122,16 +122,16 @@ $prefixNo:                    true !default;
 @mixin border-image($image){
   @include prefixer(border-image, $image);
 }
-/*============================Use==============================
-.border-image{
-  @include border-image(url("images/border.png") 20px round);
-}
-==============================Output===========================
-.border-image {
-  -webkit-border-image: url("images/border.png") 20px round;
-  border-image: url("images/border.png") 20px round;
-}
-==============================================================*/
+// ============================Use==============================
+// .border-image{
+//   @include border-image(url("images/border.png") 20px round);
+// }
+// ==============================Output===========================
+// .border-image {
+//   -webkit-border-image: url("images/border.png") 20px round;
+//   border-image: url("images/border.png") 20px round;
+// }
+// ==============================================================
 
 // box-sizing
 // $type: border-box | padding-box | content-box
@@ -140,16 +140,16 @@ $prefixNo:                    true !default;
 @mixin box-sizing($type: border-box) {
   @include prefixer(box-sizing, $type);
 }
-/*============================Use===============================
-*{
-  @include box-sizing(border-box);
-}
-==============================Output============================
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-===============================================================*/
+// ============================Use===============================
+// *{
+//   @include box-sizing(border-box);
+// }
+// ==============================Output============================
+// * {
+//   -webkit-box-sizing: border-box;
+//   box-sizing: border-box;
+// }
+// ===============================================================
 
 // box-shadow
 // Value:none | <shadow> [ , <shadow> ]*
@@ -167,23 +167,25 @@ $prefixNo:                    true !default;
 @mixin no-box-shadow($noshadow:none){
 	@include prefixer(box-shadow,$noshadow);
 }
-/*===========================Use================================
-.box-shadow{
-  @include box-shadow(inset 1px 1px 3px rgba(234,234,22,.5),1px 1px 3px rgba(33,23,23,.2));
-}
-.no-box-shadow{
-  @include no-box-shadow;
-}
-=============================Output=============================
-.box-shadow {
-  -webkit-box-shadow: inset 1px 1px 3px rgba(234, 234, 22, 0.5), 1px 1px 3px rgba(33, 23, 23, 0.2);
-  box-shadow: inset 1px 1px 3px rgba(234, 234, 22, 0.5), 1px 1px 3px rgba(33, 23, 23, 0.2);
-}
-.no-box-shadow {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-================================================================*/
+// ===========================Use================================
+// .box-shadow{
+//   @include box-shadow(inset 1px 1px 3px rgba(234,234,22,.5),1px 1px 3px rgba(33,23,23,.2));
+// }
+// .no-box-shadow{
+//   @include no-box-shadow;
+// }
+// =============================Output=============================
+// .box-shadow {
+//   -webkit-box-shadow: inset 1px 1px 3px rgba(234, 234, 22, 0.5), 1px 1px 3px rgba(33, 23, 23, 0.2);
+//   box-shadow: inset 1px 1px 3px rgba(234, 234, 22, 0.5), 1px 1px 3px rgba(33, 23, 23, 0.2);
+// }
+// .no-box-shadow {
+//   -webkit-box-shadow: none;
+//   box-shadow: none;
+// }
+// ================================================================
+
+
 // appearance
 // Value:http://css-tricks.com/almanac/properties/a/appearance/
 // http://wiki.csswg.org/spec/css4-ui#appearance
@@ -191,17 +193,19 @@ $prefixNo:                    true !default;
 @mixin appearance($value) {
   @include prefixer(appearance, $value, webkit moz);
 }
-/*=========================Use=================================
-input[type="radio"]{
-  @include appearance(radio);
-}
-===========================Output==============================
-input[type="radio"] {
-  -webkit-appearance: radio;
-  -moz-appearance: radio;
-  appearance: radio;
-}
-==============================================================*/
+// =========================Use=================================
+// input[type="radio"]{
+//   @include appearance(radio);
+// }
+// ===========================Output==============================
+// input[type="radio"] {
+//   -webkit-appearance: radio;
+//   -moz-appearance: radio;
+//   appearance: radio;
+// }
+// ==============================================================
+
+
 // hyphens
 // Valus:none | manual | auto
 // http://www.w3.org/TR/css3-text/#hyphenation
@@ -209,17 +213,19 @@ input[type="radio"] {
 @mixin hyphens($value: auto) {
   @include prefixer(hyphens, $value, webkit moz);
 }
-/*=================================Use================================
-.hyphens {
-  @include hyphens(none);
-}
-===================================Output=============================
-.hyphens {
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  hyphens: none;
-}
-=====================================================================*/
+// =================================Use================================
+// .hyphens {
+//   @include hyphens(none);
+// }
+// ===================================Output=============================
+// .hyphens {
+//   -webkit-hyphens: none;
+//   -moz-hyphens: none;
+//   hyphens: none;
+// }
+// =====================================================================
+
+
 // User select
 // Value: none | text | all | element
 // https://developer.mozilla.org/en-US/docs/Web/CSS/user-select
@@ -227,18 +233,18 @@ input[type="radio"] {
 @mixin user-select($arg: text) {
   @include prefixer(user-select, $arg,webkit moz ms);
 }
-/*=============================Use================================
-.user-select{
-  @include user-select(element);
-}
-==============================Output===============================
-.user-select {
-  -webkit-user-select: element;
-  -moz-user-select: element;
-  -ms-user-select: element;
-  user-select: element;
-}
-================================================================*/
+// =============================Use================================
+// .user-select{
+//   @include user-select(element);
+// }
+// ==============================Output===============================
+// .user-select {
+//   -webkit-user-select: element;
+//   -moz-user-select: element;
+//   -ms-user-select: element;
+//   user-select: element;
+// }
+// ================================================================
 
 //Background Image
 
@@ -253,16 +259,18 @@ input[type="radio"] {
     @include prefixer(background-clip, padding-box);
   }
 }
-/*=============================Use=================================
-.background-clip {
-  @include background-clip(padding-box,border-box);
-}
-==============================Output==============================
-.background-clip {
-  -webkit-background-clip: padding-box, border-box;
-  background-clip: padding-box, border-box;
-}
-=================================================================*/
+// ============================Use=================================
+// .background-clip {
+//   @include background-clip(padding-box,border-box);
+// }
+// ==============================Output==============================
+// .background-clip {
+//   -webkit-background-clip: padding-box, border-box;
+//   background-clip: padding-box, border-box;
+// }
+// =================================================================
+
+
 // background-origin
 // Value:border-box | padding-box | content-box
 // http://www.w3.org/TR/css3-background/#background-origin
@@ -273,15 +281,17 @@ input[type="radio"] {
     @include prefixer(background-origin, border-box);
   }
 }
-/*==============================Use===============================
-.background-origin{
-  @include background-origin;
-}
-==============================Output=============================
-.background-origin{
-  @include background-origin;
-}
-================================================================*/
+// ==============================Use===============================
+// .background-origin{
+//   @include background-origin;
+// }
+// ==============================Output=============================
+// .background-origin{
+//   @include background-origin;
+// }
+// ================================================================
+
+
 // backgroud-size
 // Value:  [ <length> | <percentage> | auto ]{1,2} | cover | contain
 // http://www.w3.org/TR/css3-background/#background-size
@@ -293,16 +303,16 @@ input[type="radio"] {
     @include prefixer(background-size, cover);
   }
 }
-/*=============================Use===================================
-.background-size{
-  @include background-size(10px 20px, 20px 10px, 40px 20px, 20px 40px);
-}
-===============================Output================================
-.background-size {
-  -webkit-background-size: 10px 20px, 20px 10px, 40px 20px, 20px 40px;
-  background-size: 10px 20px, 20px 10px, 40px 20px, 20px 40px;
-}
-====================================================================*/
+// =============================Use===================================
+// .background-size{
+//   @include background-size(10px 20px, 20px 10px, 40px 20px, 20px 40px);
+// }
+// ===============================Output================================
+// .background-size {
+//   -webkit-background-size: 10px 20px, 20px 10px, 40px 20px, 20px 40px;
+//   background-size: 10px 20px, 20px 10px, 40px 20px, 20px 40px;
+// }
+// ====================================================================
 
 //Gradient
 
@@ -313,17 +323,17 @@ input[type="radio"] {
 @mixin transform($property...) {
   @include prefixer(transform, $property,webkit ms);
 }
-/*==============================Use====================================
-.transform{
-  @include transform(rotate(3deg) translate(30px) skew(20deg));
-}
-================================Output=================================
-.transform {
-  -webkit-transform: rotate(3deg) translate(30px) skew(20deg);
-  -ms-transform: rotate(3deg) translate(30px) skew(20deg);
-  transform: rotate(3deg) translate(30px) skew(20deg);
-}
-======================================================================*/
+// ==============================Use====================================
+// .transform{
+//   @include transform(rotate(3deg) translate(30px) skew(20deg));
+// }
+// ================================Output=================================
+// .transform {
+//   -webkit-transform: rotate(3deg) translate(30px) skew(20deg);
+//   -ms-transform: rotate(3deg) translate(30px) skew(20deg);
+//   transform: rotate(3deg) translate(30px) skew(20deg);
+// }
+// ======================================================================
 
 // transform-origin
 // Value:
@@ -335,34 +345,37 @@ input[type="radio"] {
 @mixin transform-origin($axes) {
   @include prefixer(transform-origin, $axes,webkit ms);
 }
-/*==================================Use==================================
-.transform-origin {
-  @include transform-origin(left center);
-}
-===================================Output===============================
-.transform-origin {
-  -webkit-transform-origin: left center;
-  -ms-transform-origin: left center;
-  transform-origin: left center;
-}
-=======================================================================*/
+// ==================================Use==================================
+// .transform-origin {
+//   @include transform-origin(left center);
+// }
+// ===================================Output===============================
+// .transform-origin {
+//   -webkit-transform-origin: left center;
+//   -ms-transform-origin: left center;
+//   transform-origin: left center;
+// }
+// =======================================================================
+
+
 // transform-style
 // Value:flat | preserve-3d
 // http://www.w3.org/TR/css3-transforms/#propdef-transform-style
 @mixin transform-style ($style: preserve-3d) {
   @include prefixer(transform-style, $style,webkit ms);
 }
-/*==================================Use==================================
-.transform-style{
-  @include transform-style;
-}
-===================================Output================================
-.transform-style {
-  -webkit-transform-style: preserve-3d;
-  -ms-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-}
-========================================================================*/
+// ==================================Use==================================
+// .transform-style{
+//   @include transform-style;
+// }
+// ===================================Output================================
+// .transform-style {
+//   -webkit-transform-style: preserve-3d;
+//   -ms-transform-style: preserve-3d;
+//   transform-style: preserve-3d;
+// }
+// ========================================================================
+
 // rotate
 // rotate() = rotate( <angle> )
 @mixin rotate($degrees) {
@@ -384,51 +397,51 @@ input[type="radio"] {
 @mixin rotateZ($degrees) {
   @include prefixer(transform, rotateZ($degrees),webkit ms);
 }
-/*==================================Use=============================
-.rotate{
-  @include rotate(20deg);
-}
-.rotate3D{
-  @include rotate3D(0,0,1,20deg);
-}
-.rotateX{
-  @inclue rotateX(20deg);
-}
-.rotateY{
-  @include rotateY(20deg);
-}
-.rotateZ{
-  @include rotateZ(20deg);
-}
-===================================Output==========================
-.rotate {
-  -webkit-transform: rotate(20deg);
-  -ms-transform: rotate(20deg);
-  transform: rotate(20deg);
-}
+// ==================================Use=============================
+// .rotate{
+//   @include rotate(20deg);
+// }
+// .rotate3D{
+//   @include rotate3D(0,0,1,20deg);
+// }
+// .rotateX{
+//   @inclue rotateX(20deg);
+// }
+// .rotateY{
+//   @include rotateY(20deg);
+// }
+// .rotateZ{
+//   @include rotateZ(20deg);
+// }
+// ===================================Output==========================
+// .rotate {
+//   -webkit-transform: rotate(20deg);
+//   -ms-transform: rotate(20deg);
+//   transform: rotate(20deg);
+// }
 
-.rotate3D {
-  -webkit-transform: rotate3D(0, 0, 1, 20deg);
-  -ms-transform: rotate3D(0, 0, 1, 20deg);
-  transform: rotate3D(0, 0, 1, 20deg);
-}
+// .rotate3D {
+//   -webkit-transform: rotate3D(0, 0, 1, 20deg);
+//   -ms-transform: rotate3D(0, 0, 1, 20deg);
+//   transform: rotate3D(0, 0, 1, 20deg);
+// }
 
-.rotateX {
-  @inclue rotateX(20deg);
-}
+// .rotateX {
+//   @inclue rotateX(20deg);
+// }
 
-.rotateY {
-  -webkit-transform: rotateY(20deg);
-  -ms-transform: rotateY(20deg);
-  transform: rotateY(20deg);
-}
+// .rotateY {
+//   -webkit-transform: rotateY(20deg);
+//   -ms-transform: rotateY(20deg);
+//   transform: rotateY(20deg);
+// }
 
-.rotateZ {
-  -webkit-transform: rotateZ(20deg);
-  -ms-transform: rotateZ(20deg);
-  transform: rotateZ(20deg);
-}
-=====================================================================*/
+// .rotateZ {
+//   -webkit-transform: rotateZ(20deg);
+//   -ms-transform: rotateZ(20deg);
+//   transform: rotateZ(20deg);
+// }
+// =====================================================================
 // scale
 
 //scale() = scale( <number> [, <number> ]? )
@@ -451,53 +464,53 @@ input[type="radio"] {
 @mixin scaleZ($ratio) {
   @include prefixer(transform, scaleZ($ratio),webkit ms);
 }
-/*=================================Use===================================
-.scale{
-  @include scale(1.2);
-}
-.scale3D {
-  @include scale3D(.5,.8,1.2);
-}
-.scaleX{
-  @include scaleX(2);
-}
-.scaleY{
-  @include scaleY(1.1);
-}
-.scaleZ{
-  @include scaleZ(1.5);
-}
-================================Output===================================
-.scale {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
-}
+// =================================Use===================================
+// .scale{
+//   @include scale(1.2);
+// }
+// .scale3D {
+//   @include scale3D(.5,.8,1.2);
+// }
+// .scaleX{
+//   @include scaleX(2);
+// }
+// .scaleY{
+//   @include scaleY(1.1);
+// }
+// .scaleZ{
+//   @include scaleZ(1.5);
+// }
+// ================================Output===================================
+// .scale {
+//   -webkit-transform: scale(1.2);
+//   -ms-transform: scale(1.2);
+//   transform: scale(1.2);
+// }
 
-.scale3D {
-  -webkit-transform: scale3D(0.5, 0.8, 1.2);
-  -ms-transform: scale3D(0.5, 0.8, 1.2);
-  transform: scale3D(0.5, 0.8, 1.2);
-}
+// .scale3D {
+//   -webkit-transform: scale3D(0.5, 0.8, 1.2);
+//   -ms-transform: scale3D(0.5, 0.8, 1.2);
+//   transform: scale3D(0.5, 0.8, 1.2);
+// }
 
-.scaleX {
-  -webkit-transform: scaleX(2);
-  -ms-transform: scaleX(2);
-  transform: scaleX(2);
-}
+// .scaleX {
+//   -webkit-transform: scaleX(2);
+//   -ms-transform: scaleX(2);
+//   transform: scaleX(2);
+// }
 
-.scaleY {
-  -webkit-transform: scaleY(1.1);
-  -ms-transform: scaleY(1.1);
-  transform: scaleY(1.1);
-}
+// .scaleY {
+//   -webkit-transform: scaleY(1.1);
+//   -ms-transform: scaleY(1.1);
+//   transform: scaleY(1.1);
+// }
 
-.scaleZ {
-  -webkit-transform: scaleZ(1.5);
-  -ms-transform: scaleZ(1.5);
-  transform: scaleZ(1.5);
-}
-=======================================================================*/
+// .scaleZ {
+//   -webkit-transform: scaleZ(1.5);
+//   -ms-transform: scaleZ(1.5);
+//   transform: scaleZ(1.5);
+// }
+// =======================================================================
 // translate
 //translate() = translate( <translation-value> [, <translation-value> ]? )
 @mixin translate($px...) {
@@ -519,53 +532,53 @@ input[type="radio"] {
 @mixin translateZ($px) {
   @include prefixer(transform, translateZ($px),webkit ms);
 }
-/*==================================Use================================
-.translate{
-  @include translate(100px,200px);
-}
-.translate3D{
-  @include translate3D(100px,200px,30px);
-}
-.translateX{
-  @include translateX(100px);
-}
-.translateY{
-  @include translateY(-20px);
-}
-.translateZ{
-  @include translateZ(10px);
-}
-==================================Output==============================
-.translate {
-  -webkit-transform: translate(100px, 200px);
-  -ms-transform: translate(100px, 200px);
-  transform: translate(100px, 200px);
-}
+// ==================================Use================================
+// .translate{
+//   @include translate(100px,200px);
+// }
+// .translate3D{
+//   @include translate3D(100px,200px,30px);
+// }
+// .translateX{
+//   @include translateX(100px);
+// }
+// .translateY{
+//   @include translateY(-20px);
+// }
+// .translateZ{
+//   @include translateZ(10px);
+// }
+// ==================================Output==============================
+// .translate {
+//   -webkit-transform: translate(100px, 200px);
+//   -ms-transform: translate(100px, 200px);
+//   transform: translate(100px, 200px);
+// }
 
-.translate3D {
-  -webkit-transform: translate3D(100px, 200px, 30px);
-  -ms-transform: translate3D(100px, 200px, 30px);
-  transform: translate3D(100px, 200px, 30px);
-}
+// .translate3D {
+//   -webkit-transform: translate3D(100px, 200px, 30px);
+//   -ms-transform: translate3D(100px, 200px, 30px);
+//   transform: translate3D(100px, 200px, 30px);
+// }
 
-.translateX {
-  -webkit-transform: translateX(100px);
-  -ms-transform: translateX(100px);
-  transform: translateX(100px);
-}
+// .translateX {
+//   -webkit-transform: translateX(100px);
+//   -ms-transform: translateX(100px);
+//   transform: translateX(100px);
+// }
 
-.translateY {
-  -webkit-transform: translateY(-20px);
-  -ms-transform: translateY(-20px);
-  transform: translateY(-20px);
-}
+// .translateY {
+//   -webkit-transform: translateY(-20px);
+//   -ms-transform: translateY(-20px);
+//   transform: translateY(-20px);
+// }
 
-.translateZ {
-  -webkit-transform: translateZ(10px);
-  -ms-transform: translateZ(10px);
-  transform: translateZ(10px);
-}
-====================================================================*/
+// .translateZ {
+//   -webkit-transform: translateZ(10px);
+//   -ms-transform: translateZ(10px);
+//   transform: translateZ(10px);
+// }
+// ====================================================================
 // skew
 // skew时一般会有锯齿什么的，解决方法是添加backface-visibility为hidden
 // 详见 https://github.com/twitter/bootstrap/issues/5319　or http://modernweb.com/2014/05/21/fixing-typography-inside-of-css-2-d-transforms/
@@ -594,49 +607,49 @@ input[type="radio"] {
   @include prefixer(backface-visibility, $visibility);
 }
 
-/*===================================Use===============================
-.skew {
-  @include skew(30deg,45deg);
-}
-.skewX{
-  @include skewX(45deg);
-}
-.skewY{
-  @include skewY(-45deg);
-}
-.backface-visibility{
-  @include backface-visibility;
-}
-==================================Output==============================
-.skew {
-  -webkit-transform: skew(30deg, 45deg);
-  -ms-transform: skew(30deg, 45deg);
-  transform: skew(30deg, 45deg);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
+// ===================================Use===============================
+// .skew {
+//   @include skew(30deg,45deg);
+// }
+// .skewX{
+//   @include skewX(45deg);
+// }
+// .skewY{
+//   @include skewY(-45deg);
+// }
+// .backface-visibility{
+//   @include backface-visibility;
+// }
+// ==================================Output==============================
+// .skew {
+//   -webkit-transform: skew(30deg, 45deg);
+//   -ms-transform: skew(30deg, 45deg);
+//   transform: skew(30deg, 45deg);
+//   -webkit-backface-visibility: hidden;
+//   backface-visibility: hidden;
+// }
 
-.skewX {
-  -webkit-transform: skewX(45deg);
-  -ms-transform: skewX(45deg);
-  transform: skewX(45deg);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
+// .skewX {
+//   -webkit-transform: skewX(45deg);
+//   -ms-transform: skewX(45deg);
+//   transform: skewX(45deg);
+//   -webkit-backface-visibility: hidden;
+//   backface-visibility: hidden;
+// }
 
-.skewY {
-  -webkit-transform: skewY(-45deg);
-  -ms-transform: skewY(-45deg);
-  transform: skewY(-45deg);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
+// .skewY {
+//   -webkit-transform: skewY(-45deg);
+//   -ms-transform: skewY(-45deg);
+//   transform: skewY(-45deg);
+//   -webkit-backface-visibility: hidden;
+//   backface-visibility: hidden;
+// }
 
-.backface-visibility {
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-=======================================================================*/
+// .backface-visibility {
+//   -webkit-backface-visibility: hidden;
+//   backface-visibility: hidden;
+// }
+// =======================================================================
 // matrix
 // ...
 
@@ -647,34 +660,35 @@ input[type="radio"] {
 @mixin perspective($depth: none) {
   @include prefixer(perspective, $depth,webkit ms);
 }
-/*================================Use===========================
-.perspective {
-  @include perspective(300px);
-}
-================================Output=========================
-.perspective {
-  -webkit-perspective: 300px;
-  -ms-perspective: 300px;
-  perspective: 300px;
-}
-================================================================*/
+// ================================Use===========================
+// .perspective {
+//   @include perspective(300px);
+// }
+// ================================Output=========================
+// .perspective {
+//   -webkit-perspective: 300px;
+//   -ms-perspective: 300px;
+//   perspective: 300px;
+// }
+// ================================================================
+
 // perspective origin
 // Value:   x-axis - left | center | right  | length | %  y-axis - top  | center | bottom | length | %
 // http://www.w3.org/TR/css3-transforms/#propdef-perspective-origin
 @mixin perspective-origin($value: 50% 50%) {
   @include prefixer(perspective-origin, $value,webkit ms);
 }
-/*==========================Use====================================
-.perspective-origin {
-  @include perspective-origin;
-}
-============================Output=================================
-.perspective-origin {
-  -webkit-perspective-origin: 50% 50%;
-  -ms-perspective-origin: 50% 50%;
-  perspective-origin: 50% 50%;
-}
-==================================================================*/
+// ==========================Use====================================
+// .perspective-origin {
+//   @include perspective-origin;
+// }
+// ============================Output=================================
+// .perspective-origin {
+//   -webkit-perspective-origin: 50% 50%;
+//   -ms-perspective-origin: 50% 50%;
+//   perspective-origin: 50% 50%;
+// }
+// ==================================================================
 // transition
 // Value:<single-transition> [ ‘,’ <single-transition> ]* 
 //       <single-transition> = [ none | <single-transition-property> ] || <time> || <single-transition-timing-function> || <time>
@@ -689,16 +703,16 @@ input[type="radio"] {
     @include prefixer(transition, $properties);
   }
 }
-/*========================Use======================================
-.transition {
-  @include transition(color .2s ease, height .28s ease-in .2s);
-}
-===========================Output==================================
-.transition {
-  -webkit-transition: color 0.2s ease, height 0.28s ease-in 0.2s;
-  transition: color 0.2s ease, height 0.28s ease-in 0.2s;
-}
-==================================================================*/
+// ========================Use======================================
+// .transition {
+//   @include transition(color .2s ease, height .28s ease-in .2s);
+// }
+// ===========================Output==================================
+// .transition {
+//   -webkit-transition: color 0.2s ease, height 0.28s ease-in 0.2s;
+//   transition: color 0.2s ease, height 0.28s ease-in 0.2s;
+// }
+// ==================================================================
 // transition-property
 // Value:	none | <single-transition-property> [ ‘,’ <single-transition-property> ]*
 // http://www.w3.org/TR/css3-transitions/#transition-property-property
@@ -730,23 +744,26 @@ input[type="radio"] {
 @mixin transition-delay($times...) {
   @include prefixer(transition-delay, $times);
 }
-/*============================Use===============================
-.transition-all{
-  @include transition-property(width,height,color,transform);
-  @include transition-duration(.2s,.28s,.3s,.2);
-  @include transition-timing-function(ease,ease-in,ease-out,linear);
-  @include transition-delay(.1s,.15s,.2s,.1s);
-}=============================Output=============================
-.transition-all {
-  -webkit-transition-property: width, height, color, -webkit-transform;
-  transition-property: width, height, color, transform;
-  -webkit-transition-duration: 0.2s, 0.28s, 0.3s, 0.2;
-  transition-duration: 0.2s, 0.28s, 0.3s, 0.2;
-  -webkit-transition-timing-function: ease, ease-in, ease-out, linear;
-  transition-timing-function: ease, ease-in, ease-out, linear;
-  -webkit-transition-delay: 0.1s, 0.15s, 0.2s, 0.1s;
-  transition-delay: 0.1s, 0.15s, 0.2s, 0.1s;
-}================================================================*/
+// ============================Use===============================
+// .transition-all{
+//   @include transition-property(width,height,color,transform);
+//   @include transition-duration(.2s,.28s,.3s,.2);
+//   @include transition-timing-function(ease,ease-in,ease-out,linear);
+//   @include transition-delay(.1s,.15s,.2s,.1s);
+// }
+// =============================Output=============================
+// .transition-all {
+//   -webkit-transition-property: width, height, color, -webkit-transform;
+//   transition-property: width, height, color, transform;
+//   -webkit-transition-duration: 0.2s, 0.28s, 0.3s, 0.2;
+//   transition-duration: 0.2s, 0.28s, 0.3s, 0.2;
+//   -webkit-transition-timing-function: ease, ease-in, ease-out, linear;
+//   transition-timing-function: ease, ease-in, ease-out, linear;
+//   -webkit-transition-delay: 0.1s, 0.15s, 0.2s, 0.1s;
+//   transition-delay: 0.1s, 0.15s, 0.2s, 0.1s;
+// }
+// ================================================================
+
 // animation
 // Value:	<single-animation> [ ‘,’ <single-animation> ]*
 // <single-animation> = <single-animation-name> || <time> || <single-animation-timing-function> || <time> || <single-animation-iteration-count> || <single-animation-direction> || <single-animation-fill-mode> || <single-animation-play-state>
@@ -754,16 +771,16 @@ input[type="radio"] {
 @mixin animation ($animations...) {
   @include prefixer(animation, $animations);
 }
-/*==================================Use===========================
-.animation{
-  @include animation(fadeIn .2s ease .1s);
-}
-===================================Output=========================
-.animation {
-  -webkit-animation: fadeIn 0.2s ease 0.1s;
-  animation: fadeIn 0.2s ease 0.1s;
-}
-=================================================================*/
+// ==================================Use===========================
+// .animation{
+//   @include animation(fadeIn .2s ease .1s);
+// }
+// ===================================Output=========================
+// .animation {
+//   -webkit-animation: fadeIn 0.2s ease 0.1s;
+//   animation: fadeIn 0.2s ease 0.1s;
+// }
+// =================================================================
 // animation-name
 // Value:<single-animation-name> [ ‘,’ <single-animation-name> ]*
 // http://www.w3.org/TR/css3-animations/#animation-name
@@ -902,32 +919,32 @@ input[type="radio"] {
 @mixin filter($arg){
 	@include prefixer(filter,$arg);
 }
-/*=============================Use============================
-.filter{
-  @include filter(grayscale(20%) contrast(2%));
-}
-===============================Output=========================
-.filter {
-  -webkit-filter: grayscale(20%) contrast(2%);
-  filter: grayscale(20%) contrast(2%);
-}
-=============================================================*/
+// =============================Use============================
+// .filter{
+//   @include filter(grayscale(20%) contrast(2%));
+// }
+// ===============================Output=========================
+// .filter {
+//   -webkit-filter: grayscale(20%) contrast(2%);
+//   filter: grayscale(20%) contrast(2%);
+// }
+// =============================================================
 
 //filert-url
 // url()仅能用于SVG元素
 @mixin filter-url($resSvg){
 	@include prefixer(filter,url(unquote($resSvg)));
 }
-/*==============================Use===========================
-.filter-url{
-  @include filter-url("resources.svg#c1");
-}
-================================Output========================
-.filter-url {
-  -webkit-filter: url(resources.svg#c1);
-  filter: url(resources.svg#c1);
-}
-==============================================================*/
+// ==============================Use===========================
+// .filter-url{
+//   @include filter-url("resources.svg#c1");
+// }
+// ================================Output========================
+// .filter-url {
+//   -webkit-filter: url(resources.svg#c1);
+//   filter: url(resources.svg#c1);
+// }
+// ==============================================================
 // Apply a gaussian blur to an image in px, em, rem
 // @include filter-blur(RADIUS);
 @mixin filter-blur($radius) {
@@ -986,77 +1003,77 @@ input[type="radio"] {
 @mixin filter-opacity($percent){
 	@include prefixer(filter,opacity($percent));
 }
-/*=================================Use===============================
-.filter-blur{
-  @include filter-blur(20px);
-}
-.filter-brightness{
-  @include filter-brightness(20%);
-}
-.filter-drop-shadow{
-  @include filter-drop-shadow(10px 10px 20px #ffe4c4);
-}
-.filter-grayscale{
-  @include filter-grayscale(100%);
-}
-.filter-hue-rotate{
-  @include filter-hue-rotate(30deg);
-}
-.filter-invert{
-  @include filter-invert(100%);
-}
-.filter-saturate{
-  @include filter-saturate(30%);
-}
-.filter-sepia{
-  @include filter-sepia(20%);
-}
-.filter-opacity{
-  @include filter-opacity(30%);
-}
-=================================Output=============================
-.filter-blur {
-  -webkit-filter: blur(20px);
-  filter: blur(20px);
-}
+// =================================Use===============================
+// .filter-blur{
+//   @include filter-blur(20px);
+// }
+// .filter-brightness{
+//   @include filter-brightness(20%);
+// }
+// .filter-drop-shadow{
+//   @include filter-drop-shadow(10px 10px 20px #ffe4c4);
+// }
+// .filter-grayscale{
+//   @include filter-grayscale(100%);
+// }
+// .filter-hue-rotate{
+//   @include filter-hue-rotate(30deg);
+// }
+// .filter-invert{
+//   @include filter-invert(100%);
+// }
+// .filter-saturate{
+//   @include filter-saturate(30%);
+// }
+// .filter-sepia{
+//   @include filter-sepia(20%);
+// }
+// .filter-opacity{
+//   @include filter-opacity(30%);
+// }
+// =================================Output=============================
+// .filter-blur {
+//   -webkit-filter: blur(20px);
+//   filter: blur(20px);
+// }
 
-.filter-brightness {
-  -webkit-filter: brightness(20%);
-  filter: brightness(20%);
-}
+// .filter-brightness {
+//   -webkit-filter: brightness(20%);
+//   filter: brightness(20%);
+// }
 
-.filter-drop-shadow {
-  -webkit-filter: drop-shadow(10px 10px 20px #ffe4c4);
-  filter: drop-shadow(10px 10px 20px #ffe4c4);
-}
+// .filter-drop-shadow {
+//   -webkit-filter: drop-shadow(10px 10px 20px #ffe4c4);
+//   filter: drop-shadow(10px 10px 20px #ffe4c4);
+// }
 
-.filter-grayscale {
-  -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
-}
+// .filter-grayscale {
+//   -webkit-filter: grayscale(100%);
+//   filter: grayscale(100%);
+// }
 
-.filter-hue-rotate {
-  -webkit-filter: hue-rotate(30deg);
-  filter: hue-rotate(30deg);
-}
+// .filter-hue-rotate {
+//   -webkit-filter: hue-rotate(30deg);
+//   filter: hue-rotate(30deg);
+// }
 
-.filter-invert {
-  -webkit-filter: invert(100%);
-  filter: invert(100%);
-}
+// .filter-invert {
+//   -webkit-filter: invert(100%);
+//   filter: invert(100%);
+// }
 
-.filter-saturate {
-  -webkit-filter: saturate(30%);
-  filter: saturate(30%);
-}
+// .filter-saturate {
+//   -webkit-filter: saturate(30%);
+//   filter: saturate(30%);
+// }
 
-.filter-sepia {
-  -webkit-filter: sepia(20%);
-  filter: sepia(20%);
-}
+// .filter-sepia {
+//   -webkit-filter: sepia(20%);
+//   filter: sepia(20%);
+// }
 
-.filter-opacity {
-  -webkit-filter: opacity(30%);
-  filter: opacity(30%);
-}
-===============================================================*/
+// .filter-opacity {
+//   -webkit-filter: opacity(30%);
+//   filter: opacity(30%);
+// }
+// ===============================================================

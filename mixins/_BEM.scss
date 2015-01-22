@@ -60,39 +60,39 @@ $modifierSeparator: '--';
     }
 }
 
-/*======================================Use==================================
-@include b(block) {
-    background: red;
-    @include e(header){
-        font-size: 14px;
+// ======================================Use==================================
+// @include b(block) {
+//     background: red;
+//     @include e(header){
+//         font-size: 14px;
 
-        @include m(css) {
-            font-size: 18px;
-        }
-    };
-    @include m(book) {
-        color: blue;
+//         @include m(css) {
+//             font-size: 18px;
+//         }
+//     };
+//     @include m(book) {
+//         color: blue;
 
-        @include e(kindlebook) {
-            background: gray;
-        }
-    }
-}
-===================================Output===================================
-.block {
-  background: red;
-}
-.block__header {
-  font-size: 14px;
-}
-.block__header--css {
-  font-size: 18px;
-}
-.block--book {
-  color: blue;
-}
-.block--book .block__kindlebook {
-  background: gray;
-}
-===========================================================================*/
+//         @include e(kindlebook) {
+//             background: gray;
+//         }
+//     }
+// }
+// ===================================Output===================================
+// .block {
+//   background: red;
+// }
+// .block__header {
+//   font-size: 14px;
+// }
+// .block__header--css {
+//   font-size: 18px;
+// }
+// .block--book {
+//   color: blue;
+// }
+// .block--book .block__kindlebook {
+//   background: gray;
+// }
+// ===========================================================================
 

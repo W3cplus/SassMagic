@@ -9,13 +9,13 @@
   resize: $direction; // Options: horizontal, vertical, both
   overflow: auto; // Per CSS3 UI, `resize` only applies when `overflow` isn't `visible`
 }
-/*=========================User========================
-.resize {
-  @include resizable(horizontal);
-}
-==========================Output=======================
-.resize {
-  resize: horizontal;
-  overflow: auto;
-}
-======================================================*/
+// /*=========================User========================
+// .resize {
+//   @include resizable(horizontal);
+// }
+// ==========================Output=======================
+// .resize {
+//   resize: horizontal;
+//   overflow: auto;
+// }
+// ======================================================*/

@@ -16,28 +16,28 @@
   }
 }
 
-/*===============================use=============================
-@include am(module) {
-  color: red;
-}
+// ===============================use=============================
+// @include am(module) {
+//   color: red;
+// }
 
-@include am(module, blue) {
-  color: blue;
-}
+// @include am(module, blue) {
+//   color: blue;
+// }
 
-@include am(module, large) {
-  font-size: 2em;
-}
-==================================Output==========================
-[am-module] {
-  color: red;
-}
+// @include am(module, large) {
+//   font-size: 2em;
+// }
+// ==================================Output==========================
+// [am-module] {
+//   color: red;
+// }
 
-[am-module~="blue"] {
-  color: blue;
-}
+// [am-module~="blue"] {
+//   color: blue;
+// }
 
-[am-module~="large"] {
-  font-size: 2em;
-}
-==================================================================*/
+// [am-module~="large"] {
+//   font-size: 2em;
+// }
+// ==================================================================

@@ -18,44 +18,44 @@
     }
 }
 
-/*===========Use===============
-.tabs {
-    .tab {
-        background: red;
-        &:hover {
-            background: white;
-        }
-        .tab-link {
-            color: white;
+// /*===========Use===============
+// .tabs {
+//     .tab {
+//         background: red;
+//         &:hover {
+//             background: white;
+//         }
+//         .tab-link {
+//             color: white;
               
-            @include context('.tab', '.tab:hover') {
-                color: red;
-            }
-            @include parentState(':hover', '.active') {
-                color: pink;
-            }            
-        }
-    }
-}
-================================*/
+//             @include context('.tab', '.tab:hover') {
+//                 color: red;
+//             }
+//             @include parentState(':hover', '.active') {
+//                 color: pink;
+//             }            
+//         }
+//     }
+// }
+// ================================*/
 
-/*=============Output==============
-.tabs .tab {
-  background: red;
-}
-.tabs .tab:hover {
-  background: white;
-}
-.tabs .tab .tab-link {
-  color: white;
-}
-.tabs .tab:hover .tab-link {
-  color: red;
-}
-.tabs .tab:hover .tab-link {
-  color: pink;
-}
-.tabs .tab.active .tab-link {
-  color: pink;
-}
-=====================================*/
+// /*=============Output==============
+// .tabs .tab {
+//   background: red;
+// }
+// .tabs .tab:hover {
+//   background: white;
+// }
+// .tabs .tab .tab-link {
+//   color: white;
+// }
+// .tabs .tab:hover .tab-link {
+//   color: red;
+// }
+// .tabs .tab:hover .tab-link {
+//   color: pink;
+// }
+// .tabs .tab.active .tab-link {
+//   color: pink;
+// }
+// =====================================*/

@@ -57,29 +57,29 @@
   }
 }
 
-/*===============================Use=============================
-.a .b, .a .c {
-  @include parent-nth-status(1, ':hover', suffix) {
-    color: red;
-  }
-  @include parent-nth-status(1, '.en', prepend) {
-    color: green;
-  }
-  @include parent-nth-status(-2, '.target', append) {
-    colore: blue;
-  }
-}
-=================================Output==========================
-.a:hover .b, .a:hover .c {
-  color: red;
-}
-.en .a .b, .en .a .c {
-  color: green;
-}
-.a .target .b, .a .target .c {
-  color: blue;
-}
-=================================================================*/
+// /*===============================Use=============================
+// .a .b, .a .c {
+//   @include parent-nth-status(1, ':hover', suffix) {
+//     color: red;
+//   }
+//   @include parent-nth-status(1, '.en', prepend) {
+//     color: green;
+//   }
+//   @include parent-nth-status(-2, '.target', append) {
+//     colore: blue;
+//   }
+// }
+// =================================Output==========================
+// .a:hover .b, .a:hover .c {
+//   color: red;
+// }
+// .en .a .b, .en .a .c {
+//   color: green;
+// }
+// .a .target .b, .a .target .c {
+//   color: blue;
+// }
+// =================================================================*/
 
 @mixin parent-status($status, $place: suffix) {
   @include parent-nth-status(-2, $status, $place) {
@@ -87,47 +87,47 @@
   }
 }
 
-/*==============================Use================================
-.tab {
-  a {
-    display: inline-block;
-    padding: 10px 60px;
-    cursor: pointer;
+// ==============================Use================================
+// .tab {
+//   a {
+//     display: inline-block;
+//     padding: 10px 60px;
+//     cursor: pointer;
 
-    &:hover {
-      background: #AAA;
-    }
+//     &:hover {
+//       background: #AAA;
+//     }
 
-    i {
-      margin-left: 10px;
+//     i {
+//       margin-left: 10px;
 
-      @include parent-status(':hover') { color: red; }
+//       @include parent-status(':hover') { color: red; }
 
-      @include parent-status('.home-link') { background: blue; }
+//       @include parent-status('.home-link') { background: blue; }
 
-      @include parent-status('.about-link') { background: green; }
-    }
-  }
-}
-==================================Output===============================
-.tab a {
-  display: inline-block;
-  padding: 10px 60px;
-  cursor: pointer;
-}
-.tab a:hover {
-  background: #AAA;
-}
-.tab a i {
-  margin-left: 10px;
-}
-.tab a:hover i {
-  color: red;
-}
-.tab a.home-link i {
-  background: blue;
-}
-.tab a.about-link i {
-  background: green;
-}
-==========================================================================*/
+//       @include parent-status('.about-link') { background: green; }
+//     }
+//   }
+// }
+// ==================================Output===============================
+// .tab a {
+//   display: inline-block;
+//   padding: 10px 60px;
+//   cursor: pointer;
+// }
+// .tab a:hover {
+//   background: #AAA;
+// }
+// .tab a i {
+//   margin-left: 10px;
+// }
+// .tab a:hover i {
+//   color: red;
+// }
+// .tab a.home-link i {
+//   background: blue;
+// }
+// .tab a.about-link i {
+//   background: green;
+// }
+// ==========================================================================
