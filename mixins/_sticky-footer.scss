@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+//From: http://compass-style.org/reference/compass/layout/sticky_footer/
+
+//html
+
+// <body>
+//   <div id="root">
+//     <div id="root_footer"></div>
+//   </div>
+//   <div id="footer">
+//     Footer content goes here.
+//   </div>
+// </body>
+
+@mixin sticky-footer($footer-height, $root-selector: unquote("#root"), $root-footer-selector: unquote("#root_footer"), $footer-selector: unquote("#footer")) {
+  html, body {
+    height: 100%;
+  }
+  #{$root-selector} {
+    clear: both;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -$footer-height;
+    #{$root-footer-selector} {
+      height: $footer-height;
+    }
+  }
+  #{$footer-selector} {
+    clear: both;
+    position: relative;
+    height: $footer-height;
+  }
+}
+
+//===============Use=================
+//@include sticky-footer(54px)
+//===============Output=============
+//html, body {
+//   height: 100%;
+// }
+
+// #root {
+//   clear: both;
+//   min-height: 100%;
+//   height: auto !important;
+//   height: 100%;
+//   margin-bottom: -54px;
+// }
+// #root #root_footer {
+//   height: 54px;
+// }
+
+// #footer {
+//   clear: both;
+//   position: relative;
+//   height: 54px;
+// }
+// ===================================
+// @include sticky-footer(54px, "#my-root", "#my-root-footer", "#my-footer")
+// ===================================
+// html, body {
+//   height: 100%;
+// }
+
+// #my-root {
+//   clear: both;
+//   min-height: 100%;
+//   height: auto !important;
+//   height: 100%;
+//   margin-bottom: -54px;
+// }
+// #my-root #my-root-footer {
+//   height: 54px;
+// }
+
+// #my-footer {
+//   clear: both;
+//   position: relative;
+//   height: 54px;
+// }
+// ==================================
