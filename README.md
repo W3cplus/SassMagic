@@ -41,11 +41,13 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [How to use ampersands to simplifiy your sass](http://seesparkbox.com/foundry/how_to_use_ampersands_to_simplifiy_your_sass) by [@Hearsparkbox](https://twitter.com/hearsparkbox)
 - [When to use @⁠extend; when to use a mixin](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/) by@[award-winning](https://thenetawards.com/)
 - [Sass Basics: The Mixin Directive](http://www.sitepoint.com/sass-basics-the-mixin-directive/) by [@Reggie Dawson](http://www.sitepoint.com/author/rdawson/)
+- [The Ultimate Long-shadow Sass Mixin](http://www.sitepoint.com/ultimate-long-shadow-sass-mixin/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
 
 ###Function
 
 - [A Bulletproof Function to Validate Length Values in Sass](http://www.sitepoint.com/bulletproof-function-validate-length-values-sass/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
 - [Cubic Bézier representation in Sass](http://thesassway.com/advanced/cubic-bezier-representation-in-sass) by [@Tim Severien](http://twitter.com/timseverien) and [@Hugo Giraudel](http://twitter.com/hugogiraudel)
+- [A Dynamic Gradient Text Function in Sass](http://www.sitepoint.com/dynamic-gradient-text-function-sass/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
 
 ###Typography
 
@@ -105,6 +107,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Approaches to Media Queries in Sass](http://css-tricks.com/approaches-media-queries-sass/)
 - [Write Simple, Elegant and Maintainable Media Queries with Sass](http://davidwalsh.name/sass-media-query) by [@Eduardo Bouças](http://eduardoboucas.com/)
 - [Smoothing Responsive Designs with +spread](http://viget.com/inspire/responsive-design-with-spread) by [@DOUG AVERY](http://viget.com/about/team/davery)
+- [Making Inline Media Queries Even Better with Breakpoint Sass](http://webdevstudios.com/2015/01/20/better-media-queries-breakpoint-sass/) by [@Stacy Kvernmo](http://webdevstudios.com/author/stacy/)
 
 ###Sass Framework
 
