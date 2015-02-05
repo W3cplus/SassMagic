@@ -8,12 +8,16 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 ###Guide Line
 
-- [Sass Guidelines](http://sass-guidelin.es/)
+- [Sass Guidelines](http://sass-guidelin.es/) ——[译文](http://www.w3cplus.com/blog/tags/466.html) by [@南北](http://weibo.com/sunchongsheng)
 
 ###Beginner
 
-- [Getting Started with Sass (with interactive examples)](http://scotch.io/tutorials/css/getting-started-with-sass) by [@Ken Wheeler](http://scotch.io/author/kenwheeler)
+- [Getting Started with Sass (with interactive examples)](http://scotch.io/tutorials/css/getting-started-with-sass) by [@Ken Wheeler](http://scotch.io/author/kenwheeler)——[译文](http://www.w3cplus.com/preprocessor/getting-started-with-sass.html) by [@南北](http://weibo.com/sunchongsheng)
 - [Themed Styles With Sass](http://seesparkbox.com/foundry/themed_styles_with_sass) by [@ETHAN MULLER](http://seesparkbox.com/foundry/author/ethan_muller)
+
+###Advanced
+
+- [Vector Graphics in Sass](http://www.sitepoint.com/vector-graphics-sass/) by [@Tim Severien](http://www.sitepoint.com/author/tseverien/)
 
 ###Sass Variables
 
@@ -48,6 +52,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [A Bulletproof Function to Validate Length Values in Sass](http://www.sitepoint.com/bulletproof-function-validate-length-values-sass/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
 - [Cubic Bézier representation in Sass](http://thesassway.com/advanced/cubic-bezier-representation-in-sass) by [@Tim Severien](http://twitter.com/timseverien) and [@Hugo Giraudel](http://twitter.com/hugogiraudel)
 - [A Dynamic Gradient Text Function in Sass](http://www.sitepoint.com/dynamic-gradient-text-function-sass/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
+- [Sass Basics: The Function Directive](http://www.sitepoint.com/sass-basics-function-directive/) by [@Reggie Dawson](http://www.sitepoint.com/author/rdawson/)
 
 ###Typography
 
@@ -94,6 +99,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Magical Config Objects with Sass Maps](http://codepen.io/AdamBlum/blog/config-objects-with-sass-maps) by [@Adam Blum ](http://codepen.io/AdamBlum/)
 - [Extra Map Functions in Sass](http://www.sitepoint.com/extra-map-functions-sass/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
 - [Update single value in a Sass map](http://blackfalcon.roughdraft.io/8943fdfd94463467a41e-update-single-value-in-a-sass-map)
+- [Mapping Icon Fonts with Sass](http://webdevstudios.com/2015/01/28/mapping-icon-fonts-with-sass/) by [@Damon Cook](http://webdevstudios.com/author/damon/)
 
 ###OOCSS with Sass
 
@@ -108,6 +114,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Write Simple, Elegant and Maintainable Media Queries with Sass](http://davidwalsh.name/sass-media-query) by [@Eduardo Bouças](http://eduardoboucas.com/)
 - [Smoothing Responsive Designs with +spread](http://viget.com/inspire/responsive-design-with-spread) by [@DOUG AVERY](http://viget.com/about/team/davery)
 - [Making Inline Media Queries Even Better with Breakpoint Sass](http://webdevstudios.com/2015/01/20/better-media-queries-breakpoint-sass/) by [@Stacy Kvernmo](http://webdevstudios.com/author/stacy/)
+- [@include-media](http://include-media.com/) by [@Eduardo Bouças](http://eduardoboucas.com/)
 
 ###Sass Framework
 
@@ -144,4 +151,4 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 - [Sass for WordPress Developers](http://www.sitepoint.com/sass-for-wordpress-developers/) by [@James Steinbach](http://www.sitepoint.com/author/jsteinbach/)
 
- © [w3cplus](http://www.w3cplus.com),[Sass中国](http://cn-sass.com/).作者:大漠。QQ讨论群：78142855
+ © [w3cplus](http://www.w3cplus.com).作者:大漠。QQ讨论群：78142855
