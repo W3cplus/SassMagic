@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+//From super-gradient (https://github.com/mibgs/super-gradient/blob/master/_super-gradient.scss)
+
+//contains返回的值是false或true
+@function contains($colors,$var){
+	$contains: false;
+	@each $item in $colors {
+		@if $item == $var {
+			$contains: true;
+		}
+	}
+	@return $contains;
+}
+
+//输出渐变的方向
+@function orientation-string($type,$from,$w3c:false){
+	$string: '';
+
+	@if $w3c {
+		@if $type == 'linear'{
+			@if $from == 'top' or $from == 'bottom' {
+				$string: 'to bottom,';
+			} @else if $from == 'left' or $from == 'right' {
+				$string: 'to right,';
+			} @else if $from == (left top) or $from == (top left) or $from == (right bottom) or $from == (bottom right) {
+				$string: '135deg,';
+			} @else {
+				$string: '45deg,';
+			}
+		} @else if $type == 'radial' {
+			$string: 'ellipse at' + $from + ',';
+		}
+	} @else {
+		//new webkit, moz, ms, o
+		@if $type == 'linear' {
+			@if $from == 'top' or $from == 'bottom' {
+				$string: 'top,';
+			} @else if $from == 'left' or $from == 'right' {
+				$string: 'left,';
+			} @else if $from == (left top) or $from == (top left) or $from == (right bottom) or $from == (bottom right) {
+				$string: '-45deg,';
+			} @else {
+				$string: '45deg,';
+			}
+		} @else if $type == 'radial' {
+			$string: $from + ', ellipse cover, ';
+		}
+	}
+	@return $string;
+}
+
+//
+@function color-substring($colors){
+	$i: 1;
+	$substring: ' ';
+	$string: ' ';
+
+	@while $i < length($colors) {
+		$substring: nth($colors, $i) + ' ' + nth($colors, $i + 1);
+		$string: $string + $substring;
+		$i: $i + 1;
+	}
+
+	@return $string;
+}
+
+//
+@function color-string($colors) {
+	$i: 1;
+	$spacer: ', ';
+	$substring: ' ';
+	$string: ' ';
+
+	@while $i <= length($colors) {
+		@if $i == length($colors) {
+			$spacer: ' ';
+		}
+
+		$substring: color-substring(nth($colors, $i)) + $spacer;
+		$string: $string + $substring;
+		$i: $i + 1;
+	}
+
+	@return $string;
+}
+
+@function ie-gradient-type($direction) {
+	@if $first-color {
+		@return nth(nth($colors, 1), 1);
+	} @else {
+		@return nth(nth($colors, length($colors)), 1);
+	}
+}
+
+@function ie-colors($colors, $first-color:true) {
+	@if $first-color {
+		@return nth(nth($colors, 1), 1);
+	} @else {
+		@return nth(nth($colors, length($colors)), 1);
+	}
+}
+
+@mixin gradient($type:'linear', $from: 'top', $colors: ((rgba(42,179,221,1), 0%),(rgba(183,80,80,1), 100%))) {
+	$orientation-string: orientation-string($type, $from);
+	$orientation-string-w3c: orientation-string($type, $from, $w3c:true);
+	$color-string: #{color-string($colors)};
+	$css-string: gradient(#{$orientation-string}#{$color-string});
+	$css-string-w3c: gradient(#{$orientation-string-w3c}#{$color-string});
+	$ie-gradient-type: 0;
+	@if $type != 'vertical' {
+		$ie-gradient-type: 1;
+	}
+
+	background-color: #{ie-colors($colors, false)};
+	background: -webkit-#{$type}-#{$css-string};
+	background: -moz-#{$type}-#{$css-string};
+	background: -ms-#{$type}-#{$css-string};
+	background: -o-#{$type}-#{$css-string};
+	background: #{$type}-#{$css-string-w3c};
+	filter: progid:DXImageTransform.Microsoft.gradient(GradientType=#{$ie-gradient-type}, StartColorStr='#{ie-colors($colors)}', EndColorStr='#{ie-colors($colors, false)}');
+}
