@@ -13,7 +13,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 ###Beginner
 
 - [Getting Started with Sass (with interactive examples)](http://scotch.io/tutorials/css/getting-started-with-sass) by [@Ken Wheeler](http://scotch.io/author/kenwheeler)——[译文](http://www.w3cplus.com/preprocessor/getting-started-with-sass.html) by [@南北](http://weibo.com/sunchongsheng)
-- [Themed Styles With Sass](http://seesparkbox.com/foundry/themed_styles_with_sass) by [@ETHAN MULLER](http://seesparkbox.com/foundry/author/ethan_muller)
+- [Themed Styles With Sass](http://seesparkbox.com/foundry/themed_styles_with_sass) by [@ETHAN MULLER](http://seesparkbox.com/foundry/author/ethan_muller)——[译文](http://www.w3cplus.com/preprocessor/themed-styles-with-sass.html) by [@南北](http://weibo.com/sunchongsheng)
 
 ###Advanced
 
