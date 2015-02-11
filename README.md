@@ -128,6 +128,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Getting Started with Sass, Part 2](http://webstandardssherpa.com/reviews/getting-started-with-sass-part-2) by [@Laura Kalbag](http://webstandardssherpa.com/about/authors/laura-kalbag/)
 - [Getting Started with Sass, Part 3](http://webstandardssherpa.com/reviews/getting-started-with-sass-part-3/) by [@Laura Kalbag](http://webstandardssherpa.com/about/authors/laura-kalbag/)
 - [Sass for Big Sites, Part 1](http://webstandardssherpa.com/reviews/sass-for-big-sites-part-1) by [@Jackie Balzer](http://webstandardssherpa.com/about/authors/jackie-balzer/)
+- [Sass for Big Sites, Part 2](http://webstandardssherpa.com/reviews/sass-for-big-sites-part-2/) by [@Jackie Balzer](http://webstandardssherpa.com/about/authors/jackie-balzer/)
 
 ###Sass Tools & Compile
 
@@ -146,6 +147,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 - [Compass Sourcemaps](http://web-design-weekly.com/2014/09/12/compass-sourcemaps/) by [@Dennis Gaebel](http://grayghostvisuals.com/)
 - [An Overview Of Compass 1.0](http://www.sitepoint.com/an-overview-compass-1-0/) by [@Reggie Dawson](http://www.sitepoint.com/author/rdawson/)
+- [Control vertical rhythm using Sass and Compass](http://www.developerdrive.com/2015/02/control-vertical-rhythm-using-sass-and-compass/) by [@Sebastian Green](http://www.developerdrive.com/author/Sebastian-Green)
 
 ###Sass & CMS
 
