@@ -17,7 +17,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 ###Advanced
 
-- [Vector Graphics in Sass](http://www.sitepoint.com/vector-graphics-sass/) by [@Tim Severien](http://www.sitepoint.com/author/tseverien/)
+- [Vector Graphics in Sass](http://www.sitepoint.com/vector-graphics-sass/) by [@Tim Severien](http://www.sitepoint.com/author/tseverien/)——[译文](http://www.w3cplus.com/preprocessor/vector-graphics-sass.html) by [@南北](http://weibo.com/sunchongsheng)
 
 ###Sass Variables
 
