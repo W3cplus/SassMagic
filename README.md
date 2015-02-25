@@ -21,7 +21,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 ###Sass Variables
 
-- [Better Sass variables through abstraction](http://craigmdennis.com/articles/better-sass-variables) by [@Craig](http://craigmdennis.com/about)
+- [Better Sass variables through abstraction](http://craigmdennis.com/articles/better-sass-variables) by [@Craig](http://craigmdennis.com/about)——[译文](http://www.w3cplus.com/preprocessor/better-sass-variables.html) by [@南北](http://weibo.com/sunchongsheng)
 
 ###Sass Features
 - [Sass 3.4 is Out!](http://www.sitepoint.com/sass-3-4-is-out/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
