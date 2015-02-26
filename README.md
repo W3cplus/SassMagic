@@ -156,5 +156,6 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 ###Libsass
 
 - [Breaking up with Sass: it’s not you, it’s me](http://benfrain.com/breaking-up-with-sass-postcss/) by [@Ben Frain](https://plus.google.com/107588612045728705538)
+- [Configuring Grunt To Use LibSass With Susy](http://www.zell-weekeat.com/grunt-sass-with-susy/) by [@Zell](http://www.zell-weekeat.com/about/)
 
  © [w3cplus](http://www.w3cplus.com).作者:大漠。QQ讨论群：78142855
