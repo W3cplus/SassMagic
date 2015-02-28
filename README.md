@@ -24,7 +24,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Better Sass variables through abstraction](http://craigmdennis.com/articles/better-sass-variables) by [@Craig](http://craigmdennis.com/about)——[译文](http://www.w3cplus.com/preprocessor/better-sass-variables.html) by [@南北](http://weibo.com/sunchongsheng)
 
 ###Sass Features
-- [Sass 3.4 is Out!](http://www.sitepoint.com/sass-3-4-is-out/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
+- [Sass 3.4 is Out!](http://www.sitepoint.com/sass-3-4-is-out/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)——[译文](http://www.w3cplus.com/preprocessor/sass-3-4-is-out.html) by [@南北](http://weibo.com/sunchongsheng)
 - [Everything you need to know about Sass 3.4](http://www.phase2technology.com/blog/everything-you-need-to-know-about-sass-3-4/) by [@Micah Godbolt](http://www.phase2technology.com/author/mgodbolt)——[译文](http://www.w3cplus.com/preprocessor/everything-you-need-to-know-about-sass-3-4.html) by [@大漠](http://www.w3cplus.com)
 - [Emulate the Invert Filter Effect with Sass](http://davidwalsh.name/invert-color-sass) by [@Ana Tudor](http://about.me/thebabydino)
 - [A Vision for Our Sass](http://alistapart.com/article/a-vision-for-our-sass) by [@FELICITY EVANS](http://alistapart.com/author/fevans)
