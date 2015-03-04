@@ -31,7 +31,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 ###Workflow
 
-- [A Look at Different Sass Architectures](http://www.sitepoint.com/look-different-sass-architectures/) by [@Vinay Raghu](http://www.sitepoint.com/author/vraghu/)
+- [A Look at Different Sass Architectures](http://www.sitepoint.com/look-different-sass-architectures/) by [@Vinay Raghu](http://www.sitepoint.com/author/vraghu/)——[译文](http://www.w3cplus.com/preprocessor/look-different-sass-architectures.html) by [@南北](http://weibo.com/sunchongsheng)
 - [HOW I IMPROVED MY WORKFLOW WITH SMACSS & SASS](http://bramsmulders.com/how-i-improved-my-workflow-with-smacss-sass.html) by [@bramsmulders](http://twitter.com/bramsmulders)
 - [Writing CSS (and Sass) that doesn’t suck](http://ashleynolan.co.uk/blog/writing-css-and-sass-that-doesnt-suck) by [@Ashley Nolan](http://twitter.com/AshNolan_)
 - [Recommendations for a Faster Workflow with Sass](http://webdesign.tutsplus.com/articles/recommendations-for-a-faster-workflow-with-sass--cms-21616) by [@Tim Hartmann](http://tutsplus.com/authors/tim-hartmann)
