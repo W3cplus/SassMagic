@@ -14,10 +14,14 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 - [Getting Started with Sass (with interactive examples)](http://scotch.io/tutorials/css/getting-started-with-sass) by [@Ken Wheeler](http://scotch.io/author/kenwheeler)——[译文](http://www.w3cplus.com/preprocessor/getting-started-with-sass.html) by [@南北](http://weibo.com/sunchongsheng)
 - [Themed Styles With Sass](http://seesparkbox.com/foundry/themed_styles_with_sass) by [@ETHAN MULLER](http://seesparkbox.com/foundry/author/ethan_muller)——[译文](http://www.w3cplus.com/preprocessor/themed-styles-with-sass.html) by [@南北](http://weibo.com/sunchongsheng)
+- [Understanding Sass Units](http://www.sitepoint.com/understanding-sass-units/) By [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
+- [Sass Basics: Operators](http://www.sitepoint.com/sass-basics-operators/) by [@George Martsoukos](http://www.sitepoint.com/author/gmartsoukos/)
+- [Your nesting is harmful](https://medium.com/@verpixelt/your-nesting-is-harmful-a1ffddaf7e43) by [@Kevin Lorenz](https://medium.com/@verpixelt)
 
 ###Advanced
 
 - [Vector Graphics in Sass](http://www.sitepoint.com/vector-graphics-sass/) by [@Tim Severien](http://www.sitepoint.com/author/tseverien/)——[译文](http://www.w3cplus.com/preprocessor/vector-graphics-sass.html) by [@南北](http://weibo.com/sunchongsheng)
+- [Getting Back To our @at-roots](http://sassbreak.com/getting-back-to-our-roots/) by [@David Conner ](https://twitter.com/Dave_Conner)
 
 ###Sass Variables
 
@@ -28,6 +32,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Everything you need to know about Sass 3.4](http://www.phase2technology.com/blog/everything-you-need-to-know-about-sass-3-4/) by [@Micah Godbolt](http://www.phase2technology.com/author/mgodbolt)——[译文](http://www.w3cplus.com/preprocessor/everything-you-need-to-know-about-sass-3-4.html) by [@大漠](http://www.w3cplus.com)
 - [Emulate the Invert Filter Effect with Sass](http://davidwalsh.name/invert-color-sass) by [@Ana Tudor](http://about.me/thebabydino)——[译文](http://www.w3cplus.com/preprocessor/invert-color-sass.html) by [@南北](http://weibo.com/sunchongsheng)
 - [A Vision for Our Sass](http://alistapart.com/article/a-vision-for-our-sass) by [@FELICITY EVANS](http://alistapart.com/author/fevans)
+- [On Sass and Other CSS Preprocessors](http://danny.is/writing/sass-and-other-css-preprocessors-140301) by [@Danny](http://danny.is/)
 
 ###Workflow
 
@@ -158,6 +163,9 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Breaking up with Sass: it’s not you, it’s me](http://benfrain.com/breaking-up-with-sass-postcss/) by [@Ben Frain](https://plus.google.com/107588612045728705538)
 - [Configuring Grunt To Use LibSass With Susy](http://www.zell-weekeat.com/grunt-sass-with-susy/) by [@Zell](http://www.zell-weekeat.com/about/)
 
- 
- 
- © [w3cplus](http://www.w3cplus.com).作者:大漠。QQ讨论群：78142855
+###Component
+
+- [How to Create a Simple Alert with Sass](http://inspirationalpixels.com/tutorials/simple-alert-with-sass) by [@ SEB KAY](http://inspirationalpixels.com/author/sebkay)
+- [Custom CSS3 Checkbox with SASS](https://andycrone.com/custom-css3-checkbox-sass/) by [@Andy Crone](https://andycrone.com/me/)
+
+© [w3cplus](http://www.w3cplus.com).作者:大漠。QQ讨论群：78142855
