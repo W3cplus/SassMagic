@@ -51,6 +51,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [When to use @⁠extend; when to use a mixin](http://csswizardry.com/2014/11/when-to-use-extend-when-to-use-a-mixin/) by@[award-winning](https://thenetawards.com/)
 - [Sass Basics: The Mixin Directive](http://www.sitepoint.com/sass-basics-the-mixin-directive/) by [@Reggie Dawson](http://www.sitepoint.com/author/rdawson/)
 - [The Ultimate Long-shadow Sass Mixin](http://www.sitepoint.com/ultimate-long-shadow-sass-mixin/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
+- [Sass Mixins vs Extends: The Data](https://tech.bellycard.com/blog/sass-mixins-vs-extends-the-data/) by [@Shay Howe](https://tech.bellycard.com/team/shay-howe)
 
 ###Function
 
@@ -84,6 +85,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [How to Use Susy: Superpowered Sass Grids](http://webdesign.tutsplus.com/tutorials/how-to-use-susy-superpowered-sass-grids--cms-22744) by [@Jonathan Cutrell](http://tutsplus.com/authors/jonathan-cutrell)
 - [Based on The Golden Grid System Implemented with Compass SASS](http://jellyvision.github.io/spread/)
 - [Super-fast Responsive Layouts with Jeet](http://www.sitepoint.com/super-fast-responsive-layouts-jeet/) by [@George Martsoukos](http://www.sitepoint.com/author/gmartsoukos/)
+- [A Simple Sass Based responsive Grid framework](http://www.get-maze.co.uk/) by [@Cathy Dutton](http://www.cathydutton.co.uk/)
 
 ###Colors
 
@@ -105,6 +107,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Extra Map Functions in Sass](http://www.sitepoint.com/extra-map-functions-sass/) by [@Hugo Giraudel](http://www.sitepoint.com/author/hgiraudel/)
 - [Update single value in a Sass map](http://blackfalcon.roughdraft.io/8943fdfd94463467a41e-update-single-value-in-a-sass-map)
 - [Mapping Icon Fonts with Sass](http://webdevstudios.com/2015/01/28/mapping-icon-fonts-with-sass/) by [@Damon Cook](http://webdevstudios.com/author/damon/)
+- [A lesson in Sass Maps: make Sass media queries talk to JavaScript](http://clubmate.fi/a-lesson-in-sass-maps-make-sass-media-queries-talk-to-javascript/) by [@hiljaa](http://twitter.com/hiljaa)
 
 ###OOCSS with Sass
 
