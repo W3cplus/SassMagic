@@ -108,6 +108,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Update single value in a Sass map](http://blackfalcon.roughdraft.io/8943fdfd94463467a41e-update-single-value-in-a-sass-map)
 - [Mapping Icon Fonts with Sass](http://webdevstudios.com/2015/01/28/mapping-icon-fonts-with-sass/) by [@Damon Cook](http://webdevstudios.com/author/damon/)
 - [A lesson in Sass Maps: make Sass media queries talk to JavaScript](http://clubmate.fi/a-lesson-in-sass-maps-make-sass-media-queries-talk-to-javascript/) by [@hiljaa](http://twitter.com/hiljaa)
+- [5 Great Uses for Sass Maps](http://www.sitepoint.com/5-great-uses-sass-maps/) by [@Una Kravets](http://www.sitepoint.com/author/ukravets/)
 
 ###OOCSS with Sass
 
@@ -129,6 +130,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [5 Ways to Improve Your Sass with Bourbon](http://www.sitepoint.com/5-ways-improve-sass-bourbon/) by [@M. David Green](http://www.sitepoint.com/author/mdavidgreen/)
 - [Sass & CSS Style Guide](http://www.liveeditorcms.com/gc/playbook/sass-css-style-guide/) by [@liveeditorcms](http://twitter.com/liveeditorcms)
 - [Increasing SASS Compiling Performance or "When Every Second Counts”](https://www.devbridge.com/articles/increasing-sass-compiling-performance-or-when-every-second-counts/) by [@Vaclovas Vicius](https://www.devbridge.com/about-us/vaclovas-vicius)
+- [Semantic Markup with Foundation 5 and Sass](http://www.sitepoint.com/semantic-markup-foundation-5-sass/) by [@http://www.sitepoint.com/author/gmartsoukos/](http://www.sitepoint.com/author/gmartsoukos/)
 
 ###Step by Step
 
