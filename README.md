@@ -80,7 +80,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 
 - [Bootstrap’s Grid System vs. Susy: A Comparison](http://www.sitepoint.com/bootstraps-grid-system-vs-susy-comparison/) by [@Zell Liew](http://www.sitepoint.com/bootstraps-grid-system-vs-susy-comparison/)
 - [Sass and Bourbon Neat for Lightweight Semantic Grids](http://www.sitepoint.com/sass-bourbon-neat-lightweight-semantic-grids/) by [@M. David Green](http://www.sitepoint.com/author/mdavidgreen/)
-- [Build Web Layouts Easily with Susy](http://css-tricks.com/build-web-layouts-easily-susy/) by @Guest Author
+- [Build Web Layouts Easily with Susy](http://css-tricks.com/build-web-layouts-easily-susy/) by @Guest Author——[译文](http://www.w3cplus.com/preprocessor/build-web-layouts-easily-susy.html) by [@南北](http://weibo.com/sunchongsheng)
 - [Sass Grids: From Neat To Susy](http://www.sitepoint.com/sass-grids-neat-susy/) by [@James Steinbach](http://www.sitepoint.com/author/jsteinbach/)
 - [How to Use Susy: Superpowered Sass Grids](http://webdesign.tutsplus.com/tutorials/how-to-use-susy-superpowered-sass-grids--cms-22744) by [@Jonathan Cutrell](http://tutsplus.com/authors/jonathan-cutrell)
 - [Based on The Golden Grid System Implemented with Compass SASS](http://jellyvision.github.io/spread/)
