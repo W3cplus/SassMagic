@@ -1,10 +1,8 @@
-#Sass Mixins and Function
+#Sass Resources
 
 Collection best of Sass Mixins and Function.If you have seen good and meaningful Mixins or Functions, please send us your code.Let more students share your results.
 
 收集优秀的Sass Mixins和Function。如果您有看到优秀的、有意义的Mixins或Functions，请向我们提交您的代码吧。让更多的同学分享您的成果。
-
-##Sass Resources
 
 ###Guide Line
 
@@ -124,6 +122,8 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Smoothing Responsive Designs with +spread](http://viget.com/inspire/responsive-design-with-spread) by [@DOUG AVERY](http://viget.com/about/team/davery)
 - [Making Inline Media Queries Even Better with Breakpoint Sass](http://webdevstudios.com/2015/01/20/better-media-queries-breakpoint-sass/) by [@Stacy Kvernmo](http://webdevstudios.com/author/stacy/)
 - [@include-media](http://include-media.com/) by [@Eduardo Bouças](http://eduardoboucas.com/)
+- [Using Sass for “Quantity Queries”](http://www.sitepoint.com/using-sass-quantity-queries/) by [@James Steinbach](http://www.sitepoint.com/author/jsteinbach/)
+- [Organizing Nested Selectors in Sass](http://viget.com/extend/organizing-nested-selectors-in-sass) by [@JEREMY](http://viget.com/about/team/jfields)
 
 ###Sass Framework
 
@@ -139,6 +139,7 @@ Collection best of Sass Mixins and Function.If you have seen good and meaningful
 - [Getting Started with Sass, Part 3](http://webstandardssherpa.com/reviews/getting-started-with-sass-part-3/) by [@Laura Kalbag](http://webstandardssherpa.com/about/authors/laura-kalbag/)
 - [Sass for Big Sites, Part 1](http://webstandardssherpa.com/reviews/sass-for-big-sites-part-1) by [@Jackie Balzer](http://webstandardssherpa.com/about/authors/jackie-balzer/)
 - [Sass for Big Sites, Part 2](http://webstandardssherpa.com/reviews/sass-for-big-sites-part-2/) by [@Jackie Balzer](http://webstandardssherpa.com/about/authors/jackie-balzer/)
+- [Aesthetic Sass 1: Architecture and Style Organization](https://scotch.io/tutorials/aesthetic-sass-1-architecture-and-style-organization) by [@David Khourshid	](https://scotch.io/author/david)
 
 ###Sass Tools & Compile
 
