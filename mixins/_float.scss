@@ -1,20 +1,9 @@
-@charset "UTF-8";
+//https://gist.github.com/airen/d7f8ad25c982750dcb86
 
-@mixin float($side: left,$support-for-ie:true){
+@mixin float($direction: left,$support-for-ie:false){
 
-	float: unquote($side);
+	float: unquote($direction);
 	@if $support-for-ie{
 		_display: inline;
 	}
 }
-
-// ==================Use=======================
-// .pull-left {
-//   @include float(right);
-// }
-// ===================Output====================
-// .pull-left {
-//   float: right;
-//   _display: inline;
-// }
-// ============================================

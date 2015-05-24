@@ -11,28 +11,28 @@
   }
 }
 
-/*================================Use====================
-#{am('module')} {
-  color: red;
-}
+// ================================Use====================
+// #{am('module')} {
+//   color: red;
+// }
 
-#{am('module', 'blue')} {
- color: blue;
-}
+// #{am('module', 'blue')} {
+//  color: blue;
+// }
 
-#{am('module', 'large')} {
- font-size: 2em;
-}
-================================Output===================
-[am-module] {
-  color: red;
-}
+// #{am('module', 'large')} {
+//  font-size: 2em;
+// }
+// ================================Output===================
+// [am-module] {
+//   color: red;
+// }
 
-[am-module~="blue"] {
-  color: blue;
-}
+// [am-module~="blue"] {
+//   color: blue;
+// }
 
-[am-module~="large"] {
-  font-size: 2em;
-}
-========================================================*/
+// [am-module~="large"] {
+//   font-size: 2em;
+// }
+// ========================================================

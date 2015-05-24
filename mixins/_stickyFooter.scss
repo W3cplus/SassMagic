@@ -1,0 +1,38 @@
+//From: http://compass-style.org/reference/compass/layout/sticky_footer/
+
+//html
+
+// <body>
+//   <div id="wrapper">
+//     <div id="wrapper-inner"></div>
+//     <div id="push"></div>
+//   </div>
+//   <div id="footer">
+//     Footer content goes here.
+//   </div>
+// </body>
+
+
+//eg: https://gist.github.com/airen/2f7211d7819dddaf6003
+
+@mixin stickyFooter($footer-height, $root-selector: unquote("#wrapper"), $root-footer-selector: unquote("#push"), $footer-selector: unquote("#footer")) {
+  html, body {
+    height: 100%;
+  }
+  #{$root-selector} {
+    clear: both;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin-bottom: -$footer-height;
+  }
+  #{$root-footer-selector} {
+    height: $footer-height;
+  }
+
+  #{$footer-selector} {
+    clear: both;
+    position: relative;
+    height: $footer-height;
+  }
+}

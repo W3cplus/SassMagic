@@ -1,0 +1,14 @@
+//Author：Janking　（https://github.com/Janking）
+
+//eg: https://gist.github.com/airen/040f6f06bcc8b3176d8a
+
+@mixin backgroundTransparent($color,$opacity,$support-for-ie:false){
+	background-color:rgba($color,$opacity);
+	@if $support-for-ie{
+		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{ie-hex-str(rgba($color,$opacity))},endColorstr=#{ie-hex-str(rgba($color,$opacity))});
+		
+		:root & {
+			filter:none;
+		}
+	}
+}

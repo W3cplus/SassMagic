@@ -1,0 +1,40 @@
+///让列表项等分http://sassmeister.com/gist/8e46b4c77f454e0c1cac
+///@param {[string]} $way [table] 模拟table等分 [flex] 使用flexbox布局等 [other] 不编译
+///@param {[$string]} $children [li] 默认值为li [other] 可以取div,p,a,span,strong
+@mixin equal-parts($way:table,$children: li){
+  @if $way == table {
+    @extend %table-layout;
+
+    $childrenEle: li div p a span strong;
+
+    @if index($childrenEle, $children) {
+      #{$children} {
+        @extend %table-cell;
+      }
+    }
+    @else {
+      .#{$children} {
+        @extend %table-cell;
+      }
+    }
+  }
+  @else if $way == flex {
+    @extend %flexbox;
+
+    $childrenEle: li div p a span strong;
+
+    @if index($childrenEle, $children) {
+      #{$children} {
+        @extend %equalflex;
+      }
+    }
+    @else {
+      .#{$children} {
+        @extend %equalflex;
+      }
+    }
+  }
+  @else {
+    @warn "You have to put #{$way} value is set to the table or flex! "
+  }
+}

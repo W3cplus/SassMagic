@@ -1,0 +1,15 @@
+//eg: https://gist.github.com/08bce58e9af2fa223118
+@mixin content($attr,$content:null){
+  @if $attr {
+    display: inline-block;
+    content: $attr;
+  }
+  @else if $content != null {
+    content: quote($content);
+    display: inline-block;
+  }
+  @else {
+    content: "";
+    display: table;
+  }
+}

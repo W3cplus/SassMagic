@@ -1,0 +1,11 @@
+@mixin geometric-size($width, $height, $base: 0) {
+    @if $base == 0 {
+        width: $width;
+        padding-bottom: $height / $width * 100%;
+    } @else {
+        width: $width / $base * 100%;
+        padding-bottom: $height / $base * 100%;
+    }
+    height: 0;
+    overflow: hidden;
+}

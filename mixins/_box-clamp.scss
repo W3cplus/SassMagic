@@ -1,0 +1,13 @@
+/// 控制文字行数溢出点点点
+/// @param  {[string]} $v      [1] 默认一行对于点点点结束
+/// @link http://sassmeister.com/gist/599f5d4cbe6d8d108eda
+
+@mixin boxClamp($v:1){
+    overflow:hidden;
+    -webkit-line-clamp: $v;
+    line-clamp: $v;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    display:-webkit-box;
+    display:box;
+}

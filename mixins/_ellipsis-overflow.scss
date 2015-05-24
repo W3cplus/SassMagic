@@ -1,23 +1,14 @@
-@charset "UTF-8";
+//eg:https://gist.github.com/airen/caf49ca5c5e7743f9996
 
-
-@mixin ellipsis-overflow($substract:0) {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	white-space: nowrap;
-	width: 100% - $substract;
+@mixin ellipsis-overflow($line: 1, $substract: 0) {
+    @if $line == 1 {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    } @else {
+        display: -webkit-box;
+        -webkit-line-clamp: $line;
+        -webkit-box-orient: vertical;
+    }
+    width: 100% - $substract;
+    overflow: hidden;
 }
-
-// ========================Use==================
-// .text-overflow{
-//   @include ellipsis-overflow(20);
-// }
-
-// ==========================Output===============
-// .text-overflow {
-//   overflow: hidden;
-//   text-overflow: ellipsis;
-//   white-space: nowrap;
-//   width: 80%;
-// }
-// ==============================================

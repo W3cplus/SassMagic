@@ -1,0 +1,16 @@
+/// 元素垂直水平居中
+/// @param  {[string]} $pack      [center] 水平对齐方向,[false] 水平方向不设置
+/// @param  {[string]} $align      [align] 垂直对齐方向,[false] 垂直方向不设置
+/// @link (http://gitlab.alibaba-inc.com/mtb/browser-designer/raw/dev/index.html?u=1255)
+@mixin boxCenter($pack:center, $align: center) {
+    @if($align !=false) {
+        -webkit-box-align: $align;
+        box-align: $align;
+    }
+    @if($pack !=false) {
+        -webkit-box-pack: $pack;
+        box-pack: $pack;
+    }
+    display:-webkit-box;
+    display:box;
+}
