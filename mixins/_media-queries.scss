@@ -145,6 +145,120 @@
 
 //iPhone
 
+//iPhone6
+@mixin iphone6($orientation: all){
+  $deviceMinWidth: 375px;
+  $deviceMaxWidth: 667px;
+  $deviceMinPixelRatio: 2;
+
+  @if $orientation == all {
+    @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
+    and (-webkit-min-device-pixel-ratio: $deviceMinPixelRatio){
+      @content;
+    }
+  }
+  @else {
+    @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
+    and (-webkit-min-device-pixel-ratio: $deviceMinPixelRatio) and (orientation: $orientation) {
+      @content;
+    }
+  }
+}
+
+// =====================================Use===================================
+//.iphone6 {
+//  //portrait and landscape
+//  @include iphone6(){
+//    width: 100px;
+//    height: 100px;
+//  }
+//  //portrait (竖屏)
+//  @include iphone6(portrait){
+//    width: 200px;
+//    height: 200px;
+//  }
+//  //landscape（横屏）
+//  @include iphone6(landscape){
+//    width: 300px;
+//    height: 300px;
+//  }
+//}
+// =====================================Output===================================
+// @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+//   .iphone6 {
+//     width: 100px;
+//     height: 100px;
+//   }
+// }
+// @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
+//   .iphone6 {
+//     width: 200px;
+//     height: 200px;
+//   }
+// }
+// @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+//   .iphone6 {
+//     width: 300px;
+//     height: 300px;
+//   }
+// }
+
+//iPhone6plus
+@mixin iphone6plus($orientation: all){
+  $deviceMinWidth: 414px;
+  $deviceMaxWidth: 736px;
+  $deviceMinPixelRatio: 3;
+
+  @if $orientation == all {
+    @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
+    and (-webkit-min-device-pixel-ratio: $deviceMinPixelRatio){
+      @content;
+    }
+  }
+  @else {
+    @media only screen and (min-device-width: $deviceMinWidth) and (max-device-width: $deviceMaxWidth)
+    and (-webkit-min-device-pixel-ratio: $deviceMinPixelRatio) and (orientation: $orientation) {
+      @content;
+    }
+  }
+}
+// =====================================Use===================================
+//.iphone6plus {
+//  //portrait and landscape
+//  @include iphone6plus(){
+//    width: 100px;
+//    height: 100px;
+//  }
+//  //portrait (竖屏)
+//  @include iphone6plus(portrait){
+//    width: 200px;
+//    height: 200px;
+//  }
+//  //landscape（横屏）
+//  @include iphone6plus(landscape){
+//    width: 300px;
+//    height: 300px;
+//  }
+//}
+// =====================================Output==================================
+//@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+//  .iphone6plus {
+//    width: 100px;
+//    height: 100px;
+//  }
+//}
+//@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait) {
+//  .iphone6plus {
+//    width: 200px;
+//    height: 200px;
+//  }
+//}
+//@media only screen and (min-device-width: 414px) and (max-device-width: 736px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+//  .iphone6plus {
+//    width: 300px;
+//    height: 300px;
+//  }
+//}
 //iPhone5
 @mixin iphone5($orientation: all){
   $deviceMinWidth: 320px;
