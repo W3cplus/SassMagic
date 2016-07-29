@@ -1,0 +1,9 @@
+@mixin heightRelativeToWidth($percentage: 100%, $pos: 'after') {
+    &:#{$pos} {
+        content: " ";
+        display: block;
+        height: 0;
+        padding-bottom: $percentage;
+        @content;
+    }
+}

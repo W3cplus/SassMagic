@@ -1,0 +1,18 @@
+// http://www.w3cplus.com/preprocessor/creat-css-polygon-wiht-border-and-clip-path-property.html
+
+@function polygon($points, $startPoint: 0) {
+    $angle: (360deg / $points);
+    $coords: '';
+    @for $point from $startPoint through ($points + $startPoint - 1) {
+        $pointAngle: $angle * $point;
+        $x: 50% + (percentage(sin($pointAngle)) / 2);
+        $y: 50% - (percentage(cos($pointAngle)) / 2);
+        $coords: $coords + $x + ' ' + $y;
+        @if $point !=$points + $startPoint - 1 {
+            $coords: $coords + ', ';
+        }
+        $point: $point + 1;
+    }
+    $polygon: 'polygon(' + $coords + ')';
+    @return unquote($polygon);
+}

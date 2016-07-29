@@ -1,0 +1,38 @@
+// http://www.w3cplus.com/preprocessor/creat-css-polygon-wiht-border-and-clip-path-property.html
+
+$PI: 3.141592653589793;
+@mixin border-polygon($num, $color: #000, $radius: 64px) {
+    position: relative;
+    height: 2.5*$radius;
+    width: 2.5*$radius;
+    div {
+        $halfWidth: tan($PI / $num) * $radius + 1; // + 1.5 to account for anti-aliasing
+        border-top: #{$radius} solid $color;
+        border-left: #{$halfWidth} solid transparent;
+        border-right: #{$halfWidth} solid transparent;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform-origin: 50% 100%;
+        @for $i from 0 through $num {
+            &:nth-child(#{$i}) {
+                transform: translate(-50%, -100%) rotate(360deg / $num * $i);
+            }
+        }
+    }
+}
+
+@mixin clip-polygon($num, $color, $radius: 64px) {
+    position: relative;
+    width: $radius*2;
+    height: $radius*2;
+    background: $color;
+    $points: ();
+    @for $i from 0 to $num {
+        $angle: 360deg/2/$num + 360deg / $num * $i;
+        $pointX: 50% + sin($angle)*50%;
+        $pointY: 50% + cos($angle)*50%;
+        $points: append($points, unquote($pointX+" "+$pointY), "comma");
+    }
+    clip-path: polygon(#{$points});
+}
