@@ -1,0 +1,63 @@
+// http://www.w3cplus.com/preprocessor/sass-animation-keyframes.html
+
+@mixin animation($options: ()) {
+    $options: map-merge(( 
+    	animationName: unique-id(), 
+    	duration: 1, 
+    	waitTime: 0, 
+    	timingFunction: linear, 
+    	iterationCount: infinite
+    ), $options);
+    $name: map-get($options, animationName);
+    $kf: map-get($options, keyframes);
+    $kfLength: length($kf);
+    $duration: map-get($options, duration);
+    $waitTime: map-get($options, waitTime);
+    $timingFunction: map-get($options, timingFunction);
+    $iterationCount: map-get($options, iterationCount);
+    $counter: 1; // index of 'each'
+    @keyframes #{$name} {
+        @each $frame,
+        $prop in $kf {
+            #{$frame * $duration / ($duration + $waitTime)}% {
+                @each $k,
+                $v in $prop {
+                    #{$k}: #{$v}
+                }
+            }
+            // if last in loop and waitTime is not 0, add the last frame as 100% (this is what creates the pause)
+            @if $counter==$kfLength and $waitTime > 0 {
+                100% {
+                    @each $k,
+                    $v in $prop {
+                        #{$k}: #{$v}
+                    }
+                }
+            }
+            $counter: $counter+1;
+        }
+    }
+    animation: #{$name} #{$duration}s #{$timingFunction} #{$iterationCount};
+}
+
+// .anime {
+// 	@include animation(
+//       	(
+//         	animationName: zoom,
+//         	keyframes: (
+//           		0: (
+//             		transform: scale(1),
+//             		background-color: blue
+//           		),
+//           		100: (
+//             		transform: scale(3),
+//             		background-color: red
+//           		)
+//         	),
+//         	duration: 2,
+//         	waitTime: 1,
+//         	timingFunction: ease,
+//         	iterationCount: infinite
+//       )
+//     );
+// }
