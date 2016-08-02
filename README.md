@@ -1,8 +1,5 @@
 # SassMagic
 
-![npm version](http://img.shields.io/npm/v/SassMagic.svg)
-![ci status](https://api.travis-ci.org/amfe/SassMagic.svg?branch=master)
-
 SassMagic is a collection of Sass mixins and functions to ease and improve our implementations of common style-code patterns.
 
 Collection best of Sass Mixins and Function.If you have seen good and meaningful Mixins or Functions, please send us your code.Let more students share your results.
