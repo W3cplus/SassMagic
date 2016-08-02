@@ -11,12 +11,38 @@ var htmlone = require('gulp-htmlone');
 
 var rename = require('gulp-rename');
 var del = require('del');
+var source = require('vinyl-source-stream');
+var streamify = require('gulp-streamify');
+var browserify = require('browserify');
+var uglify = require('gulp-uglify');
+var gulpify = require('gulpify');
+var sassdoc = require('sassdoc');
+
 
 var paths = {
   src: './src',
   build: './build'
 };
 
+// using gulpify:
+gulp.task('gulpify', function() {
+  gulp.src('index.js')
+    .pipe(gulpify())
+    .pipe(uglify())
+    .pipe(rename('bundle.js'))
+    .pipe(gulp.dest('./'))
+})
+
+// using vinyl-source-stream:
+gulp.task('browserify', function() {
+  var bundleStream = browserify('./index.js').bundle()
+
+  bundleStream
+    .pipe(source('index.js'))
+    .pipe(streamify(uglify()))
+    .pipe(rename('bundle.js'))
+    .pipe(gulp.dest('./'))
+})
 // css
 gulp.task('sass', function () {
   return sass(paths.src + '/**/*.scss')
@@ -82,6 +108,27 @@ gulp.task('htmlone', ['css', 'eslint'], function () {
 // clean
 gulp.task('clean', function () {
   del(paths.build);
+});
+
+gulp.task('sassdoc', function () {
+  var options = {
+    dest: 'docs',
+    verbose: true,
+    display: {
+      access: ['public', 'private'],
+      alias: true,
+      watermark: true,
+    },
+    // groups: {
+    //   'undefined': 'Ungrouped',
+    //   foo: 'Foo group',
+    //   bar: 'Bar group',
+    // },
+    basePath: 'https://github.com/W3cplus/SassMagic/sassdoc',
+  };
+
+  return gulp.src('src/**/*.scss')
+    .pipe(sassdoc(options));
 });
 
 gulp.task('watch', ['default'], function () {

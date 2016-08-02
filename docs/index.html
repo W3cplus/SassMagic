@@ -1,0 +1,301 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Sassmagic - v1.0.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Sassmagic - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>SassMagic is a collection of Sass mixins and functions to ease and improve our implementations of common style-code patterns.</p>
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Sassmagic - 1.0.0</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-mixin"><a href="#undefined-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="alert-variant" data-type="mixin"><a href="#undefined-mixin-alert-variant">alert-variant</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="ae-pseudo" data-type="mixin"><a href="#undefined-mixin-ae-pseudo">ae-pseudo</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="angled-edge" data-type="mixin"><a href="#undefined-mixin-angled-edge">angled-edge</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="boxCenter" data-type="mixin"><a href="#undefined-mixin-boxCenter">boxCenter</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="boxClamp" data-type="mixin"><a href="#undefined-mixin-boxClamp">boxClamp</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="equal-parts" data-type="mixin"><a href="#undefined-mixin-equal-parts">equal-parts</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="position" data-type="mixin"><a href="#undefined-mixin-position">position</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="at-least" data-type="mixin"><a href="#undefined-mixin-at-least">at-least</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="at-most" data-type="mixin"><a href="#undefined-mixin-at-most">at-most</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="between" data-type="mixin"><a href="#undefined-mixin-between">between</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="exactly" data-type="mixin"><a href="#undefined-mixin-exactly">exactly</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="size" data-type="mixin"><a href="#undefined-mixin-size">size</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-function"><a href="#undefined-function">functions</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="ae-str-replace" data-type="function"><a href="#undefined-function-ae-str-replace">ae-str-replace</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="ae-svg-encode" data-type="function"><a href="#undefined-function-ae-svg-encode">ae-svg-encode</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="_last-simple-selector" data-type="function"><a href="#undefined-function-_last-simple-selector">_last-simple-selector</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="_build-quantity-selector" data-type="function"><a href="#undefined-function-_build-quantity-selector">_build-quantity-selector</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="undefined-mixin-alert-variant"><h3 class="item__heading"><a class="item__name" href="#mixin-alert-variant">alert-variant</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin alert-variant() { 
+  background-color: $background;
+  border-color: $border;
+  color: $text-color;
+
+  a {
+    color: darken($text-color, 10%);
+  }
+ }" data-collapsed="@mixin alert-variant() { ... }"><code>@mixin alert-variant() { ... }</code></pre><a href="https://github.com/W3cplus/SassMagic/sassdoc/mixins/_alerts.scss#L3-L11" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Thanks <a href="https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_alerts.scss">https://github.com/twbs/bootstrap-sass/blob/master/assets/stylesheets/bootstrap/mixins/_alerts.scss</a></p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p></section><section class="main__item container item" id="undefined-mixin-ae-pseudo"><h3 class="item__heading"><a class="item__name" href="#mixin-ae-pseudo">ae-pseudo</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin ae-pseudo($location, $height) { 
+	background-image: url($wedge);
+	background-position: center center;
+	background-repeat: no-repeat;
+	content: &#39;&#39;;
+	height: $height * 1px;
+	left: 0;
+	position: absolute;
+	right: 0;
+	width: 100%;
+	z-index: 1;
+ }" data-collapsed="@mixin ae-pseudo($location, $height) { ... }"><code>@mixin ae-pseudo($location, $height) { ... }</code></pre><a href="https://github.com/W3cplus/SassMagic/sassdoc/mixins/_angled-edges.scss#L51-L62" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Outputs pseudo content for main mixin</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$location</code></th><td data-label="desc">&mdash;<span class="visually-hidden">none</span></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$height</code></th><td data-label="desc">&mdash;<span class="visually-hidden">none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Output</h3><div class="item__description"><p>psuedo content</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-angled-edge"><code>angled-edge</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Joseph Fusco</p></li></ul></section><section class="main__item container item" id="undefined-mixin-angled-edge"><h3 class="item__heading"><a class="item__name" href="#mixin-angled-edge">angled-edge</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin angled-edge($location, $hypotenuse, $fill, $width, $height) { 
+
+	// polygon points for right triangle
+	$points: (
+		&#39;upper left&#39;: &#39;0,#{$height} #{$width},#{$height} #{$width},0&#39;,
+		&#39;upper right&#39;: &#39;0,#{$height} #{$width},#{$height} 0,0&#39;,
+		&#39;lower left&#39;: &#39;0,0 #{$width},#{$height} #{$width},0&#39;,
+		&#39;lower right&#39;: &#39;0,0 #{$width},0 0,#{$height}&#39;
+	);
+
+	// ensure $fill color is using rgb()
+	$fill-rgb: &#39;rgb(&#39; + round(red($fill)) + &#39;,&#39; + round(green($fill)) + &#39;,&#39; + round(blue($fill)) + &#39;)&#39;;
+
+	// capture alpha component of $fill to use with fill-opacity
+	$fill-alpha: alpha($fill);
+
+	$wedge: ae-svg-encode(&#39;&lt;svg height=&quot;#{$height}&quot; width=&quot;#{$width}&quot; fill=&quot;#{$fill-rgb}&quot; fill-opacity=&quot;#{$fill-alpha}&quot;&gt;&lt;polygon points=&quot;#{map-get($points, $hypotenuse)}&quot;&gt;&lt;/polygon&gt;&lt;/svg&gt;&#39;);
+
+	position: relative;
+
+	@if ($location == &#39;inside top&#39;) {
+		&amp;::before {
+			@include ae-pseudo($wedge, $height);
+			top: 0;
+		}
+	} @else if ($location == &#39;outside top&#39;) {
+		&amp;::before {
+			@include ae-pseudo($wedge, $height);
+			top: -$height * 1px;
+		}
+	} @else if ($location == &#39;inside bottom&#39;) {
+		&amp;::after {
+			@include ae-pseudo($wedge, $height);
+			bottom: 0;
+		}
+	} @else if ($location == &#39;outside bottom&#39;) {
+		&amp;::after {
+			@include ae-pseudo($wedge, $height);
+			bottom: -$height * 1px;
+		}
+	} @else {
+		@error &quot;Invalid argument for $location. Must use: &#39;inside top&#39;, &#39;outside top&#39;, &#39;inside bottom&#39;, &#39;outside bottom&#39;&quot;;
+	}
+ }" data-collapsed="@mixin angled-edge($location, $hypotenuse, $fill, $width, $height) { ... }"><code>@mixin angled-edge($location, $hypotenuse, $fill, $width, $height) { ... }</code></pre><a href="https://github.com/W3cplus/SassMagic/sassdoc/mixins/_angled-edges.scss#L75-L118" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Attatches an svg wedge shape to an element</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$location</code></th><td data-label="desc"><p>&#39;inside top&#39;, &#39;outside top&#39;, &#39;inside bottom&#39;, &#39;outside bottom&#39;</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$hypotenuse</code></th><td data-label="desc"><p>&#39;upper left&#39;, &#39;upper right&#39;, &#39;lower left&#39;, &#39;lower right&#39;</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$fill</code></th><td data-label="desc">&mdash;<span class="visually-hidden">none</span></td><td data-label="type"><code>Color</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$width</code></th><td data-label="desc">&mdash;<span class="visually-hidden">none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$height</code></th><td data-label="desc">&mdash;<span class="visually-hidden">none</span></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Output</h3><div class="item__description"><p>&#39;::before&#39; and/or &quot;::after&quot; with svg background image</p></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p>Invalid argument for $location. Must use:</p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-ae-pseudo"><code>ae-pseudo</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-ae-svg-encode"><code>ae-svg-encode</code></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Joseph Fusco</p></li></ul></section><section class="main__item container item" id="undefined-mixin-boxCenter"><h3 class="item__heading"><a class="item__name" href="#mixin-boxCenter">boxCenter</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin boxCenter($pack: center, $align: align) { 
+    @if($align !=false) {
+        -webkit-box-align: $align;
+        box-align: $align;
+    }
+    @if($pack !=false) {
+        -webkit-box-pack: $pack;
+        box-pack: $pack;
+    }
+    display:-webkit-box;
+    display:box;
+ }" data-collapsed="@mixin boxCenter($pack: center, $align: align) { ... }"><code>@mixin boxCenter($pack: center, $align: align) { ... }</code></pre><a href="https://github.com/W3cplus/SassMagic/sassdoc/mixins/_box-center.scss#L5-L16" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>元素垂直水平居中</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$pack</code></th><td data-label="desc"><p>水平对齐方向,[false] 水平方向不设置</p></td><td data-label="type"><code>[string]</code></td><td data-label="default"><code>center</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$align</code></th><td data-label="desc"><p>垂直对齐方向,[false] 垂直方向不设置</p></td><td data-label="type"><code>[string]</code></td><td data-label="default"><code>align</code></td></tr></tbody></table><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="(http://gitlab.alibaba-inc.com/mtb/browser-designer/raw/dev/index.html?u=1255)">(http://gitlab.alibaba-inc.com/mtb/browser-designer/raw/dev/index.html?u=1255)</a></li></ul></section><section class="main__item container item" id="undefined-mixin-boxClamp"><h3 class="item__heading"><a class="item__name" href="#mixin-boxClamp">boxClamp</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin boxClamp($v: 1) { 
+    overflow:hidden;
+    -webkit-line-clamp: $v;
+    line-clamp: $v;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
+    display:-webkit-box;
+    display:box;
+ }" data-collapsed="@mixin boxClamp($v: 1) { ... }"><code>@mixin boxClamp($v: 1) { ... }</code></pre><a href="https://github.com/W3cplus/SassMagic/sassdoc/mixins/_box-clamp.scss#L5-L13" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>控制文字行数溢出点点点</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$v</code></th><td data-label="desc"><p>默认一行对于点点点结束</p></td><td data-label="type"><code>[string]</code></td><td data-label="default"><code>1</code></td></tr></tbody></table><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="http://sassmeister.com/gist/599f5d4cbe6d8d108eda">http://sassmeister.com/gist/599f5d4cbe6d8d108eda</a></li></ul></section><section class="main__item container item" id="undefined-mixin-equal-parts"><h3 class="item__heading"><a class="item__name" href="#mixin-equal-parts">equal-parts</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin equal-parts($way: table, $children: li) { 
+  @if $way == table {
+    @extend %table-layout;
+
+    $childrenEle: li div p a span strong;
+
+    @if index($childrenEle, $children) {
+      #{$children} {
+        @extend %table-cell;
+      }
+    }
+    @else {
+      .#{$children} {
+        @extend %table-cell;
+      }
+    }
+  }
+  @else if $way == flex {
+    @extend %flexbox;
+
+    $childrenEle: li div p a span strong;
+
+    @if index($childrenEle, $children) {
+      #{$children} {
+        @extend %equalflex;
+      }
+    }
+    @else {
+      .#{$children} {
+        @extend %equalflex;
+      }
+    }
+  }
+  @else {
+    @warn &quot;You have to put #{$way} value is set to the table or flex! &quot;
+  }
+ }" data-collapsed="@mixin equal-parts($way: table, $children: li) { ... }"><code>@mixin equal-parts($way: table, $children: li) { ... }</code></pre><a href="https://github.com/W3cplus/SassMagic/sassdoc/mixins/_equal-parts.scss#L4-L40" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>让列表项等分<a href="http://sassmeister.com/gist/8e46b4c77f454e0c1cac">http://sassmeister.com/gist/8e46b4c77f454e0c1cac</a></p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$way</code></th><td data-label="desc"><p>模拟table等分 [flex] 使用flexbox布局等 [other] 不编译</p></td><td data-label="type"><code>[string]</code></td><td data-label="default"><code>table</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$children</code></th><td data-label="desc"><p>默认值为li [other] 可以取div,p,a,span,strong</p></td><td data-label="type"><code>[$string]</code></td><td data-label="default"><code>li</code></td></tr></tbody></table></section><section class="main__item container item" id="undefined-mixin-position"><h3 class="item__heading"><a class="item__name" href="#mixin-position">position</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin position($position, $args) { 
+	@each $o in top right bottom left {
+		$i: index($args, $o);
+		@if $i and $i + 1 &lt;= length($args) and type-of(nth($args, $i + 1)) == number {
+			#{$o}: nth($args, $i + 1);
+		}
+	}
+	position: $position;
+ }" data-collapsed="@mixin position($position, $args) { ... }"><code>@mixin position($position, $args) { ... }</code></pre><a href="https://github.com/W3cplus/SassMagic/sassdoc/mixins/_positin.scss#L34-L42" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>设置<code>position</code></p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$position</code></th><td data-label="desc"><p>可选值: <code>static</code> | <code>relative</code> | <code>absolute</code> | <code>fixed</code></p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$args</code></th><td data-label="desc"><p>可设置值: <code>top</code> | <code>right</code> | <code>bottom</code> | <code>left</code></p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>//SCSS
+
+.absolute{
+  @include position(absolute,top 10px right 20px);
+}
+.absolute{
+  @include position(absolute,top 0 right 0 bottom 0 left 0);
+}
+
+//Output CSS
+
+.absolute {
+  top: 10px;
+  right: 20px;
+  position: absolute; 
+}
+
+.absolute {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute; 
+}</code></pre></div><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="http://sassmeister.com/gist/a70eb473b806c4e2a57d">http://sassmeister.com/gist/a70eb473b806c4e2a57d</a></li><li><a href=""></a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>大漠</p></li></ul></section><section class="main__item container item" id="undefined-mixin-at-least"><h3 class="item__heading"><a class="item__name" href="#mixin-at-least">at-least</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin at-least($count) { 
+    $selector-append: &#39;:nth-last-child(n+#{$count})&#39;;
+
+    @if type-of($count) != &#39;number&#39; or not unitless($count) or $count &lt; 1 {
+        @error &#39;`#{$count}` is not a valid number for `at-least`&#39;;
+    }
+
+    @if $selector != null and (type-of($selector) != &#39;string&#39; or length($selector) &gt; 1) {
+        @error &#39;`#{$selector}` is not a valid selector for `at-least`&#39;;
+    }
+
+    $at-least-selector: _build-quantity-selector($selector-append, $selector);
+
+
+    @at-root #{$at-least-selector} {
+        @content;
+    }
+ }" data-collapsed="@mixin at-least($count) { ... }"><code>@mixin at-least($count) { ... }</code></pre><a href="https://github.com/W3cplus/SassMagic/sassdoc/mixins/_quantity-queries.scss#L80-L97" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Query when total items is at least N items</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$count</code></th><td data-label="desc"><p>Quantity to match (equal or more)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).<h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Make the items color red when there are 4 items or more</p></div><pre class="example__code language-scss"><code>ul li {
+  @include at-least(4) { color: red; }
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Make the items color blue when there are 6 items or more and use &#39;*&#39; (element agnostic) as the item selector</p></div><pre class="example__code language-scss"><code>ul li {
+  @include at-least(6, &#39;*&#39;) { color: blue; }
+}</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p><code>#{$count}</code> is not a valid number for <code>at-least</code></p></li><li><p><code>#{$selector}</code> is not a valid selector for <code>at-least</code></p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-_build-quantity-selector"><code>_build-quantity-selector</code></a></li></ul></p></section><section class="main__item container item" id="undefined-mixin-at-most"><h3 class="item__heading"><a class="item__name" href="#mixin-at-most">at-most</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin at-most($count) { 
+    $selector-append: &#39;:nth-last-child(-n+#{$count}):first-child&#39;;
+
+    @if type-of($count) != &#39;number&#39; or not unitless($count) or $count &lt; 1 {
+        @error &#39;`#{$count}` is not a valid number for `at-most`.&#39;;
+    }
+
+    @if $selector != null and (type-of($selector) != &#39;string&#39; or length($selector) &gt; 1) {
+        @error &#39;`#{$selector}` is not a valid selector for `at-most`&#39;;
+    }
+
+    $at-most-selector: _build-quantity-selector($selector-append, $selector);
+
+
+    @at-root #{$at-most-selector} {
+        @content;
+    }
+ }" data-collapsed="@mixin at-most($count) { ... }"><code>@mixin at-most($count) { ... }</code></pre><a href="https://github.com/W3cplus/SassMagic/sassdoc/mixins/_quantity-queries.scss#L115-L132" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Query when total items is at most N items</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$count</code></th><td data-label="desc"><p>Quantity to match (equal or less)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).<h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Make the items color red when there are 4 items or less</p></div><pre class="example__code language-scss"><code>ul li {
+  @include at-most(4) { color: red; }
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Make the items color blue when there are 6 items or less and use &#39;*&#39; (element agnostic) as the item selector</p></div><pre class="example__code language-scss"><code>ul li {
+  @include at-most(6, &#39;*&#39;) { color: blue; }
+}</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p><code>#{$count}</code> is not a valid number for <code>at-most</code>.</p></li><li><p><code>#{$selector}</code> is not a valid selector for <code>at-most</code></p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-_build-quantity-selector"><code>_build-quantity-selector</code></a></li></ul></p></section><section class="main__item container item" id="undefined-mixin-between"><h3 class="item__heading"><a class="item__name" href="#mixin-between">between</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin between($at-least, $at-most) { 
+    $selector-append: &#39;:nth-last-child(n+#{$first}):nth-last-child(-n+#{$last}):first-child&#39;;
+
+    @if type-of($first) != &#39;number&#39; or not unitless($first) or $first &lt; 1 {
+        @error &#39;`#{$first}` is not a valid number for `between`&#39;;
+    }
+
+    @if type-of($last) != &#39;number&#39; or not unitless($last) or $last &lt; 1 {
+        @error &#39;`#{$last}` is not a valid number for `between`&#39;;
+    }
+
+    @if $first &gt; $last {
+        @error &#39;#{$first} can´t be larger that #{$last} for `between`&#39;;
+    }
+
+    @if $selector != null and (type-of($selector) != &#39;string&#39; or length($selector) &gt; 1) {
+        @error &#39;`#{$selector}` is not a valid selector for `between`&#39;;
+    }
+
+    $between-selector: _build-quantity-selector($selector-append, $selector);
+
+
+    @at-root #{$between-selector} {
+        @content;
+    }
+ }" data-collapsed="@mixin between($at-least, $at-most) { ... }"><code>@mixin between($at-least, $at-most) { ... }</code></pre><a href="https://github.com/W3cplus/SassMagic/sassdoc/mixins/_quantity-queries.scss#L151-L177" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Query when total items is at least X items and at most Y items</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$at-least</code></th><td data-label="desc"><p>Lower quantity of items to match</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$at-most</code></th><td data-label="desc"><p>Higher quantity of items to match</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).<h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Make the items color red when there are at least 2 and at most 4 items</p></div><pre class="example__code language-scss"><code>ul li {
+  @include between(4, 8) { color: red; }
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Make the items color blue when there are at least 6 items and at most 10 items and use &#39;*&#39; (element agnostic) as the item selector</p></div><pre class="example__code language-scss"><code>ul li {
+  @include between(6, 10, &#39;*&#39;) { color: blue; }
+}</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p><code>#{$first}</code> is not a valid number for <code>between</code></p></li><li><p><code>#{$last}</code> is not a valid number for <code>between</code></p></li><li><p>#{$first} can´t be larger that #{$last} for <code>between</code></p></li><li><p><code>#{$selector}</code> is not a valid selector for <code>between</code></p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-_build-quantity-selector"><code>_build-quantity-selector</code></a></li></ul></p></section><section class="main__item container item" id="undefined-mixin-exactly"><h3 class="item__heading"><a class="item__name" href="#mixin-exactly">exactly</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin exactly($count) { 
+    $selector-append: &#39;:nth-last-child(#{$count}):first-child&#39;;
+
+    @if type-of($count) != &#39;number&#39; or not unitless($count) or $count &lt; 1 {
+        @error &#39;`#{$count}` is not a valid number for `exactly`&#39;;
+    }
+
+    @if $selector != null and (type-of($selector) != &#39;string&#39; or length($selector) &gt; 1) {
+        @error &#39;`#{$selector}` is not a valid selector for `exactly`&#39;;
+    }
+
+    $exactly-selector: _build-quantity-selector($selector-append, $selector);
+
+
+    @at-root #{$exactly-selector} {
+        @content;
+    }
+ }" data-collapsed="@mixin exactly($count) { ... }"><code>@mixin exactly($count) { ... }</code></pre><a href="https://github.com/W3cplus/SassMagic/sassdoc/mixins/_quantity-queries.scss#L195-L212" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Query when total items is exactly N items</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$count</code></th><td data-label="desc"><p>Quantity to match (equal)</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Content</h3><p>This mixin allows extra content to be passed (through the <code>@content</code> directive).<h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>Make the items color red when there are exactly 4 items</p></div><pre class="example__code language-scss"><code>ul li {
+  @include exactly(4) { color: red; }
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>Make the items color blue when there are exactly 6 items and use &#39;*&#39; (element agnostic) as the item selector</p></div><pre class="example__code language-scss"><code>ul li {
+  @include exactly(6, &#39;*&#39;) { color: blue; }
+}</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p><code>#{$count}</code> is not a valid number for <code>exactly</code></p></li><li><p><code>#{$selector}</code> is not a valid selector for <code>exactly</code></p></li></ul><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-_build-quantity-selector"><code>_build-quantity-selector</code></a></li></ul></p></section><section class="main__item container item" id="undefined-mixin-size"><h3 class="item__heading"><a class="item__name" href="#mixin-size">size</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin size($width, $height:$width) { 
+	width: $width;
+	height: $height;
+ }" data-collapsed="@mixin size($width, $height:$width) { ... }"><code>@mixin size($width, $height:$width) { ... }</code></pre><a href="https://github.com/W3cplus/SassMagic/sassdoc/mixins/_size.scss#L27-L30" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>元素宽度和高度的设置,当<code>$width</code>和<code>$height</code>大小一样时，实现一个正方形。</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$width</code></th><td data-label="desc"><p>盒子宽度</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$height:$width</code></th><td data-label="desc"><p>盒子高度</p></td><td data-label="type"><code>Number</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>//SCSS
+
+.square {
+	@include size(50px);
+}
+.rectangle {
+	@include size(100px, 50px);
+}
+
+//Output CSS
+
+.square {
+	width: 50px;
+	height: 50px; 
+}
+.rectangle {
+	width: 100px;
+  	height: 50px; 
+}</code></pre></div><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="https://gist.github.com/ffd4e5cfcaf9bd23f3e4">https://gist.github.com/ffd4e5cfcaf9bd23f3e4</a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>大漠</p></li></ul></section></section><section class="main__sub-section" id="undefined-function"><h2 class="main__heading--secondary"><div class="container">functions</div></h2><section class="main__item container item" id="undefined-function-ae-str-replace"><h3 class="item__heading"><a class="item__name" href="#function-ae-str-replace">ae-str-replace</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function ae-str-replace($string, $search, $replace) { 
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + ae-str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+ }" data-collapsed="@function ae-str-replace($string, $search, $replace) { ... }"><code>@function ae-str-replace($string, $search, $replace) { ... }</code></pre><a href="https://github.com/W3cplus/SassMagic/sassdoc/mixins/_angled-edges.scss#L17-L25" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Replace <code>$search</code> with <code>$replace</code> in <code>$string</code></p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$string</code></th><td data-label="desc"><p>Initial string</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$search</code></th><td data-label="desc"><p>Substring to replace</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$replace</code></th><td data-label="desc"><p>(&#39;&#39;) - New value</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code> &mdash;<p>Updated string</p></div><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-ae-svg-encode"><code>ae-svg-encode</code></a></li></ul><h3 class="item__sub-heading">Links</h3><ul class="list-unstyled"><li><a href="http://www.sassmeister.com/gist/1b4f2da5527830088e4d">http://www.sassmeister.com/gist/1b4f2da5527830088e4d</a></li></ul><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Hugo Giraudel</p></li></ul></section><section class="main__item container item" id="undefined-function-ae-svg-encode"><h3 class="item__heading"><a class="item__name" href="#function-ae-svg-encode">ae-svg-encode</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function ae-svg-encode($string) { 
+	$result: ae-str-replace($string, &#39;&lt;svg&#39;, &quot;&lt;svg xmlns=&#39;http://www.w3.org/2000/svg&#39;&quot;);
+	$result: ae-str-replace($result, &#39;%&#39;, &#39;%25&#39;);
+	$result: ae-str-replace($result, &#39;&quot;&#39;, &#39;%22&#39;);
+	$result: ae-str-replace($result, &quot;&#39;&quot;, &#39;%27&#39;);
+	$result: ae-str-replace($result, &#39; &#39;, &#39;%20&#39;);
+	$result: ae-str-replace($result, &#39;&lt;&#39;, &#39;%3C&#39;);
+	$result: ae-str-replace($result, &#39;&gt;&#39;, &#39;%3E&#39;);
+	@return &#39;data:image/svg+xml,&#39; + $result;
+ }" data-collapsed="@function ae-svg-encode($string) { ... }"><code>@function ae-svg-encode($string) { ... }</code></pre><a href="https://github.com/W3cplus/SassMagic/sassdoc/mixins/_angled-edges.scss#L32-L41" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Encode SVG to use as background</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$string</code></th><td data-label="desc">&mdash;<span class="visually-hidden">none</span></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code> &mdash;<p>Encoded svg data</p></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-ae-str-replace"><code>ae-str-replace</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-angled-edge"><code>angled-edge</code></a></li></ul></section><section class="main__item container item" id="undefined-function-_last-simple-selector"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#function-_last-simple-selector">_last-simple-selector</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function _last-simple-selector($selector) { 
+    $parsed: selector-parse($selector);
+
+    @if length($parsed) &gt; 1 {
+      @error &#39;`#{$selector}` contains #{length($parsed)} selectors and the `_last-simple-selector()`function accepts only 1.&#39;;
+    }
+    $last-simple-selector: nth(nth($parsed, 1), -1);
+
+    @return $last-simple-selector;
+ }" data-collapsed="@function _last-simple-selector($selector) { ... }"><code>@function _last-simple-selector($selector) { ... }</code></pre><a href="https://github.com/W3cplus/SassMagic/sassdoc/mixins/_quantity-queries.scss#L28-L37" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Find the last simple selector in a given selector</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$selector</code></th><td data-label="desc"><p>A single selector</p></td><td data-label="type"><code>List</code> or <code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>String</code> &mdash;<p>The last simple selector in $selector</p></div><h3 class="item__sub-heading">Example</h3><div class="item__example example"><pre class="example__code language-scss"><code>$result: _last-simple-selector(ul &gt; li); // li</code></pre></div><h3 class="item__sub-heading">Throws</h3><ul class="list-unstyled"><li><p><code>#{$selector}</code> contains #{length($parsed)} selectors and the <code>_last-simple-selector()</code>function accepts only 1.</p></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[function]</span> <a href="#undefined-function-_build-quantity-selector"><code>_build-quantity-selector</code></a></li></ul></section><section class="main__item container item" id="undefined-function-_build-quantity-selector"><h3 class="item__heading"><span class="item__access">[private]</span> <a class="item__name" href="#function-_build-quantity-selector">_build-quantity-selector</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@function _build-quantity-selector($selector-append, $last-selector) { 
+    $quantity-selector: ();
+
+    @each $s in &amp; {
+        $last-simple-selector: &#39;~&#39; + if($last-selector, $last-selector, _last-simple-selector($s));
+        $sel: selector-append($s, $selector-append);
+        $sel2: selector-nest($sel, $last-simple-selector);
+        $quantity-selector: append($quantity-selector, $sel, &#39;comma&#39;);
+        $quantity-selector: append($quantity-selector, $sel2 , &#39;comma&#39;);
+    }
+
+    @return $quantity-selector;
+ }" data-collapsed="@function _build-quantity-selector($selector-append, $last-selector) { ... }"><code>@function _build-quantity-selector($selector-append, $last-selector) { ... }</code></pre><a href="https://github.com/W3cplus/SassMagic/sassdoc/mixins/_quantity-queries.scss#L50-L62" class="item__source-link" target="_blank">View source</a></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Builds the selector for the quantity query</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter</span>Name</th><th scope="col"><span class="visually-hidden">parameter</span>Description</th><th scope="col"><span class="visually-hidden">parameter</span>Type</th><th scope="col"><span class="visually-hidden">parameter</span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$selector-append</code></th><td data-label="desc"><p>The selector to be appended</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$last-selector</code></th><td data-label="desc"><p>The item&#39;s selector</p></td><td data-label="type"><code>String</code></td><td data-label="default">&mdash;<span class="visually-hidden">none</span></td></tr></tbody></table><h3 class="item__sub-heading">Returns</h3><div class="item__description item__description--inline"><code>List</code> &mdash;<p>The final quantity query selector</p></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[function]</span> <a href="#undefined-function-_last-simple-selector"><code>_last-simple-selector</code></a></li></ul><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-at-least"><code>at-least</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-at-most"><code>at-most</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-between"><code>between</code></a></li><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-exactly"><code>exactly</code></a></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --><span class="project-info__name">Sassmagic</span><!-- Version --> <span class="project-info__version">- v1.0.0</span><!-- License --> <span class="project-info__license">, under MIT</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>

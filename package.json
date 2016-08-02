@@ -1,27 +1,34 @@
 {
   "name": "SassMagic",
   "version": "1.0.0",
-  "repository": "git@gitlab.alibaba-inc.com:templates/SassMagic.git",
+  "description": "SassMagic is a collection of Sass mixins and functions to ease and improve our implementations of common style-code patterns.",
   "author": {
     "name": "Airen",
-    "email": "airenliao@gmail.com"
+    "email": "airenliao@gmail.com",
+    "url": "http://www.w3cplus.com"
   },
   "license": "MIT",
   "keywords": [
-    "mt",
-    "template"
+    "sass",
+    "scss",
+    "W3cplus",
+    "SassMagic"
   ],
   "devDependencies": {
     "autoprefixer": "~6.1.2",
+    "browserify": "^13.1.0",
     "del": "^2.2.0",
-    "gulp": "^3.9.0",
+    "gulp": "^3.9.1",
     "gulp-eslint": "^1.1.1",
     "gulp-htmlone": "^0.1.9",
     "gulp-postcss": "~6.0.1",
     "gulp-px3rem": "^0.2.2",
     "gulp-rename": "^1.2.2",
-    "gulp-ruby-sass": "^2.0.6"
-  },
-  "description": "mt template for <tmpl-snow>",
-  "mt": {}
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-streamify": "^1.0.2",
+    "gulp-uglify": "^2.0.0",
+    "gulpify": "^0.1.1",
+    "sassdoc": "^2.1.20",
+    "vinyl-source-stream": "^1.1.0"
+  }
 }
