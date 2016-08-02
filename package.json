@@ -1,0 +1,27 @@
+{
+  "name": "SassMagic",
+  "version": "1.0.0",
+  "repository": "git@gitlab.alibaba-inc.com:templates/SassMagic.git",
+  "author": {
+    "name": "Airen",
+    "email": "airenliao@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "mt",
+    "template"
+  ],
+  "devDependencies": {
+    "autoprefixer": "~6.1.2",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^1.1.1",
+    "gulp-htmlone": "^0.1.9",
+    "gulp-postcss": "~6.0.1",
+    "gulp-px3rem": "^0.2.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.0.6"
+  },
+  "description": "mt template for <tmpl-snow>",
+  "mt": {}
+}
