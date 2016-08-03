@@ -1,0 +1,22 @@
+@mixin haslines($gutter:20px, $color:#ccc, $minWidth:20px, $height:1px) {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    &:before,
+    &:after {
+        content: '';
+        flex-grow: 1;
+        background-color: $color;
+        display: inline-block;
+        vertical-align: middle;
+        height: $height;
+        min-width: $minWidth;
+    }
+    &:before {
+        margin-right: $gutter;
+    }
+    &:after {
+        margin-left: $gutter;
+    }
+}
