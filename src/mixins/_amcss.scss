@@ -1,7 +1,39 @@
-@charset "UTF-8";
-
-//AMCSS:http://amcss.github.io/
-//Thanks:http://sassmeister.com/gist/2709da070d6aac25a9f5
+/// AMCSS，实现自定义属性的属性选择器，其前缀采用了am字符开头
+/// @access public
+/// @param {type} $module - 自定义属性名
+/// @param {type} $trait [null] - 属性值
+/// @content
+/// @example
+///   //SCSS
+/// 
+///   @include am(module) {
+///       color: red;
+///   }
+/// 
+///   @include am(module, blue) {
+///     color: blue;
+///   }
+/// 
+///   @include am(module, large) {
+///     font-size: 2em;
+///   }
+/// 
+///   //CSS
+/// 
+///   [am-module] {
+///     color: red;
+///   }
+/// 
+///   [am-module~="blue"] {
+///     color: blue;
+///   }
+/// 
+///   [am-module~="large"] {
+///     font-size: 2em;
+///   }
+/// 
+/// @link http://sassmeister.com/gist/2709da070d6aac25a9f5
+/// @author AMCSS
 
 @mixin am($module, $trait: null) {
   @if $trait != null {
@@ -15,29 +47,3 @@
     }
   }
 }
-
-// ===============================use=============================
-// @include am(module) {
-//   color: red;
-// }
-
-// @include am(module, blue) {
-//   color: blue;
-// }
-
-// @include am(module, large) {
-//   font-size: 2em;
-// }
-// ==================================Output==========================
-// [am-module] {
-//   color: red;
-// }
-
-// [am-module~="blue"] {
-//   color: blue;
-// }
-
-// [am-module~="large"] {
-//   font-size: 2em;
-// }
-// ==================================================================

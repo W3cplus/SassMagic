@@ -1,13 +1,44 @@
 /// 控制文字行数溢出点点点
-/// @param  {[string]} $v      [1] 默认一行对于点点点结束
+/// @param  {number} $lines      [1] - 默认一行对于点点点结束
+/// @example
+/// 
+/// //SCSS
+/// div {
+/// 	@include box-clamp;
+/// }
+///
+///	.box {
+/// 	@include box-clamp(3);
+///	}
+///	//CSS
+///	div {
+///	  overflow: hidden;
+///	  display: -webkit-box;
+///	  display: box;
+///	  -webkit-line-clamp: 1;
+///	  line-clamp: 1;
+///	  -webkit-box-orient: vertical;
+///	  box-orient: vertical;
+///	}
+///
+///	.box {
+///	  overflow: hidden;
+///	  display: -webkit-box;
+///	  display: box;
+///	  -webkit-line-clamp: 3;
+///	  line-clamp: 3;
+///	  -webkit-box-orient: vertical;
+///	  box-orient: vertical;
+///	}
+///
 /// @link http://sassmeister.com/gist/599f5d4cbe6d8d108eda
 
-@mixin boxClamp($v:1){
+@mixin box-clamp($lines:1){
     overflow:hidden;
-    -webkit-line-clamp: $v;
-    line-clamp: $v;
-    -webkit-box-orient: vertical;
-    box-orient: vertical;
     display:-webkit-box;
     display:box;
+    -webkit-line-clamp: $lines;
+    line-clamp: $lines;
+    -webkit-box-orient: vertical;
+    box-orient: vertical;
 }

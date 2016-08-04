@@ -1,19 +1,12 @@
-//-------------------------------------------------------------------------------------
-// Angled Edges v1.0.4 (https://github.com/josephfusco/angled-edges)
-// Copyright 2016 Joseph Fusco
-// Licensed under MIT (https://github.com/josephfusco/angled-edges/blob/master/LICENSE)
-//-------------------------------------------------------------------------------------
-
 /// Replace `$search` with `$replace` in `$string`
-///
-/// @author Hugo Giraudel
-/// @link   http://www.sassmeister.com/gist/1b4f2da5527830088e4d
-///
 /// @param  {String}  $string - Initial string
 /// @param  {String}  $search - Substring to replace
 /// @param  {String}  $replace ('') - New value
 /// @return {String}  Updated string
 ///
+/// @author Hugo Giraudel
+/// @link   http://www.sassmeister.com/gist/1b4f2da5527830088e4d
+
 @function ae-str-replace($string, $search, $replace: '') {
 	$index: str-index($string, $search);
 
@@ -24,7 +17,7 @@
 	@return $string;
 }
 
-/// Encode SVG to use as background
+/// SVG编码当作背景
 ///
 /// @param  {String}  $string
 /// @return {String}  Encoded svg data
@@ -42,12 +35,11 @@
 
 /// Outputs pseudo content for main mixin
 ///
-/// @author Joseph Fusco
-///
 /// @param  {String}  $location
 /// @param  {Number}  $height
 /// @output psuedo content
-///
+/// @author Joseph Fusco
+
 @mixin ae-pseudo($wedge, $height) {
 	background-image: url($wedge);
 	background-position: center center;

@@ -124,7 +124,7 @@ gulp.task('sassdoc', function () {
     //   foo: 'Foo group',
     //   bar: 'Bar group',
     // },
-    basePath: 'https://github.com/W3cplus/SassMagic/sassdoc',
+    basePath: 'https://github.com/W3cplus/SassMagic/docs',
   };
 
   return gulp.src('src/**/*.scss')
@@ -136,6 +136,6 @@ gulp.task('watch', ['default'], function () {
   gulp.watch([paths.src + '/**/*.scss'], ['css']);
 });
 
-gulp.task('build', ['clean', 'sass', 'css', 'eslint', 'htmlone']);
+gulp.task('build', ['clean', 'sass', 'css', 'eslint', 'htmlone','sassdoc']);
 gulp.task('default', ['build']);
 
