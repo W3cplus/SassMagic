@@ -4,6 +4,37 @@ SassMagic is a collection of Sass mixins and functions to ease and improve our i
 
 Collection best of Sass Mixins and Function.If you have seen good and meaningful Mixins or Functions, please send us your code.Let more students share your results.
 
+## Clone Project
+
+	git clone git@github.com:W3cplus/SassMagic.git
+
+## Install
+
+Please install NPM and NodeJS. If the installation is done, please run the following command in the project root directory:
+
+	npm install
+
+or 
+
+	cnpm install
+
+## Run the project
+
+In the project root orders, please run the following command：
+
+	gulp
+
+If you need to monitor your modified files, you can run：
+
+	gulp watch
+
+If you want to generate Sassdoc document, please run：
+
+	gulp sassdoc
+
+If you want to view Sassdoc documentation, please enter the following address in the address bar of the browser:
+
+	http://localhost/yourworkshopaddress/SassMagic/docs/
 
 ## License
 
