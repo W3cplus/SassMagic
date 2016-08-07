@@ -3,7 +3,7 @@
 /// @param  {String}  $search - Substring to replace
 /// @param  {String}  $replace ('') - New value
 /// @return {String}  Updated string
-///
+/// @access private
 /// @author Hugo Giraudel
 /// @link   http://www.sassmeister.com/gist/1b4f2da5527830088e4d
 
@@ -18,10 +18,10 @@
 }
 
 /// SVG编码当作背景
-///
+/// @access private
 /// @param  {String}  $string
 /// @return {String}  Encoded svg data
-///
+
 @function ae-svg-encode($string){
 	$result: ae-str-replace($string, '<svg', "<svg xmlns='http://www.w3.org/2000/svg'");
 	$result: ae-str-replace($result, '%', '%25');
