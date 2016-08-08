@@ -1,24 +1,16 @@
-@charset "UTF-8";
-
-// Thanks:https://github.com/starzonmyarmz/sass-mixins/blob/master/_calc.scss by @starzonmyarmz (https://github.com/starzonmyarmz)
-// http://caniuse.com/#search=calc
-// http://www.w3.org/TR/css3-values/#calc
+/// Calc计算
+/// @param {String} $prop CSS属性
+/// @param {String} $val CSS属性值的表达式
+/// @example
+/// //SCSS
+/// .calc{
+/// 	 @include calc(width,'100% - 20px');
+///	}
+/// //CSS
+/// .calc {
+///		width: calc(100% - 20px);
+///	}
 
 @mixin calc($prop, $val) {
-  @each $pre in -webkit-, -moz- {
-    #{$prop}: $pre + calc(#{$val});
-  }
   #{$prop}: calc(#{$val});
 }
-
-// ===================================Use================================
-// .calc{
-//   @include calc(width,'100% - 20px');
-// }
-// =====================================Output=============================
-// .calc {
-//   width: -webkit-calc(100% - 20px);
-//   width: -moz-calc(100% - 20px);
-//   width: calc(100% - 20px);
-// }
-// ======================================================================

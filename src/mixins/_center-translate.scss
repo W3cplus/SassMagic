@@ -1,19 +1,30 @@
+/// 使用translate实现水平垂直居中
+/// @param {String} $direction [both] - 水平垂直,其它值`horizontal`和`vertical`
+/// @example
+/// //SCSS
+/// .center{
+///   @include center-translate;
+/// }
+/// //CSS
+/// .center {
+///   position: absolute;
+///   top: 50%;
+///   left: 50%;
+///   transform: translate3d(-50%, -50%, 0);
+/// }
 @mixin center-translate($direction: both) {
     position: absolute;
     @if $direction == both {
         top: 50%;
         left: 50%;
-        -webkit-transform: translate3d(-50%, -50%, 0);
         transform: translate3d(-50%, -50%, 0);
     }
     @else if $direction == horizontal {
         left: 50%;
-        -webkit-transform: translate3d(-50%, 0, 0);
         transform: translate3d(-50%, 0, 0);
     }
     @else if $direction == vertical {
         top: 50%;
-        -webkit-transform: translate3d(0, -50%, 0);
         transform: translate3d(0, -50%, 0);
     }
 }

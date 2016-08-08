@@ -1,4 +1,38 @@
-//http://lugolabs.com/caret
+/// 绘制三角形
+/// @param {String} $position 
+/// @param {Number} $caret-width 三角形外宽度
+/// @param {Number} $border-width 三角形内宽度
+/// @param {String} $direction 三角形方向
+/// @param {String} $border-color 边框颜色
+/// @param {String} $background-color 背景颜色
+/// @example
+/// //SCSS
+/// .caret{
+///   @include caret(absolute,50px,1px,bottom,red,#ccc);
+/// }
+/// //CSS
+/// .caret {
+///     position: absolute;
+/// }
+/// .caret:before, .caret:after {
+///    content: "";
+///   `position: absolute;
+/// }
+/// .caret:before {
+///    top: 0;
+///    left: 0;
+///    border-top: 50px solid red;
+///    border-left: 50px solid transparent;
+///    border-right: 50px solid transparent;
+/// }
+/// .caret:after {
+///    left: 1px;
+///    top: 0;
+///    border-top: 49px solid #ccc;
+///    border-left: 49px solid transparent;
+///    border-right: 49px solid transparent;
+/// }
+/// @link http://lugolabs.com/caret
 
 @mixin caret($position,$caret-width,$border-width,$direction,$border-color,$background-color){
   position: $position;
