@@ -1,0 +1,541 @@
+
+/// @param {string} $old-context - 选择器
+/// @param {string} $new-context - 选择器
+/// @content
+/// @example
+/// //SCSS
+/// .tabs {
+///     .tab {
+///         background: red;
+///         &:hover {
+///             background: white;
+///         }
+///         .tab-link {
+///             color: white;
+///             @include context('.tab', '.tab:hover') {
+///                 color: red;
+///             }
+///         }
+///     }
+/// }
+/// //CSS
+/// .tabs .tab {
+///  	background: red;
+///	}
+///	.tabs .tab:hover {
+///  	background: white;
+///	}
+///	.tabs .tab .tab-link {
+///  	color: white;
+///	}
+///	.tabs .tab:hover .tab-link {
+///  	color: red;
+///	}
+/// @link Thanks:http://sassmeister.com/gist/ba63c6546349047ad73b
+
+@mixin context($old-context, $new-context) {
+    @at-root #{selector-replace(&, $old-context, $new-context)} {
+        @content;
+    }
+}
+
+/// @param {list} $states - 选择器组
+/// @example
+/// //SCSS
+/// .tab {
+/// 	background: red;
+///	
+///     &:hover {
+///     	background: white;
+///     }
+///
+///   	.tab-link {
+///     	color: white;
+/// 
+///         @include parentState(':hover', '.active') {
+///         	color: pink;
+///         }            
+/// 	}
+/// }
+/// //CSS
+/// .tab {
+///	  	background: red;
+///	}
+///	.tab:hover {
+///	  	background: white;
+///	}
+///	.tab .tab-link {
+///	  	color: white;
+///	}
+///	.tab:hover .tab-link {
+///	  	color: pink;
+///	}
+///	.tab.active .tab-link {
+///	  	color: pink;
+///	}
+@mixin parentState($states...) {
+    $parent: nth(nth(&, 1), (length(nth(&, 1))-1));
+    
+    @each $state in $states {    
+      @at-root #{selector-replace(&, $parent, ($parent#{$state}))} {
+          @content;
+      }
+    }
+}
+
+/// 伪元素
+/// @param {string} $el - 伪元素`:before`或`:after`
+/// @param {number} $el-width - 伪元素的`width`
+/// @param {number} $el-height - 伪元素的 `height`
+/// @example
+/// //SCSS
+/// .icon-toggle {
+///   width: 1.56em;
+///   height: 0.75em;
+///   position: relative;
+///   display: inline-block;
+///   border-top: solid .125em #60666c;
+///
+///   @include pseudo-elements(before, 1.56em, .125em) {
+///     background: #888c91;
+///     top: .25em;
+///   }
+///   @include pseudo-elements(after, 1.56em, .125em) {
+///     background: #afb3b5;
+///     bottom: 0;
+///   }
+/// }
+/// // Out CSS
+/// .icon-toggle {
+///   width: 1.56em;
+///   height: 0.75em;
+///   position: relative;
+///   display: inline-block;
+///   border-top: solid .125em #60666c;
+/// }
+/// .icon-toggle:before {
+///   content: "";
+///   position: absolute;
+///   width: 1.56em;
+///   height: 0.125em;
+///   background: #888c91;
+///   top: .25em;
+/// }
+/// .icon-toggle:after {
+///   content: "";
+///   position: absolute;
+///   width: 1.56em;
+///   height: 0.125em;
+///   background: #afb3b5;
+///   bottom: 0;
+/// }
+/// @author Guil Hernandez
+/// @link Thanks: http://blog.teamtreehouse.com/modular-pseudo-elements-sass
+
+@mixin pseudo-elements($el,$el-width,$el-height){
+	@if $el == "before" or $el == "after"{
+		&:#{$el}{
+			content: "";
+			position: absolute;
+			width: $el-width;
+			height: $el-height;
+			@content;
+		}
+	}
+	@else {
+		@warn "`#{$el}` is not a valid pseudo-element.";
+	}
+}
+
+
+/// Parent Hover
+/// @example
+/// //SCSS
+/// .nav-menu {
+///   li {
+///     float: left;
+///     a {
+///       color: blue;
+///       @include parent-hover {
+///         color: purple;
+///       }
+///     }
+///     .sub-menu {
+///       display: none;
+///       @include parent-hover {
+///         display: block;
+///       }
+///     }
+///   }
+/// }
+/// //Out CSS
+/// .nav-menu li {
+///   float: left;
+/// }
+/// .nav-menu li a {
+///   color: blue;
+/// }
+/// .nav-menu li:hover a {
+///   color: purple;
+/// }
+/// .nav-menu li .sub-menu {
+///   display: none;
+/// }
+/// .nav-menu li:hover .sub-menu {
+///   display: block;
+/// }
+/// @link http://sassmeister.com/gist/5ede2ad94b87929db8fe
+
+@mixin parent-hover() {
+  $selector: &;
+  @each $list in & {
+    $parent: nth($list,length($list)-1);
+    $selector: selector-replace($selector,$parent,$parent+':hover');
+  }
+  @at-root #{$selector} {
+    @content;
+  }
+}
+
+/// parent-nth-status($index, $status, $place: suffix)
+/// @param {number} $index
+/// @param {string} $status
+/// @param {string} $place [prefix/suffix/prepend/append]
+/// @example
+/// //SCSS
+/// .a .b, .a .c {
+///   @include parent-nth-status(1, ':hover', suffix) {
+///     color: red;
+///   }
+///   @include parent-nth-status(1, '.en', prepend) {
+///     color: green;
+///   }
+///   @include parent-nth-status(-2, '.target', append) {
+///     colore: blue;
+///   }
+/// }
+/// // Out CSS
+/// .a:hover .b, .a:hover .c {
+///   color: red;
+/// }
+/// .en .a .b, .en .a .c {
+///   color: green;
+/// }
+/// .a .target .b, .a .target .c {
+///   color: blue;
+/// }
+@mixin parent-nth-status($index, $status, $place: suffix) {
+  $func-name: parent-nth-status;
+  $new-selectors: ();
+  $selectors: &;
+
+  $status: unquote($status);
+  $place: unquote($place);
+
+  @if not $selectors {
+    @error "#{$func-name} should not at root!";
+  }
+
+  @if not $status or $status == "" {
+    @error "#{$func-name} parameter $status error";
+  }
+
+  @each $selector in $selectors {
+    $len: length($selector);
+    $index: if($index < 0, $len + $index + 1, $index);
+    $result: ();
+
+    @for $i from 1 through $len {
+      $item: nth($selector, $i);
+
+      @if $i == $index {
+        @if $place == suffix {
+          $result: $item + $status;
+        } @else if $place == prefix {
+          $result: $status + $item;
+        } @else if $place == prepend {
+          $result: append($status, $item);
+        } @else if $place == append {
+          $result: append($item, $status);
+        }
+      }
+      @else {
+        $result: append($result, $item);
+      }
+
+    }
+
+    $new-selectors: append($new-selectors, $result, comma);
+  }
+
+  @at-root #{$new-selectors} {
+    @content;
+  }
+}
+
+/// Parent Status
+/// @param {string} $status
+/// @param {string} $place [prefix/suffix/prepend/append]
+/// @content
+/// @example
+/// //SCSS
+/// .tab {
+///   a {
+///     display: inline-block;
+///     padding: 10px 60px;
+///     cursor: pointer;
+///
+///     &:hover {
+///       background: #AAA;
+///     }
+///
+///     i {
+///       margin-left: 10px;
+///
+///       @include parent-status(':hover') { color: red; }
+///
+///       @include parent-status('.home-link') { background: blue; }
+///
+///       @include parent-status('.about-link') { background: green; }
+///     }
+///   }
+/// }
+/// // Out CSS
+/// .tab a {
+///   display: inline-block;
+///   padding: 10px 60px;
+///   cursor: pointer;
+/// }
+/// .tab a:hover {
+///   background: #AAA;
+/// }
+/// .tab a i {
+///   margin-left: 10px;
+/// }
+/// .tab a:hover i {
+///   color: red;
+/// }
+/// .tab a.home-link i {
+///   background: blue;
+/// }
+/// .tab a.about-link i {
+///   background: green;
+/// }
+@mixin parent-status($status, $place: suffix) {
+  @include parent-nth-status(-2, $status, $place) {
+    @content;
+  }
+}
+
+// 教程：http://alistapart.com/article/quantity-queries-for-css
+// quantity-queries SCSS:https://github.com/danielguillan/quantity-queries/blob/master/stylesheets/_quantity-queries.scss
+// Demo: http://codepen.io/danielguillan/pen/GgBOxm
+
+// -----------------------------------------------------------------------------
+// Quantity queries
+// -----------------------------------------------------------------------------
+// Table of contents:
+// 1. Last Simple Selector
+// 2. Build Quantity Selector
+// 3. At least
+// 4. At most
+// 5. Between
+// 6. Exactly
+
+
+// -----------------------------------------------------------------------------
+// 1. Last Simple Selector
+// -----------------------------------------------------------------------------
+
+/// Find the last simple selector in a given selector
+/// @access private
+/// @param  {list | string} $selector - A single selector
+/// @return {string}                  - The last simple selector in $selector
+/// @example scss
+///   $result: _last-simple-selector(ul > li); // li
+
+@function _last-simple-selector($selector) {
+    $parsed: selector-parse($selector);
+
+    @if length($parsed) > 1 {
+      @error '`#{$selector}` contains #{length($parsed)} selectors and the `_last-simple-selector()`function accepts only 1.';
+    }
+    $last-simple-selector: nth(nth($parsed, 1), -1);
+
+    @return $last-simple-selector;
+}
+
+
+// -----------------------------------------------------------------------------
+// 2. Build Quantity Selector
+// -----------------------------------------------------------------------------
+
+/// Builds the selector for the quantity query
+/// @access private
+/// @param  {string} $selector-append      - The selector to be appended
+/// @param  {string} $last-selector        - The item's selector
+/// @return {list}                         - The final quantity query selector
+
+@function _build-quantity-selector($selector-append, $last-selector) {
+    $quantity-selector: ();
+
+    @each $s in & {
+        $last-simple-selector: '~' + if($last-selector, $last-selector, _last-simple-selector($s));
+        $sel: selector-append($s, $selector-append);
+        $sel2: selector-nest($sel, $last-simple-selector);
+        $quantity-selector: append($quantity-selector, $sel, 'comma');
+        $quantity-selector: append($quantity-selector, $sel2 , 'comma');
+    }
+
+    @return $quantity-selector;
+}
+
+
+// -----------------------------------------------------------------------------
+// 3. At least
+// -----------------------------------------------------------------------------
+
+/// Query when total items is at least N items
+/// @param  {number} $count - Quantity to match (equal or more)
+/// @example scss - Make the items color red when there are 4 items or more
+///   ul li {
+///     @include at-least(4) { color: red; }
+///   }
+/// @example scss - Make the items color blue when there are 6 items or more and use '*' (element agnostic) as the item selector
+///   ul li {
+///     @include at-least(6, '*') { color: blue; }
+///   }
+
+@mixin at-least($count, $selector: null) {
+    $selector-append: ':nth-last-child(n+#{$count})';
+
+    @if type-of($count) != 'number' or not unitless($count) or $count < 1 {
+        @error '`#{$count}` is not a valid number for `at-least`';
+    }
+
+    @if $selector != null and (type-of($selector) != 'string' or length($selector) > 1) {
+        @error '`#{$selector}` is not a valid selector for `at-least`';
+    }
+
+    $at-least-selector: _build-quantity-selector($selector-append, $selector);
+
+
+    @at-root #{$at-least-selector} {
+        @content;
+    }
+}
+
+
+// -----------------------------------------------------------------------------
+// 4. At most
+// -----------------------------------------------------------------------------
+
+/// Query when total items is at most N items
+/// @param  {number} $count - Quantity to match (equal or less)
+/// @example scss - Make the items color red when there are 4 items or less
+///   ul li {
+///     @include at-most(4) { color: red; }
+///   }
+/// @example scss - Make the items color blue when there are 6 items or less and use '*' (element agnostic) as the item selector
+///   ul li {
+///     @include at-most(6, '*') { color: blue; }
+///   }
+
+@mixin at-most($count, $selector: null) {
+    $selector-append: ':nth-last-child(-n+#{$count}):first-child';
+
+    @if type-of($count) != 'number' or not unitless($count) or $count < 1 {
+        @error '`#{$count}` is not a valid number for `at-most`.';
+    }
+
+    @if $selector != null and (type-of($selector) != 'string' or length($selector) > 1) {
+        @error '`#{$selector}` is not a valid selector for `at-most`';
+    }
+
+    $at-most-selector: _build-quantity-selector($selector-append, $selector);
+
+
+    @at-root #{$at-most-selector} {
+        @content;
+    }
+}
+
+
+// -----------------------------------------------------------------------------
+// 5. Between
+// -----------------------------------------------------------------------------
+
+/// Query when total items is at least X items and at most Y items
+/// @param  {number} $at-least - Lower quantity of items to match
+/// @param  {number} $at-most - Higher quantity of items to match
+/// @example scss - Make the items color red when there are at least 2 and at most 4 items
+///   ul li {
+///     @include between(4, 8) { color: red; }
+///   }
+/// @example scss - Make the items color blue when there are at least 6 items and at most 10 items and use '*' (element agnostic) as the item selector
+///   ul li {
+///     @include between(6, 10, '*') { color: blue; }
+///   }
+
+
+@mixin between($first, $last, $selector: null) {
+    $selector-append: ':nth-last-child(n+#{$first}):nth-last-child(-n+#{$last}):first-child';
+
+    @if type-of($first) != 'number' or not unitless($first) or $first < 1 {
+        @error '`#{$first}` is not a valid number for `between`';
+    }
+
+    @if type-of($last) != 'number' or not unitless($last) or $last < 1 {
+        @error '`#{$last}` is not a valid number for `between`';
+    }
+
+    @if $first > $last {
+        @error '#{$first} can´t be larger that #{$last} for `between`';
+    }
+
+    @if $selector != null and (type-of($selector) != 'string' or length($selector) > 1) {
+        @error '`#{$selector}` is not a valid selector for `between`';
+    }
+
+    $between-selector: _build-quantity-selector($selector-append, $selector);
+
+
+    @at-root #{$between-selector} {
+        @content;
+    }
+}
+
+
+// -----------------------------------------------------------------------------
+// 6. Exactly
+// -----------------------------------------------------------------------------
+
+/// Query when total items is exactly N items
+/// @param  {number} $count - Quantity to match (equal)
+/// @example scss - Make the items color red when there are exactly 4 items
+///   ul li {
+///     @include exactly(4) { color: red; }
+///   }
+/// @example scss - Make the items color blue when there are exactly 6 items and use '*' (element agnostic) as the item selector
+///   ul li {
+///     @include exactly(6, '*') { color: blue; }
+///   }
+
+@mixin exactly($count, $selector: null) {
+    $selector-append: ':nth-last-child(#{$count}):first-child';
+
+    @if type-of($count) != 'number' or not unitless($count) or $count < 1 {
+        @error '`#{$count}` is not a valid number for `exactly`';
+    }
+
+    @if $selector != null and (type-of($selector) != 'string' or length($selector) > 1) {
+        @error '`#{$selector}` is not a valid selector for `exactly`';
+    }
+
+    $exactly-selector: _build-quantity-selector($selector-append, $selector);
+
+
+    @at-root #{$exactly-selector} {
+        @content;
+    }
+}
