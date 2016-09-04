@@ -1,9 +1,6 @@
-//https://gist.github.com/airen/d7f8ad25c982750dcb86
+/// Float
+/// @param {string} $direction [left] - 左浮动 [right] - 右浮动
 
-@mixin float($direction: left,$support-for-ie:false){
-
+@mixin float($direction: left){
 	float: unquote($direction);
-	@if $support-for-ie{
-		_display: inline;
-	}
 }

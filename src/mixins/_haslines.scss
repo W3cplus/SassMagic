@@ -1,3 +1,9 @@
+/// Has Lines
+/// @param {number} $gutter [20px] - 间距
+/// @param {string} $color [#ccc] - 线条颜色
+/// @param {number} $minWidth [20px] - 线条宽度
+/// @param {number} $height [1px] - 线条粗细
+
 @mixin haslines($gutter:20px, $color:#ccc, $minWidth:20px, $height:1px) {
     display: flex;
     align-items: center;

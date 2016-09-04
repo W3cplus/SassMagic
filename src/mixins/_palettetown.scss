@@ -1,7 +1,9 @@
-// from: https://github.com/jordiesaenz/palette-town
-// Author: @jordiesaenz
-// DEMO: http://codepen.io/airen/pen/BzPLXr
-// Try changing the $test-color variable in the CSS area and watch a new color palette generate!
+/// Try changing the $test-color variable in the CSS area and watch a new color palette generate!
+/// @param {list} $color
+/// @param {string} $type
+/// @link https://github.com/jordiesaenz/palette-town
+/// @author jordiesaenz
+
 
 @mixin palette-town($color, $type) {
     $color-primary: $color !global;

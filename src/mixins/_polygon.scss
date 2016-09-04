@@ -1,6 +1,11 @@
-// http://www.w3cplus.com/preprocessor/creat-css-polygon-wiht-border-and-clip-path-property.html
-
 $PI: 3.141592653589793;
+
+/// Border Polygon
+/// @param {number} $num - 多边型数量
+/// @param {string} $color [#000] - 多边型颜色
+/// @param {number} $radius [64px] - 多边型背景
+/// @author 大漠
+/// @link http://www.w3cplus.com/preprocessor/creat-css-polygon-wiht-border-and-clip-path-property.html
 @mixin border-polygon($num, $color: #000, $radius: 64px) {
     position: relative;
     height: 2.5*$radius;
@@ -22,6 +27,12 @@ $PI: 3.141592653589793;
     }
 }
 
+/// 使用 clip 制作多边形
+/// @param {number} $num - 多边形数量
+/// @param {string} $color - 多边形颜色
+/// @param {number} $radius - 多边形半径
+/// @author 大漠
+/// @link http://www.w3cplus.com/preprocessor/creat-css-polygon-wiht-border-and-clip-path-property.html
 @mixin clip-polygon($num, $color, $radius: 64px) {
     position: relative;
     width: $radius*2;

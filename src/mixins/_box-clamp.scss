@@ -1,5 +1,6 @@
 /// 控制文字行数溢出点点点
 /// @param  {number} $lines      [1] - 默认一行对于点点点结束
+/// @param  {number} $substract  [0] - 默认宽度为100% - 0
 /// @example
 /// 
 /// //SCSS
@@ -31,14 +32,20 @@
 ///	  box-orient: vertical;
 ///	}
 ///
-/// @link http://sassmeister.com/gist/599f5d4cbe6d8d108eda
 
-@mixin box-clamp($lines:1){
-    overflow:hidden;
-    display:-webkit-box;
-    display:box;
-    -webkit-line-clamp: $lines;
-    line-clamp: $lines;
-    -webkit-box-orient: vertical;
-    box-orient: vertical;
+@mixin ellipsis($line: 1, $substract: 0) {
+    @if $line == 1 {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 100% - $substract;
+    	overflow: hidden;
+    } @else {
+        overflow:hidden;
+	    display:-webkit-box;
+	    display:box;
+	    -webkit-line-clamp: $lines;
+	    line-clamp: $lines;
+	    -webkit-box-orient: vertical;
+	    box-orient: vertical;
+    }
 }

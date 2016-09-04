@@ -1,3 +1,5 @@
+/// @param {string} $font-size - 字号大小
+
 @mixin font-dpr($font-size){
 	font-size: $font-size;
 

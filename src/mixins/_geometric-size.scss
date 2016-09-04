@@ -1,3 +1,7 @@
+/// Geometric size
+/// @param {number} $width - 容器的`width`
+/// @param {number} $height - 容器的`height`
+/// @param {number} $base [0]
 @mixin geometric-size($width, $height, $base: 0) {
     @if $base == 0 {
         width: $width;
@@ -8,4 +12,17 @@
     }
     height: 0;
     overflow: hidden;
+}
+
+/// 容器高度相对于宽度的计算
+/// @param {number} $percentage [100%] - 高度和宽度一样
+/// @param {string} $pos [after] - 通过伪元元素 `after`来撑开容器 [before] - 通过伪元素 `before`来撑开容器
+@mixin heightRelativeToWidth($percentage: 100%, $pos: 'after') {
+    &:#{$pos} {
+        content: " ";
+        display: block;
+        height: 0;
+        padding-bottom: $percentage;
+        @content;
+    }
 }
