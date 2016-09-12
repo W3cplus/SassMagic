@@ -1,6 +1,0 @@
-/// Float
-/// @param {string} $direction [left] - 左浮动 [right] - 右浮动
-
-@mixin float($direction: left){
-	float: unquote($direction);
-}
