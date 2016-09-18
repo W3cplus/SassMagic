@@ -25,7 +25,7 @@
         align-items: $align;
     }
     @if($justify !=false) {
-        justify-content: $pack;
+        justify-content: $justify;
     }
 }
 
