@@ -1,11 +1,12 @@
 /// Computes the height of the tilted pseudo-element based on the given angle
 /// using Pythagoras Theorem.
-// sin(..), pow(..) and sqrt(..)  functions come from this pen:
-// http://codepen.io/HugoGiraudel/pen/rLpPGo
 /// @access public
 /// @author Hugo Giraudel
 /// @param {Angle} $angle - the tilt angle
 @function get-tilted-height($angle) {
+  // sin(..), pow(..) and sqrt(..)  functions come from this pen:
+  // http://codepen.io/HugoGiraudel/pen/rLpPGo
+
   $a: (100% / 1%);
   $A: (90deg - $angle);
   $c: ($a / sin($A));
