@@ -1,0 +1,46 @@
+/// Computes the height of the tilted pseudo-element based on the given angle
+/// using Pythagoras Theorem.
+// sin(..), pow(..) and sqrt(..)  functions come from this pen:
+// http://codepen.io/HugoGiraudel/pen/rLpPGo
+/// @access public
+/// @author Hugo Giraudel
+/// @param {Angle} $angle - the tilt angle
+@function get-tilted-height($angle) {
+  $a: (100% / 1%);
+  $A: (90deg - $angle);
+  $c: ($a / sin($A));
+  $b: sqrt(pow($c, 2) - pow($a, 2));
+
+  @return (abs($b) * 1%);
+}
+
+/// Apply a tilted effect by generating a pseudo-element with a diagonal
+/// splitted background.
+/// @access public
+/// @author Hugo Giraudel
+/// @param {Angle} $angle - the tilt angle
+/// @param {Color} $color - the color to be used as background + gradient
+/// @param {String} $position ['top'] - either `top` or `bottom`
+/// @param {String} $pseudo ['before'] - either `before` or `after`
+@mixin tilted($angle, $color, $position: 'top', $pseudo: 'before') {
+  $height: get-tilted-height($angle);
+
+  position: relative;
+  background-color: $color;
+
+  &::#{$pseudo} {
+    content: '';
+    padding-top: $height;
+    position: absolute;
+    left: 0;
+    right: 0;
+
+    @if ($position == 'top') {
+      bottom: 100%;
+      background-image: linear-gradient($angle, $color 50%, transparent 50%);
+    } @else {
+      top: 100%;
+      background-image: linear-gradient($angle, transparent 50%, $color 50%);
+    }
+  }
+}
