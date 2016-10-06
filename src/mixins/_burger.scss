@@ -13,12 +13,12 @@
 
 
 /// Burger
-/// @param {Number} $width - `30px`
-/// @param {Number} $height - `5px`
-/// @param {Number} $gutter - `3px`
-/// @param {String} $color - `#000`
-/// @param {Number} $border-radius - `0`
-/// @param {Number} $transition-duration - `0`
+/// @param {Number} $width  30px
+/// @param {Number} $height  5px
+/// @param {Number} $gutter  3px
+/// @param {String} $color  #000
+/// @param {Number} $border-radius  0
+/// @param {Number} $transition-duration  0
 /// @example
 /// //SCSS
 /// .burger {
@@ -167,7 +167,7 @@
 
 
 /// Burger animations
-/// @param {String} $color - `auto`
+/// @param {String} $color - auto
 @mixin burger-to-cross($color: auto) {
     & {
         background-color: transparent;
