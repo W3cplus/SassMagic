@@ -1,0 +1,186 @@
+//-------------------------------------------------------------------------------------
+// Sass burger (https://github.com/jorenvanhee/sass-burger)
+// Copyright 2016 Joren Van Hee
+// Licensed under MIT (http://joren.mit-license.org/)
+//-------------------------------------------------------------------------------------
+
+
+// Burger parts
+//
+// (---) top    -> &::before
+// [---] middle -> &
+// (---) bottom -> &::after
+
+
+/// Burger
+/// @param {Number} $width - `30px`
+/// @param {Number} $height - `5px`
+/// @param {Number} $gutter - `3px`
+/// @param {String} $color - `#000`
+/// @param {Number} $border-radius - `0`
+/// @param {Number} $transition-duration - `0`
+/// @example
+/// //SCSS
+/// .burger {
+///  @include burger;
+/// }
+/// //Output CSS
+/// .burger {
+///  position: relative;
+///  margin-top: 8px;
+///  margin-bottom: 8px;
+///  user-select: none;
+/// }
+/// .burger, .burger::before, .burger::after {
+///   display: block;
+///   width: 30px;
+///   height: 5px;
+///   background-color: #000;
+///   outline: 1px solid transparent;
+///   transition-property: background-color, transform;
+///   transition-duration: 0.3s;
+/// }
+/// .burger::before, .burger::after {
+///   position: absolute;
+///   content: "";
+/// }
+/// .burger::before {
+///   top: -8px;
+/// }
+/// .burger::after {
+///   top: 8px;
+/// }
+
+/// @author Joren Van Hee
+@mixin burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s) {
+    $burger-height: $height !global;
+    $burger-gutter: $gutter !global;
+
+    position: relative;
+    margin-top: $height + $gutter;
+    margin-bottom: $height + $gutter;
+
+    user-select: none;
+
+    // 1. Fixes jagged edges in Firefox, see issue #10.
+    &,
+    &::before,
+    &::after {
+        display: block;
+        width: $width;
+        height: $height;
+        background-color: $color;
+        outline: 1px solid transparent; // 1
+        @if $border-radius != 0 {
+            border-radius: $border-radius;
+        }
+
+        transition-property: background-color, transform;
+        transition-duration: $transition-duration;
+    }
+
+    &::before, &::after {
+        position: absolute;
+        content: "";
+    }
+
+    &::before {
+        top: -($height + $gutter);
+    }
+
+    &::after {
+        top: $height + $gutter;
+    }
+}
+
+
+/// Select parts of the burger
+/// @example
+/// //SCSS
+/// .burger {
+///  @include burger-top {
+///    background-color: red;
+///  }
+/// }
+/// //Output CSS
+/// .burger,
+/// .burger::before,
+/// .burger::after {
+///  background-color: red;
+/// }
+@mixin burger-parts {
+    &,
+    &::before,
+    &::after {
+        @content;
+    }
+}
+
+/// @example
+/// //SCSS
+/// .burger {
+///  @include burger-top {
+///    background-color: red;
+///  }
+/// }
+/// //Output CSS
+/// .burger::before {
+///  background-color: red;
+/// }
+@mixin burger-top {
+    &::before {
+        @content;
+    }
+}
+/// @example
+/// //SCSS
+/// .burger {
+///  @include burger-middle {
+///    background-color: red;
+///  }
+/// }
+/// //Output CSS
+/// .burger {
+///  background-color: red;
+/// }
+@mixin burger-middle {
+    & {
+        @content;
+    }
+}
+/// @example
+/// //SCSS
+/// .burger {
+///  @include burger-bottom {
+///    background-color: red;
+///  }
+/// }
+/// //Output CSS
+/// .burger::after {
+///  background-color: red;
+/// }
+@mixin burger-bottom {
+    &::after {
+        @content;
+    }
+}
+
+
+/// Burger animations
+/// @param {String} $color - `auto`
+@mixin burger-to-cross($color: auto) {
+    & {
+        background-color: transparent;
+    }
+    @if ($color != auto) {
+        &::before, &::after {
+            background-color: $color;
+        }
+    }
+    &::before {
+        transform: translateY($burger-gutter + $burger-height) rotate(45deg);
+    }
+    &::after {
+        transform: translateY(-($burger-gutter + $burger-height)) rotate(-45deg);
+    }
+}
