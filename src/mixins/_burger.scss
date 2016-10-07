@@ -12,12 +12,12 @@
 // (---) bottom -> &::after
 
 /// Burger
-/// @param {number} $width  30px
-/// @param {number} $height  5px
-/// @param {Number} $gutter  3px
-/// @param {string} $color  #000
-/// @param {number} $border-radius  0
-/// @param {number} $transition-duration  0
+/// @param {number} $width  [30px] - 宽度
+/// @param {number} $height  [5px] - 高度
+/// @param {Number} $gutter  [3px] - 间距
+/// @param {string} $color  [#000] - 线条颜色
+/// @param {number} $border-radius  [0] - 圆角
+/// @param {number} $transition-duration  [0] - 动效持续时间
 /// @example
 /// //SCSS
 /// .burger {
