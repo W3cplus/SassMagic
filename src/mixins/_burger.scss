@@ -11,14 +11,13 @@
 // [---] middle -> &
 // (---) bottom -> &::after
 
-
 /// Burger
-/// @param {Number} $width  30px
-/// @param {Number} $height  5px
+/// @param {number} $width  30px
+/// @param {number} $height  5px
 /// @param {Number} $gutter  3px
-/// @param {String} $color  #000
-/// @param {Number} $border-radius  0
-/// @param {Number} $transition-duration  0
+/// @param {string} $color  #000
+/// @param {number} $border-radius  0
+/// @param {number} $transition-duration  0
 /// @example
 /// //SCSS
 /// .burger {
@@ -50,7 +49,6 @@
 /// .burger::after {
 ///   top: 8px;
 /// }
-
 /// @author Joren Van Hee
 @mixin burger($width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s) {
     $burger-height: $height !global;
