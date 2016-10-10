@@ -14,6 +14,16 @@
     "W3cplus",
     "SassMagic"
   ],
+  "bugs": {
+    "url": "https://github.com/W3cplus/SassMagic/issues"
+  },
+  "repository": [
+    {
+      "type": "git",
+      "url": "https://github.com/W3cplus/SassMagic.git"
+    }
+  ],
+  "homepage": "http://w3cplus.github.io/SassMagic",
   "devDependencies": {
     "autoprefixer": "~6.1.2",
     "browserify": "^13.1.0",
