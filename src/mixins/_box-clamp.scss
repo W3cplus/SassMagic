@@ -33,7 +33,7 @@
 ///	}
 ///
 
-@mixin ellipsis($line: 1, $substract: 0) {
+@mixin ellipsis($lines: 1, $substract: 0) {
     @if $line == 1 {
         white-space: nowrap;
         text-overflow: ellipsis;
