@@ -712,8 +712,8 @@
 }
 
 /// range selector mixin
-/// @param {number} {$start} -开始值
-/// @param {number} {$end} -结束值
+/// @param {number} $start - 开始值
+/// @param {number} $end - 结束值
 /// @example
 /// //SCSS
 /// li {
@@ -732,8 +732,8 @@
 }
 
 /// mod query mixin
-/// @param {number} $mod -整除倍数
-/// @param {number} $remainder -余数
+/// @param {number} $mod - 整除倍数
+/// @param {number} $remainder - 余数
 /// @example
 /// //SCSS
 /// li{
