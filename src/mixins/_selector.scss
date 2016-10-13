@@ -711,7 +711,47 @@
   }
 }
 
+/// range selector mixin
+/// @param {number} {$start} -开始值
+/// @param {number} {$end} -结束值
+/// @example
+/// //SCSS
+/// li {
+///  @include select-range(3,5){
+///    color: red;
+///  }
+/// }
+/// //Output CSS
+/// li:nth-child(n+3):nth-child(-n+5) {
+///  color: red;
+/// }
+@mixin select-range($start, $end){
+  &:nth-child(n+#{$start}):nth-child(-n+#{$end}){
+    @content;
+  }
+}
 
+/// mod query mixin
+/// @param {number} $mod -整除倍数
+/// @param {number} $remainder -余数
+/// @example
+/// //SCSS
+/// li{
+///  @include mod-list(3,1){
+///    color: green;
+///  }
+/// }
+/// //Output CSS
+/// li:nth-last-child(3n+1):first-child,
+/// li:nth-last-child(3n+1):first-child ~ li {
+///  color: green;
+/// }
+@mixin mod-list($mod, $remainder){
+  &:nth-last-child(#{$mod}n+#{$remainder}):first-child,
+  &:nth-last-child(#{$mod}n+#{$remainder}):first-child ~ & {
+    @content;
+  }
+}
 
 // Functions
 @function orderIndex($i, $index, $direction){
