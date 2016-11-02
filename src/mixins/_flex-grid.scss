@@ -1,0 +1,220 @@
+// ===================================================================
+// Flexbox Grid Mixins
+// Version 0.1.3
+// Description: Sass Mixins to generate Flexbox grid
+// Author: thingsym
+// GitHub: https://github.com/thingsym/flexbox-grid-mixins
+// MIT License
+// ===================================================================
+
+/// Define the grid container
+/// @param {string} $display [flex] - 生成一个block-level或者inline-level网格容器:[flex|inline-flex]
+/// @param {string} $flex-direction [null] - 指定伸缩容器主轴的伸缩流方向:[row|row-reverse|column|column-reverse]
+/// @param {string} $flex-wrap [null] - 指定伸缩项目是否沿着侧轴排列:[nowrap|wrap|wrap-reverse]
+/// @param {string} $flex-flow [null] - 适用于flex容器元素，flex-direction和flex-wrap的缩写属性: [row|row-reverse|column|column-reverse] [nowrap|wrap|wrap-reverse]
+/// @param {string} $justify-content [null] - 指定伸缩项目沿主轴对齐方式：[flex-start|flex-end|center|space-betwwen|space-around]
+/// @param {string} $align-items [null] - 指定伸缩项目沿着侧轴对齐方式：[flex-start|flex-end|center|stretch]
+/// @param {string} $align-content [null] - 指定伸缩项目行在侧轴的对齐方式:[flex-start|flex-end|center|space-between|space-around|stretch]
+/// @param {string} $gutter [null] - 网格左右两端有`margin`值，null表示没有间距，percentage表示间距为百分比，length表示间距为固定值
+/// @param {string} $grid-type [skeleton] - 网格类型:[skeleton|margin-offset]
+@mixin grid(
+		$display: flex,
+		$flex-direction: null,
+		$flex-wrap: null,
+		$flex-flow: null,
+		$justify-content: null,
+		$align-items: null,
+		$align-content: null,
+		$gutter: null,
+		$grid-type: skeleton
+	){
+	
+	@if $display {
+		display: $display;
+	}
+	
+	@if $flex-direction {
+		flex-direction: $flex-direction;
+	}
+
+	@if $flex-wrap {
+		flex-wrap: $flex-wrap;
+	}
+
+	@if $flex-flow {
+		flex-flow: $flex-flow;
+	}
+
+	@if $justify-content {
+		justify-content: $justify-content;
+	}
+
+	@if $align-items {
+		align-items: $align-items;
+	}
+
+	@if $align-content {
+		align-content: $align-content;
+	}
+
+	@if $grid-type == skeleton {
+		@if $gutter {
+			@include grid-gutter($margin: 0 $gutter / 2 * -1);
+		}
+	}
+
+	@content;
+}
+
+/// Generate the margins around grids.
+/// @param {string} $margin [null] - 设置margin值:[null|<margin-width>]
+/// @param {string} $margin-top [null] - 设置margin-top值：[null|<margin-width>]
+/// @param {string} $margin-right [null] - 设置margin-rgiht值：[null|<margin-width>]
+/// @param {string} $margin-bottom [null] - 设置margin-bottom值：[null|<margin-width>]
+/// @param {string} $margin-left [null] - 设置margin-left值：[null|<margin-width>]
+@mixin grid-gutter(
+		$margin: null,
+		$margin-top: null,
+		$margin-right: null,
+		$margin-bottom: null,
+		$margin-left: null
+	){
+	@if $margin != null {
+		margin: $margin;
+	}
+
+	@if $margin-top != null {
+		margin-top: $margin-top;
+	}
+
+	@if $margin-right != null {
+		margin-right: $margin-right;
+	}
+
+	@if $margin-bottom != null {
+		margin-bottom: $margin-bottom;
+	}
+
+	@if $margin-left != null {
+		margin-left: $margin-left;
+	}
+}
+
+/// Generate the grid columns
+/// @param {number} $col [null] - 网格列数：[null|initial|<number>|auto|equal|none|breakpoint|<width>]
+/// @param {number} $grid-columns [12] - 网格总列数
+/// @param {string} $col-offset [null] - 抵消列宽度：[null|<percentage>]
+/// @param {string} $gutter [null] - 列间距：[null|<percentage>|<length>]
+/// @param {Boolean} $condensed [false] - 去掉列顶部和底部的margin
+/// @param {string} $align-self [null] - 单个伸缩项目侧轴对齐方式:[null|auto|flex-start|flex-end|center|baseline|stretch]
+/// @param {number} $flex-grow [0] - Flex项目的扩大比例
+/// @param {number} $flex-shrink [1] - 定义Flex项目的缩小比例
+/// @param {number} $flex-basis [auto] - Flex项目在分配Flex容器剩余空间之前的一个默认尺寸:[<length>|auto]
+/// @param {number} $order [null] - 控制Flex项目的顺序源
+/// @param {string} $grid-type [skeleton] - 网格类型:[skeleton|margin-offset]
+/// @param {Boolean} $last-child [false] - 当网格类型是margin-offset时，调整最后一列margin值
+@mixin grid-col(
+		$col: null,
+		$grid-columns: 12,
+		$col-offset: null,
+		$gutter: null,
+		$condensed: false,
+		$align-self: null,
+		$flex-grow: 0,
+		$flex-shrink:1,
+		$flex-basis: auto,
+		$order: null,
+		$grid-type: skeleton,
+		$last-child: false
+	){
+
+	@if type-of($col) == number and unitless($col) == true {
+		$flex-grow: 0;
+		$flex-shrink: 0;
+		$flex-basis: percentage($col / $grid-columns);
+
+		@if $grid-type == skeleton {
+			@if $gutter and unit($gutter) == '%' {
+				$flex-basis: $flex-basis - $gutter;
+			} @else if $gutter and unitless($gutter) == false {
+				$flex-basis: calc(#{$flex-basis} - #{$gutter});
+			}
+		} @else if $grid-type == margin-offset {
+			@if $gutter and unit($gutter) == '%' {
+				$flex-basis: (100% - ($gutter * ($grid-columns / $col - 1))) / ($grid-columns / $col);
+			} @else if $gutter and unitless($gutter) == false {
+				$flex-basis: calc( #{$flex-basis} - #{$gutter * ($grid-columns / $col - 1) / ($grid-columns / $col)} );
+			}
+		}
+
+		@if $col-offset and unit($col-offset) == '%' {
+			$flex-basis: $flex-basis + $col-offset;
+		} @else if $col-offset and unitless($col-offset) == false {
+			$flex-basis: calc( #{$flex-basis} + #{$col-offset} );
+		}
+	} @else if type-of($col) == number and unitless($col) == false {
+		$flex-grow: 0;
+		$flex-shrink: 0;
+		$flex-basis: $col;
+	} @else if type-of($col) == string and $col == 'auto' {
+		$flex-grow: 1;
+		$flex-shrink: 1;
+		$flex-basis: auto;
+		max-width: 100%;
+		width: auto;
+	} @else if type-of($col) == string and $col == 'equal' {
+		// flex: 1
+		$flex-grow: 1;
+		$flex-shrink: 1;
+		$flex-basis: 0;
+	} @else if type-of($col) == string and $col == 'none' {
+		// flex: none
+		$flex-grow: 0;
+		$flex-shrink: 0;
+		$flex-basis: auto;
+	} @else if type-of($col) == string and $col == 'initial' {
+		// flex: initial
+		$flex-grow: 0;
+		$flex-shrink: 1;
+		$flex-basis: auto;
+	} @else if type-of($col) == string and $col == 'breakpoint' {
+		$flex-grow: 0;
+		$flex-shrink: 1;
+		$flex-basis: auto;
+		width: 100%;
+	}
+
+	flex: $flex-grow $flex-shrink $flex-basis;
+
+	@if $align-self {
+		align-self: $align-self;
+	}
+
+	@if type-of($order) == number {
+		order: $order;
+	}
+
+	@if $gutter and untiless($gutter) == false {
+		@if $grid-type == skeleton {
+			@if $condensed == true {
+				@include grid-gutter($margin: 0 $gutter / 2);
+			} @else {
+				@include grid-gutter($margin: 0 $gutter / 2 $gutter);
+			}
+		} @else if $grid-type == margin-offset {
+			@if type-of($col) == string and $col == 'breakpoint' {
+				@include grid-gutter($margin-right: 0);
+			} @else if $last-child {
+				@include grid-gutter($margin-right: 0);
+			} @else {
+				@include grid-gutter($margin-right: $gutter);
+			}
+
+			@if $condensed == false {
+				@include grid-gutter($margin-bottom: $gutter);
+			}
+		}
+	}
+
+	@content;
+}
