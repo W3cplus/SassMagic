@@ -194,7 +194,7 @@
 		order: $order;
 	}
 
-	@if $gutter and untiless($gutter) == false {
+	@if $gutter and unitless($gutter) == false {
 		@if $grid-type == skeleton {
 			@if $condensed == true {
 				@include grid-gutter($margin: 0 $gutter / 2);
