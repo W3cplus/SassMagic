@@ -1,0 +1,101 @@
+// Sprite Spirit
+// SCSS Mixin that Bring Image Sprite to life
+// Authour: Eliorshalev https://github.com/eliorshalev
+// Github: https://github.com/eliorshalev/sprite-spirit
+// MIT License
+
+/// Set Dimensions
+/// @param {Number} $width [null] - 宽度
+/// @param {Number} $height [$width] - 高度
+/// @example 
+/// //SCSS
+/// .box {
+/// 	@include dimensions(100px,200px);
+/// }
+/// //Output CSS
+/// .box {
+/// 	width: 100px;
+/// 	height: 200px;
+/// }
+/// @author Eliorshalev
+
+@mixin dimensions($width: null, $height: $width) {
+	width: $width;
+	height: $height;
+}
+
+/// Sprite to Animate Mixin
+/// @param {String} $name - 动画名称
+/// @param {String} $url - Sprite图路径
+/// @param {Boolean} $vertical - Sprite图是不是垂直排列
+/// @param {Number} $width - Sprite图宽度
+/// @param {Number} $hieght - Spritel图高度
+/// @param {String} $frameNum - 动画帧数
+/// @param {Number} $duration [.8] - 动画播放持续时间
+/// @param {Number} $iteration [0] - 动画播放次数
+/// @param {Boolean} $reverse [false] - 动画是不是反向播放
+/// @example
+/// //SCSS
+/// .spriteAnimate {
+/// 	@include spriteSpirit(
+/// 		'sprite',
+///    		'//www.w3cplus.com/img/srpite.png',
+///		    false,
+/// 		800px,
+/// 	    100px,
+/// 	    8,
+/// 	    1s
+/// 	  )
+/// }
+/// @author Eliorshalev
+/// @link https://eliorshalev.github.io/sprite-spirit/
+
+@mixin spriteSpirit(
+	$name,
+	$url,
+	$vertical,
+	$width,
+	$height,
+	$frameNum,
+	$duration: .8,
+	$iteration: 0,
+	$reverse: false) {
+		$single-Y-frame: $height / $frameNum;
+  		$single-X-frame: $width / $frameNum;
+
+  		background-image: url($url);
+  		background-repeat: no-repeat;
+  		background-size: $width $height;
+  		animation: #{$name} steps($frameNum);
+  		animation-duration: $duration + s;
+
+  		@if $iteration == 0 {
+    		animation-iteration-count: infinite;
+  		} @else {
+    		animation-iteration-count: $iteration;
+  		}
+
+  		@if $reverse == true {
+    		animation-direction: reverse;
+  		} @else {
+    		animation-direction: normal;
+  		}
+
+  		@if $vertical == true {
+    		@include dimensions($width: $width, $height: $single-Y-frame);
+    		background-position: 0 top;
+  		} @else {
+    		@include dimensions($width: $single-X-frame, $height: $height);
+    		background-position: left 0;
+  		}
+
+  		@keyframes #{$name} {
+    		to {
+      			@if $vertical == true {
+        			background-position: 0 -#{$height};
+      			} @else {
+        			background-position: -#{$width} 0;
+      			}
+    		}
+  		}
+}
