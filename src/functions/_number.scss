@@ -29,7 +29,7 @@
         @else {
             @if not $index {
                 $result: if($minus, $result * -1, $result);
-                @return length($result, str-slice($string, $i));
+                @return unit-length($result, str-slice($string, $i));
             }
 
             $number: nth($numbers, $index);
