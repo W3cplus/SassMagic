@@ -1,6 +1,10 @@
 // Import Functions
 @import "functions/amcss";
 @import "functions/calc-percent";
+@import "functions/decimal";
+@import "functions/exponent";
+@import "functions/length";
+@import "functions/number";
 @import "functions/polygon";
 @import "functions/px2em";
 @import "functions/strip-units";
@@ -21,7 +25,7 @@
 @import "mixins/equal-parts";
 @import "mixins/fluid-ratio";
 @import "mixins/flex-grid";
-@import "mixins/fluid-type";
+@import "mixins/typographic";
 @import "mixins/geometric-size";
 @import "mixins/gradient";
 @import "mixins/haslines";

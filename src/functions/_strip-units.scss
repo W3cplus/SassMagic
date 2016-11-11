@@ -1,5 +1,8 @@
-@charset "UTF-8";
-
+/// Removes the unit (e.g. px, em, rem) from a value, returning the number only.
+///
+/// @param {Number} $num - Number to strip unit from.
+/// @returns {Number} The same number, sans unit.
+/// @link https://github.com/zurb/foundation-sites/blob/develop/scss/util/_unit.scss
 @function strip-units($number){
 	@return $number / ($number * 0 + 1);
 }

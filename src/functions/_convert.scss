@@ -1,0 +1,29 @@
+/// Converts one or more pixel values into matching rem (or em) values.
+/// @param {String} $unit - 单位名称（一般是em或rem）
+/// @param {Number|List} $value - One or more values to convert. Be sure to separate them with spaces and not commas. If you need to convert a comma-separated list, wrap the list in parentheses.
+/// @param {Number} $base-font-size [null] - The base value to use when calculating the `rem`. If you're using Foundation out of the box, this is 16px. If this parameter is `null`, the function will reference the `$base-font-size` variable as the base.
+/// @returns {List} A list of converted values.
+/// @link https://github.com/zurb/foundation-sites/blob/develop/scss/util/_unit.scss
+@function convert($unit, $value, $base-font-size:null) {
+	$value: strip-units($value) / strip-units($base-font-size) * number(1 + $unit);
+
+	@if ($value == (0 + $unit)){
+		$value: 0;
+	}
+
+	@return $value;
+}
+
+/// Converts a unitless, pixel, or rem value to em, for use in breakpoints.
+/// @param {Number|List} $value - One or more values to convert. Be sure to separate them with spaces and not commas. If you need to convert a comma-separated list, wrap the list in parentheses.
+/// @param {Number} $base-font-size [null] - The base value to use when calculating the `rem`. If you're using Foundation out of the box, this is 16px. If this parameter is `null`, the function will reference the `$base-font-size` variable as the base.
+@function px2rem($value, $base-font-size: null) {
+	@return convert("rem", $value, $base-font-size);
+}
+
+/// Converts a unitless, pixel, or rem value to em, for use in breakpoints.
+/// @param {Number|List} $value - One or more values to convert. Be sure to separate them with spaces and not commas. If you need to convert a comma-separated list, wrap the list in parentheses.
+/// @param {Number} $base-font-size [null] - The base value to use when calculating the `rem`. If you're using Foundation out of the box, this is 16px. If this parameter is `null`, the function will reference the `$base-font-size` variable as the base.
+@function px2em($value, $base-font-size: null) {
+	@return convert("rem", $value, $base-font-size);
+}

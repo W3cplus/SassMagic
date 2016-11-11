@@ -1,0 +1,230 @@
+/// Fluid vertical rhythm and Fluid Modular scale
+/// @param {string} $properties - CSS属性
+/// @param {string} $min-vw - 视窗最小宽度(viewport min-width)
+/// @param {string} $max-vw - 视窗最大宽度(viewport max-width)
+/// @param {string} $min-value - 最小值
+/// @param {string} $max-value - 最大值
+/// @example
+///  //SCSS
+///  $minScreen: 20rem; // $min-vw
+///  $maxScreen: 50rem; // $max-vw
+///  $minFont: .8rem; // $min-value
+///  $maxFont: 2rem; // $max-value
+///  :root {
+///  	@include fluid-type(font-size, $minScreen, $maxScreen, $minFont, $maxFont);
+///  }
+///  //Output CSS
+///  :root {
+///    font-size: 0.8rem;
+///  }
+///  @media screen and (min-width: 20rem) {
+///    :root {
+///      font-size: calc(0.8rem + 1.2 * ((100vw - 20rem) / 30));
+///    }
+///  }
+///  @media screen and (min-width: 50rem) {
+///    :root {
+///      font-size: 2rem;
+///    }
+///  }
+@mixin fluid-type($properties, $min-vw, $max-vw, $min-value, $max-value) {
+	& {
+		@each $property in $properties {
+			#{$property}: $min-value;
+		}
+
+		@media screen and (min-width: $min-vw) {
+			@each $property in $properties {
+				#{$property}: calc(#{$min-value} + #{strip-units($max-value - $min-value)} * ((100vw - #{$min-vw}) / #{strip-units($max-vw - $min-vw)}));
+			}
+		}
+
+		@media screen and (min-width: $max-vw) {
+			@each $property in $properties {
+				#{$property}: $max-value;
+			}
+		}
+	}
+}
+
+// Super easy to use Sass mixins to establish a typographic system with modular scale and vertical rhythm
+// Author: hiulit
+// Github: https://github.com/hiulit/Sassy-Gridlover
+// Gridlover app: http://hiulit.github.io/Sassy-Gridlover/sassdoc/
+
+/// To use in the `body` element.Outputs `font-size` and `line-height`.
+/// @param {number} $font-size [18px] - Base font size(Define $base-font-size)
+/// @param {number} $base-line-height [1.2] - Base line-height (Define $base-line-height)
+/// @param {number} $base-font-size [16px] - Default font size
+/// @param {string} $unit ["px"] - Unit to output (Define $base-unit)
+/// @example scss
+/// body {
+/// 	@include body();
+/// }
+/// @example css
+/// body {
+///     font-size: 18px;
+///     line-height: 22px;
+/// }
+/// @author hiulit
+/// @link https://github.com/hiulit/Sassy-Gridlover/blob/master/sassy-gridlover/_sassy-gridlover.scss
+
+@mixins body($font-size: 18px,$base-line-height: 1.2,$base-font-size:16px, $unit: 'px'){
+	$line-height: round(($font-size * $base-line-height));
+
+	@if ($unit == 'px' or $unit == 'pxrem') {
+		font-size: $font-size * 1px;
+		line-height: $line-height * 1px;
+	}
+
+	@if ($unit == 'rem' or $unit == 'pxrem'){
+		font-size: px2rem($font-size);
+		line-height: px2rem($line-height);
+	}
+	@if ($unit == "em") {
+		font-size: decimal-ceil(px2em($font-size,strip-units($base-font-size)),5);
+		line-height: decimal-ceil(px2em($line-height, $font-size), 5);
+	}
+}
+
+/// To use in headings `<h1> - <h4>`.
+///
+/// Outputs `font-size`, `line-height`, `margin-bottom` and `margin-top`.
+///
+/// @param {number} $step -
+/// `<h1>` &rarr; `$step: 3`
+///
+/// `<h2>` &rarr; `$step: 2`
+///
+/// `<h3>` &rarr; `$step: 1`
+///
+/// `<h4>` &rarr; `$step: 0`
+///
+/// @param {string} $unit ["px"] - Unit to output(Defin $base-unit)
+/// @param {number} $base-value [18px] - Optional call with a different base font size when using em (Define $base-font-size)
+/// @param {number} $scale-factor [1.618] - Scale factor constants
+/// @param {number} $base-line-height [1.2] - Base line-height
+/// @example scss
+/// h1 {
+/// 	@include heading(3, "em");
+/// }
+///
+/// h2 {
+/// 	@include heading(2, "px");
+/// }
+///
+/// h3 {
+/// 	@include heading(1, "pxrem");
+/// }
+///
+/// h4 {
+/// 	@include heading(0);
+/// }
+///
+/// @example css
+/// h1 {
+///     font-size: 4.22222em;
+///     line-height: 1.15789em;
+///     margin-bottom: 0.28947em;
+///     margin-top: 0.57895em;
+/// }
+///
+/// h2 {
+///     font-size: 47px;
+///     line-height: 66px;
+///     margin-bottom: 22px;
+///     margin-top: 44px;
+/// }
+///
+/// h3 {
+///     font-size: 29px;
+///     line-height: 44px;
+///     margin-bottom: 22px;
+///     margin-top: 22px;
+///     font-size: 1.8125rem;
+///     line-height: 2.75rem;
+///     margin-bottom: 1.375rem;
+///     margin-top: 1.375rem;
+/// }
+///
+/// h4 {
+///     font-size: 18px;
+///     line-height: 22px;
+///     margin-bottom: 22px;
+///     margin-top: 22px;
+///     font-size: 1.125rem;
+///     line-height: 1.375rem;
+///     margin-bottom: 1.375rem;
+///     margin-top: 1.375rem;
+/// }
+
+@mixin heading($step, $unit: "px", $base-value: 18px, $scale-factor: 1.618, $base-line-height:1.2) {
+    $font-size: $base-value;
+    $scale: $scale-factor;
+    $computed-font-size: round($font-size * exponent($scale, $step));
+    $line-height: round($font-size * $base-line-height);
+    $lines: ceil($computed-font-size / $line-height);
+    $computed-line-height: $line-height * $lines;
+
+    $margin-top: $line-height;
+    @if ($step > 1) {
+        $margin-top: $line-height * 2;
+    }
+
+    @if ($unit == "px" or $unit == "pxrem") {
+        font-size: $computed-font-size * 1px;
+        line-height: $computed-line-height * 1px;
+        margin-bottom: $line-height * 1px;
+        margin-top: $margin-top * 1px;
+    }
+
+    @if ($unit == "rem" or $unit == "pxrem") {
+        font-size: px2rem($computed-font-size);
+        line-height: px2rem($computed-line-height);
+        margin-bottom: px2rem($line-height);
+        margin-top: px2rem($margin-top);
+    }
+
+    @if ($unit == "em") {
+        font-size: decimal-ceil(px2em($computed-font-size, strip-units($base-value)), 5);
+        line-height: decimal-ceil(px2em($computed-line-height, $computed-font-size), 5);
+        margin-bottom: decimal-ceil(px2em($line-height, $computed-font-size), 5);
+        margin-top: decimal-ceil(px2em($margin-top, $computed-font-size), 5);
+    }
+}
+
+/// To use in `<p>`, `<ul>`, `<ol>`, `<pre>`, `<table>`, `<blockquote>`, etc.
+///
+/// Outputs `margin-bottom` and `margin-top`.
+///
+/// @param {string} $unit ["px"] - Unit to output(Define $base-unit)
+/// @param {number} $base-value [18px] - Optional call with a different base font size when using em (Define $base-font-size)
+/// @param {number} $base-line-height [1.2] - Base line height
+/// @example scss
+/// p, ul, ol, pre, table, blockquote {
+/// 	@include margins();
+/// }
+/// @example css
+/// p, ul, ol, pre, table, blockquote {
+///    margin-bottom: 22px;
+///    margin-top: 22px;
+/// }
+
+@mixin sgl-margins($unit: "px", $base-value: 18px, $base-line-height:1.2) {
+    $margin: round(strip-units($base-value) * $base-line-height);
+
+    @if ($unit == "px" or $unit == "pxrem") {
+        margin-bottom: $margin * 1px;
+        margin-top: $margin * 1px;
+    }
+
+    @if ($unit == "rem" or $unit == "pxrem") {
+        margin-bottom: px2rem($margin);
+        margin-top: px2rem($margin);
+    }
+
+    @if ($unit == "em") {
+        margin-bottom: decimal-ceil(px2em($margin, strip-units($base-value)), 5);
+        margin-top: decimal-ceil(px2em($margin, strip-units($base-value)), 5);
+    }
+}
