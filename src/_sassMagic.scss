@@ -1,13 +1,13 @@
 // Import Functions
 @import "functions/amcss";
 @import "functions/calc-percent";
+@import "functions/convert";
 @import "functions/decimal";
 @import "functions/exponent";
-@import "functions/unit-length";
 @import "functions/number";
 @import "functions/polygon";
-@import "functions/px2em";
 @import "functions/strip-units";
+@import "functions/unit-length";
 @import "functions/z-index";
 
 
@@ -19,13 +19,13 @@
 @import "mixins/BEM";
 @import "mixins/box-center";
 @import "mixins/box-clamp";
+@import "mixins/burger";
 @import "mixins/buttons";
 @import "mixins/calc";
 @import "mixins/caret";
 @import "mixins/equal-parts";
-@import "mixins/fluid-ratio";
 @import "mixins/flex-grid";
-@import "mixins/typographic";
+@import "mixins/fluid-ratio";
 @import "mixins/geometric-size";
 @import "mixins/gradient";
 @import "mixins/haslines";
@@ -35,14 +35,15 @@
 @import "mixins/palettetown";
 @import "mixins/polygon";
 @import "mixins/position";
-@import "mixins/px2rem";
-@import "mixins/rem";
+@import "mixins/resize";
 @import "mixins/ribbon";
-@import "mixins/burger";
+@import "mixins/scrollbars";
 @import "mixins/selector";
 @import "mixins/sticky-footer";
 @import "mixins/sprite-spirit";
+@import "mixins/sticky-footer";
 @import "mixins/tilted";
 @import "mixins/triangle";
+@import "mixins/typographic";
 @import "mixins/visuallyhidden";
 
