@@ -124,7 +124,7 @@ gulp.task('sassdoc', function () {
     //   foo: 'Foo group',
     //   bar: 'Bar group',
     // },
-    basePath: 'https://github.com/W3cplus/SassMagic/docs',
+    basePath: 'https://github.com/W3cplus/SassMagic/blob/master/src',
   };
 
   return gulp.src('src/**/*.scss')
