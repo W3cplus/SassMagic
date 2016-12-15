@@ -238,3 +238,62 @@
     @content;
   }
 }
+
+/// Media queries with Sass Maps
+/// @param {String} $qtype
+/// @example
+/// //SCSS
+/// @include media-queries( large ) {
+///  h1 {
+///    font-size: 2rem;
+///  }
+/// }
+/// // CSS
+/// @media screen and (min-width: 50rem) and (max-width: 80rem) and (-webkit-min-device-pixel-ratio: 1) {
+///  h1 {
+///    font-size: 2rem;
+///  }
+/// }
+@mixin media-queries( $qtype ) {
+  $value: screen;
+  $breakpoints: (
+    // smartphones, portrait iPhone, portrait 480x320 phones (Android)
+    // font-size of root is 16px
+    ( phone-portrait,     20rem,   30rem,   1),
+    // smartphones, portrait iPhone, portrait 480x320 phones (Android)
+    ( phone-portrait-r,   20rem,   30rem,   2),
+    // smartphones, Android phones, landscape iPhone
+    ( phone-landscape,    30rem,   37.5rem, 1 ),
+    // smartphones, Android phones, landscape iPhone
+    ( phone-landscape-r,  30rem,   37.5rem, 2 ),
+    // portrait tablets, portrait iPad, e-readers (Nook/Kindle), 
+    // landscape 800x480 phones (Android)
+    ( table-portrait,     37.5rem, 50rem,   1 ),
+    // portrait tablets, portrait iPad, e-readers (Nook/Kindle), 
+    // landscape 800x480 phones (Android)
+    ( table-portrait-r,   37.5rem, 50rem,   2 ),
+    // tablet, landscape iPad, lo-res laptops ands desktops
+    ( table-landscape,    50rem,   64rem,   1),
+    // tablet, landscape iPad, lo-res laptops ands desktops
+    ( table-landscape-r,  50rem,   64rem,   2),
+    // big landscape tablets, laptops, and desktops
+    ( large,              50rem,   80rem,   1),
+    // big landscape tablets, laptops, and desktops
+    ( large-r,            50rem,   80rem,   2),
+    // hi-res laptops and desktops
+    ( xlarge,             80rem,   100rem,  1),
+    // hi-res laptops and desktops
+    ( xlarge-r,           80rem,   100rem,  2)
+  );
+
+  @each $item in $breakpoints {
+    @if $qtype == nth($item, 1) {
+
+    @media #{$value} and (min-width: nth($item, 2))
+      and (max-width: nth($item, 3))
+      and (-webkit-min-device-pixel-ratio: nth($item, 4)) {
+        @content;
+      }
+    }
+  }
+}
