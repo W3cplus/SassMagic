@@ -1,0 +1,33 @@
+/// Full Width Containers in Limited Width Parents
+/// @param {String} $support-type [margin] - 有三个可选值`margin`、`position`、`translate`
+/// @param {Number} $min-width [null] - 父容器最小宽度
+/// @example
+/// //SCSS
+/// .full-width {
+///   @include full-width(margin, 960px);
+/// }
+/// //CSS
+/// .full-width {
+///   margin-left: calc(-50vw + 50%);
+///   margin-right: calc(-50vw + 50%);
+/// }
+@mixin full-width($support-type: margin,$min-width:null){
+  @if $support-type == 'margin' {
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+  }
+
+  @if $support-type == 'position' {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+  
+  @if $support-type == 'translate' {
+    width: 100vw;
+    transform: translateX(calc((#{$min-width} - 100vw)/2));
+  }
+}
