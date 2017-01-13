@@ -1,0 +1,105 @@
+// PLUMBER BOX - Plumber extension to align boxes to the baseline grid
+// https://github.com/jamonserrano/plumber-box
+// https://jamonserrano.github.io/plumber-sass
+// Copyright 2017 Viktor Honti
+// MIT License
+
+/// Plumber extension to align boxes to the baseline grid
+/// @param {Number} $grid-height [null] - Override the default grid height (Any unit | As set in Plumber)
+/// @param {Number} $margin [0 0] - Top and bottom margin as a multiple of grid height (One two integers)
+/// @param {String} $border [0px 0px] - Top and bottom border width (One or two non-negative px values or 0s)
+/// @param {Number} $padding [0] - Top and bottom padding as a multiple of grid height (One or two non-negative integers)
+/// @example
+/// //SCSS
+/// blockquote {
+///     @include plumber-box(
+///         $margin: 2 0, // top margin: 2, bottom margin: 0
+///         $padding: 1 1 // top padding: 1, bottom padding: 1
+///     );
+/// }
+/// //Oupt CSS
+/// blockquote {
+///     margin-top: 2rem;
+///     padding-top: 1rem;
+///     margin-bottom: 0;
+///     padding-bottom: 1rem;
+/// }
+/// @link https://github.com/jamonserrano/plumber-box
+/// @author jamonserrano:https://github.com/jamonserrano
+@mixin plumber-box(
+	$margin: 0 0,
+	$border: 0px 0px,
+	$padding: 0 0,
+	$grid-height: null
+) {
+	// *** MAKE SURE THAT PLUMBER IS INCLUDED ***
+	@if not function-exists(-plumber-get-default) {
+		@error 'Plumber-box depends on plumber-sass. Please install and include plumber-sass first';
+	}
+
+	// *** VALIDATE PARAMETERS ***
+	// if grid-height is missing try to get it from Plumber defaults
+	@if not $grid-height {
+		$grid-height: -plumber-get-default(grid-height);
+	}
+	@if not $grid-height {
+		// no luck :(
+		@error '$grid-height must be passed as a parameter or defined with -plumber-set-defaults';
+	} @else if unitless($grid-height) or $grid-height <= 0 {
+		// got it, check validity
+		@error '$grid-height parameter must be a positive unit, got #{$grid-height} instead';
+	}
+
+	// if margin has one value use it for both top and bottom
+	@if length($margin) == 1 {
+		$top: $margin;
+		$margin: ($top $top);
+	}
+	// check validity
+	@each $value in $margin {
+		@if not -plumber-is-integer($value) {
+			@error '$margin values must be integers, got #{$value} instead';
+		}
+	}
+
+	// if margin has one value use it for both top and bottom
+	@if length($border) == 1 {
+		$top: $border;
+		$border: ($top $top);
+	}
+	// check validity
+	@each $value in $border {
+		@if unitless($value) and $value == 0 {
+			$value: 0px;
+		}
+		@else if unit($value) != 'px' or $value < 0 {
+			@error '$border values must be non-negative pixels, got #{$value} instead';
+		}
+	}
+
+	// if padding has one value use it for both top and bottom
+	@if length($padding) == 1 {
+		$top: $padding;
+		$padding: ($top $top);
+	}
+	// check validity
+	@each $value in $padding {
+		@if not -plumber-is-integer($value) or $value < 0 {
+			@error '$padding values must be non-negative integers, got #{$value} instead';
+		}
+	}
+
+	// *** CSS OUTPUT ***
+	@each $position, $index in (top: 1, bottom: 2) {
+		margin-#{$position}: nth($margin, $index) * $grid-height;
+		
+		$currentPadding: nth($padding, $index);
+		$currentBorder: nth($border, $index);
+		@if $currentBorder > 0 and $currentPadding == 0 {
+			@error 'Cannot use borders with 0 padding';
+		}
+
+		padding-#{$position}: calc(#{$currentPadding * $grid-height} - #{$currentBorder});
+		border-#{$position}-width: $currentBorder;
+	}
+}
