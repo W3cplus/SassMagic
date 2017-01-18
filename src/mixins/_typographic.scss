@@ -69,7 +69,7 @@
 /// @author hiulit
 /// @link https://github.com/hiulit/Sassy-Gridlover/blob/master/sassy-gridlover/_sassy-gridlover.scss
 
-@mixins body($font-size: 18px,$base-line-height: 1.2,$base-font-size:16px, $unit: 'px'){
+@mixin body($font-size: 18px,$base-line-height: 1.2,$base-font-size:16px, $unit: 'px'){
 	$line-height: round(($font-size * $base-line-height));
 
 	@if ($unit == 'px' or $unit == 'pxrem') {
