@@ -1,0 +1,30 @@
+/// CSS Corners
+/// @param {List} $shorthand
+/// @example
+/// //SCSS
+/// $shortand:40px 20px solid red;
+/// .corners {
+///   @include corners($shortand);
+/// }
+/// //OutPut CSS
+/// .corners {
+///   border: 20px solid red;
+///   clip-path: polygon(0 40px, 0 0, 40px 0, 40px 21px, calc(100% - 40px) 21px, calc(100% - 40px) 0, 100% 0, 100% 40px, calc(100% - #bw - 1px) 40px, calc(100% - #bw - 1px) calc(100% - 40px), 100% calc(100% - 40px), 100% 100%, calc(100% - 40px) 100%, calc(100% - 40px) calc(100% - #bw - 1px), 40px calc(100% - #bw - 1px), 40px 100%, 0 100%, 0 calc(100% - 40px), 21px calc(100% - 40px), 21px 40px);
+/// }
+/// @author Bennett Feely
+/// @link http://codepen.io/bennettfeely/pen/NdVyvR
+
+@mixin corners($shorthand) {
+	$cs: nth($shorthand, 1); // corner-size
+	$-cs: calc(100% - #{$cs}); // corner-width from ends
+	$bw: nth($shorthand, 2); // border-width
+	$bs: nth($shorthand, 3); // border-style
+	$bc: nth($shorthand, 4); // border-color
+
+	border: $bw $bs $bc;
+
+	$bw: $bw + 1px; // border-width
+	$-bw: calc(100% - #{#bw} - 1px); // border-width from ends
+
+	clip-path: polygon(0 $cs, 0 0, $cs 0, $cs $bw, $-cs $bw, $-cs 0, 100% 0, 100% $cs, $-bw $cs, $-bw $-cs, 100% $-cs, 100% 100%, $-cs 100%, $-cs $-bw, $cs $-bw, $cs 100%, 0 100%, 0 $-cs, $bw $-cs, $bw $cs);
+}
