@@ -1,0 +1,93 @@
+/// Fade Text
+/// @param {String} $text-color - text color
+/// @param {String} $direction [top] - Fade Direction
+/// @param {String} $offset [2em] - Fade Offset
+/// @param {String} $transition [0.5s ease-out] - Transition Effects
+/// @example
+/// //SCSS
+/// p {
+///   color: #fff;
+///   @supports(mix-blend-mode: screen){
+///     @include fadeText(light, top, 3rem);
+///   }
+/// }
+/// //Output CSS
+/// p {
+///  color: #fff;
+/// }
+/// @supports (mix-blend-mode: screen) {
+///   p {
+///     mix-blend-mode: screen;
+///     position: relative;
+///   }
+///	  p::after {
+///     content: '';
+///     background: linear-gradient(180deg, transparent, #000 3rem) no-repeat bottom center/100% 100%;
+///     position: absolute;
+///     top: 0;
+///     right: 0;
+///     left: 0;
+///     bottom: 0;
+///     pointer-events: none;
+///     transition: 0.5s ease-out;
+///   }
+///   p:hover::after {
+///     background-size: 100% 0%;
+///   }
+/// }
+/// @author Giana
+/// @link http://codepen.io/giana/full/aJmxXm
+
+@mixin fadeText(
+	$text-color,
+	$direction: top,
+	$offset: 2em,
+	$transition: .5s ease-out
+	) {
+	// text-color: dark
+	$color: #fff;
+
+	// direction: top
+	$deg: 180deg;
+	$pos: bottom;
+
+	@if ($text-color == 'light') {
+		$color: #000;
+		mix-blend-mode: screen;
+	} @else {
+		mix-blend-mode: multiply;
+	}
+
+	@if ($direction == 'left') {
+		$deg: 90deg;
+		$pos: right;
+	} @else if ($direction == 'right'){
+		$deg: -90deg;
+		$pos: left;
+	} @else if ($direction == 'bottom') {
+		$deg: 0;
+		$pos: top;
+	}
+
+	position: relative;
+
+	&::after {
+		content: '';
+		background: linear-gradient($deg, transparent, $color $offset) no-repeat $pos center / 100% 100%;
+		position: absolute;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		pointer-events: none;
+		transition: $transition;
+	}
+
+	&:hover::after{
+		@if($direction == 'left' or $direction == 'right') {
+			background-size: 0% 100%;
+		} @else {
+			background-size: 100% 0%;
+		}
+	}
+}
