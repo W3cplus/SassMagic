@@ -16,24 +16,24 @@
 ///  color: #fff;
 /// }
 /// @supports (mix-blend-mode: screen) {
-///   p {
-///     mix-blend-mode: screen;
-///     position: relative;
-///   }
-///	  p::after {
-///     content: '';
-///     background: linear-gradient(180deg, transparent, #000 3rem) no-repeat bottom center/100% 100%;
-///     position: absolute;
-///     top: 0;
-///     right: 0;
-///     left: 0;
-///     bottom: 0;
-///     pointer-events: none;
-///     transition: 0.5s ease-out;
-///   }
-///   p:hover::after {
-///     background-size: 100% 0%;
-///   }
+/// p {
+///   mix-blend-mode: screen;
+///   position: relative;
+/// }
+///	p::after {
+///   content: '';
+///   background: linear-gradient(180deg, transparent, #000 3rem) no-repeat bottom center/100% 100%;
+///   position: absolute;
+///   top: 0;
+///   right: 0;
+///   left: 0;
+///   bottom: 0;
+///   pointer-events: none;
+///   transition: 0.5s ease-out;
+/// }
+/// p:hover::after {
+///   background-size: 100% 0%;
+/// }
 /// }
 /// @author Giana
 /// @link http://codepen.io/giana/full/aJmxXm
