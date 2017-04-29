@@ -1,0 +1,45 @@
+/// leastSquaresFit
+/// Calculate the least square fit linear regression of provided values
+/// @param {map} $map - A Sass map of viewport width and size value combinations
+/// @return Linear equation as a calc() function
+/// @example
+///   $map: (576: 24, 768: 24, 992: 34)
+///   font-size: leastSquaresFit($map)
+/// @author Jake Wilson <jake.e.wilson@gmail.com>
+@function leastSquaresFit($map) {
+    // Get the number of provided breakpoints
+    $length: length(map-keys($map));
+    // Error if the number of breakpoints is < 2
+    @if ($length < 2) {
+        @error "leastSquaresFit() $map must be at least 2 values"
+    }
+    // Calculate the Means
+    $resTotal: 0;
+    $valueTotal: 0;
+    @each $res,
+    $value in $map {
+        $resTotal: $resTotal + $res;
+        $valueTotal: $valueTotal + $value;
+    }
+    $resMean: $resTotal / $length;
+    $valueMean: $valueTotal / $length;
+    // Calculate some other stuff
+    $multipliedDiff: 0;
+    $squaredDiff: 0;
+    @each $res,
+    $value in $map {
+        // Differences from means
+        $resDiff: $res - $resMean;
+        $valueDiff: $value - $valueMean;
+        // Sum of multiplied differences
+        $multipliedDiff: $multipliedDiff + ($resDiff * $valueDiff);
+        // Sum of squared resolution differences
+        $squaredDiff: $squaredDiff + ($resDiff * $resDiff);
+    }
+    // Calculate the Slope
+    $m: $multipliedDiff / $squaredDiff;
+    // Calculate the Y-Intercept
+    $b: $valueMean - ($m * $resMean);
+    // Return the CSS calc equation
+    @return calc(#{$m * 100}vw + #{$b}px);
+}

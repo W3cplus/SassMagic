@@ -1,0 +1,14 @@
+/// map-sort
+/// Sort map by keys
+/// @param $map - A SASS map
+/// @returns A SASS map sorted by keys
+/// @requires function list-sort
+/// @author Jake Wilson <jake.e.wilson@gmail.com>
+@function map-sort($map) {
+    $keys: list-sort(map-keys($map));
+    $sortedMap: ();
+    @each $key in $keys {
+        $sortedMap: map-merge($sortedMap, ($key: map-get($map, $key)));
+    }
+    @return $sortedMap;
+}

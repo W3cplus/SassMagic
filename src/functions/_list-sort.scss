@@ -1,0 +1,20 @@
+/// list-sort
+/// Sort a SASS list
+/// @param $list - A SASS list
+/// @returns A sorted SASS list
+/// @requires function list-remove
+/// @author Jake Wilson <jake.e.wilson@gmail.com>
+@function list-sort($list) {
+    $sortedlist: ();
+    @while length($list)>0 {
+        $value: nth($list, 1);
+        @each $item in $list {
+            @if $item < $value {
+                $value: $item;
+            }
+        }
+        $sortedlist: append($sortedlist, $value, 'space');
+        $list: list-remove($list, index($list, $value));
+    }
+    @return $sortedlist;
+}
