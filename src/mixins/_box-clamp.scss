@@ -5,11 +5,11 @@
 /// 
 /// //SCSS
 /// div {
-/// 	@include box-clamp;
+/// 	@include ellipsis;
 /// }
 ///
 ///	.box {
-/// 	@include box-clamp(3);
+/// 	@include ellipsis(3);
 ///	}
 ///	//CSS
 ///	div {
@@ -34,7 +34,7 @@
 ///
 
 @mixin ellipsis($lines: 1, $substract: 0) {
-    @if $line == 1 {
+    @if $lines == 1 {
         white-space: nowrap;
         text-overflow: ellipsis;
         width: 100% - $substract;
