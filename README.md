@@ -1,3 +1,5 @@
+![](https://www.w3cplus.com/sites/default/files/blogs/2017/1707/sassmagic.png)
+
 # SassMagic
 
 SassMagic is a collection of Sass mixins and functions to ease and improve our implementations of common style-code patterns.
