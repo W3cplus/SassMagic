@@ -23,7 +23,7 @@
 
 /// Converts a unitless, pixel, or rem value to em, for use in breakpoints.
 /// @param {Number|List} $value - One or more values to convert. Be sure to separate them with spaces and not commas. If you need to convert a comma-separated list, wrap the list in parentheses.
-/// @param {Number} $base-font-size [null] - The base value to use when calculating the `rem`. If you're using Foundation out of the box, this is 16px. If this parameter is `null`, the function will reference the `$base-font-size` variable as the base.
+/// @param {Number} $base-font-size [null] - The base value to use when calculating the `em`. If you're using Foundation out of the box, this is 16px. If this parameter is `null`, the function will reference the `$base-font-size` variable as the base.
 @function px2em($value, $base-font-size: null) {
-	@return convert("rem", $value, $base-font-size);
+	@return convert("em", $value, $base-font-size);
 }
