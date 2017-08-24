@@ -38,7 +38,8 @@
     "gulp-streamify": "^1.0.2",
     "gulp-uglify": "^2.0.0",
     "gulpify": "^0.1.1",
-    "sassdoc": "^2.1.20",
+    "sass-convert": "^0.5.2",
+    "sassdoc": "^2.2.2",
     "vinyl-source-stream": "^1.1.0"
   }
 }

@@ -1,38 +1,37 @@
-@charset "UTF-8";
-
-//AMCSS:http://amcss.github.io/
-//Thanks:http://sassmeister.com/gist/92601e5f31bb71913d06
-
+/// AMCSS
+/// @param {String} $module - Module name
+/// @param {String} $trait [false] - Trait string
+/// @example
+/// // Input
+/// #{am('module')} {
+///   color: red;
+/// }
+///
+/// #{am('module', 'blue')} {
+///  color: blue;
+/// }
+///
+/// #{am('module', 'large')} {
+///  font-size: 2em;
+/// }
+/// // Output
+/// [am-module] {
+///   color: red;
+/// }
+///
+/// [am-module~="blue"] {
+///   color: blue;
+/// }
+///
+/// [am-module~="large"] {
+///   font-size: 2em;
+/// }
+/// @link http://sassmeister.com/gist/92601e5f31bb71913d06
 @function am($module, $trait: false) {
-  @if $trait == false  {
-    @return '[am-' + $module + ']';
-  } @else {
-    @return '[am-' + $module + '~="' + $trait + '"]';
-  }
+    @if $trait==false {
+        @return '[am-'+$module+']';
+    }
+    @else {
+        @return '[am-'+$module+'~="'+$trait+'"]';
+    }
 }
-
-// ================================Use====================
-// #{am('module')} {
-//   color: red;
-// }
-
-// #{am('module', 'blue')} {
-//  color: blue;
-// }
-
-// #{am('module', 'large')} {
-//  font-size: 2em;
-// }
-// ================================Output===================
-// [am-module] {
-//   color: red;
-// }
-
-// [am-module~="blue"] {
-//   color: blue;
-// }
-
-// [am-module~="large"] {
-//   font-size: 2em;
-// }
-// ========================================================

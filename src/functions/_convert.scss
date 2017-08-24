@@ -1,29 +1,75 @@
-/// Converts one or more pixel values into matching rem (or em) values.
-/// @param {String} $unit - 单位名称（一般是em或rem）
-/// @param {Number|List} $value - One or more values to convert. Be sure to separate them with spaces and not commas. If you need to convert a comma-separated list, wrap the list in parentheses.
-/// @param {Number} $base-font-size [null] - The base value to use when calculating the `rem`. If you're using Foundation out of the box, this is 16px. If this parameter is `null`, the function will reference the `$base-font-size` variable as the base.
-/// @returns {List} A list of converted values.
-/// @link https://github.com/zurb/foundation-sites/blob/develop/scss/util/_unit.scss
-@function convert($unit, $value, $base-font-size:null) {
-	$value: strip-units($value) / strip-units($base-font-size) * number(1 + $unit);
-
-	@if ($value == (0 + $unit)){
-		$value: 0;
-	}
-
-	@return $value;
-}
-
-/// Converts a unitless, pixel, or rem value to em, for use in breakpoints.
-/// @param {Number|List} $value - One or more values to convert. Be sure to separate them with spaces and not commas. If you need to convert a comma-separated list, wrap the list in parentheses.
-/// @param {Number} $base-font-size [null] - The base value to use when calculating the `rem`. If you're using Foundation out of the box, this is 16px. If this parameter is `null`, the function will reference the `$base-font-size` variable as the base.
-@function px2rem($value, $base-font-size: null) {
-	@return convert("rem", $value, $base-font-size);
-}
-
-/// Converts a unitless, pixel, or rem value to em, for use in breakpoints.
-/// @param {Number|List} $value - One or more values to convert. Be sure to separate them with spaces and not commas. If you need to convert a comma-separated list, wrap the list in parentheses.
-/// @param {Number} $base-font-size [null] - The base value to use when calculating the `rem`. If you're using Foundation out of the box, this is 16px. If this parameter is `null`, the function will reference the `$base-font-size` variable as the base.
-@function px2em($value, $base-font-size: null) {
-	@return convert("rem", $value, $base-font-size);
+/// Converting typographic units
+/// @param {Number} $value - Need to convert unit
+/// @param {String} $currentUnit - Current Unit
+/// @param {String} $convertUnit - Convert unit
+/// @param {Number} $baseSise [null] - Base font-size for html element
+/// @example
+/// //input
+/// .example1{
+///   font-size: convert(12, px, percent, 16); // converted from pixels
+/// }
+///   
+/// .example2{
+///   font-size: convert(13, pts, ems); // converted from points
+/// }
+///   
+/// .example3{
+///   font-size: convert(2.5, ems, px); // converted from ems 
+/// }
+///   
+/// .example4{
+///   font-size: convert(234, percent, px); // converted from percentage 
+/// }
+/// //Output
+/// .example1 {
+///   font-size: 75%;
+/// }
+///   
+/// .example2 {
+///   font-size: 1.08333em;
+/// }
+///   
+/// .example3 {
+///   font-size: 40px;
+/// }
+///   
+/// .example4 {
+///   font-size: 37.44px;
+/// }
+@function convert($value, $currentUnit, $convertUnit, $baseSise: 16) {
+    @if $convertUnit==px {
+        @if $converUnit==ems {
+            @return $value / $baseSise+0em;
+        }
+        @else if $convertUnit==percent {
+            @return percentage($value / $baseSise);
+        }
+    }
+    @else if $currentUnit==ems {
+        @if $convertUnit==px {
+            @return $value * $baseSise+0px;
+        }
+        @else if $convertUnit==percent {
+            @return percentage($value);
+        }
+    }
+    @else if $currentUnit==percent {
+        @if $convertUnit==px {
+            @return $value * $baseSise / 100+0px;
+        }
+        @else if $convertUnit==ems {
+            @return $value / 100+em;
+        }
+    }
+    @else if $currentUnit==pts {
+        @if $convertUnit==px {
+            @return $value * 1.3333+0px;
+        }
+        @else if $convertUnit==ems {
+            @return $value / 12+0em;
+        }
+        @else if $convertUnit==percent {
+            @return percentage($value / 12)
+        }
+    }
 }
