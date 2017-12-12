@@ -1,0 +1,396 @@
+// From Github: https://github.com/vmcreative/Hexi-Flexi-Grid
+// Author: @vmcreative
+// 
+
+/// Hexi-Flexi Grid is an SCSS component, built on the CSS Grid layout, that creates a hexagonal lattice. The mixin includes a number of customizeable settings to control the size, layout and look of the hex grid. 
+/// @author vmcreative
+/// @link https://vmcreative.github.io/Hexi-Flexi-Grid/
+
+/// Compute the fr of the vertical direction
+/// @param {Number} $l
+/// @param {Number} $c
+/// @return {Number}
+@function vfr($l, $c) {
+    @return (($l / (($c * 3) + 1)) * 1.73);
+}
+
+/// Compute the fr of the horizontal direction
+/// @param {Number} $l
+/// @param {Number} $c
+/// @return {Number}
+@function hfr($l, $c) {
+    @return (($l / (($c * 2) + 1)) * .578);
+}
+
+/// Grid horizontal height
+/// @param {Number} $gridWidth - Set the width of the hex grid.
+/// @param {Number} $rowCount - Set the number of rows in the hex grid.
+/// @param {Number} $columnCount - Set the number of columns in the hex grid.
+/// @return {Number}
+@function hGridHeight($gridWidth, $rowCount, $columnCount) {
+    @return hrf($gridWidth, $columnCount) * (($rowCount * 3) + 1);
+}
+
+/// Grid horizontal width
+/// @param {Number} $gridHeight - Set the height of the hex grid.
+/// @param {Number} $rowCount - Set the number of rows in the hex grid.
+/// @param {Number} $columnCount - Set the number of columns in the hex grid.
+/// @return {Number}
+@function hGridWidth($gridHeight, $rowCount, $columnCount) {
+    @return vfr($gridHeight, $rowCount) * (($columnCount * 2) + 1);
+}
+
+/// Grid vertical hegiht
+/// @param {Number} $gridWidth - Set the width of the hex grid.
+/// @param {Number} $rowCount - Set the number of rows in the hex grid.
+/// @param {Number} $columnCount - Set the number of columns in the hex grid.
+/// @return {Number}
+@function vGridHeight($gridWidth, $rowCount, $columnCount) {
+    @return vfr($gridWidth, $columnCount) * (($rowCount * 2) + 1);
+}
+
+/// Grid vertical width
+/// @param {Number} $gridHeight - Set the height of the hex grid.
+/// @param {Number} $rowCount - Set the number of rows in the hex grid.
+/// @param {Number} $columnCount - Set the number of columns in the hex grid.
+/// @return {Number}
+@function vGridWidth($gridHeight, $rowCount, $columnCount) {
+    @return hfr($gridHeight, $rowCount) * (($columnCount * 3) + 1);
+}
+
+/// @param {Number} $num
+/// @return {Number}
+@function hexRatio($num) {
+    @return $num * 1.156;
+}
+
+/// @param {Number} $num
+/// @return {Number}
+@function hexRatioInv($num) {
+    @return $num * .865;
+}
+
+/// @param {Number} $num
+/// @param {Number} $pos
+/// @return {Number}
+@function increment($num, $pos) {
+    @for $i from 1 to $num {
+        $pos: $pos + 2;
+    }
+    @return $pos;
+}
+
+/// Hex wrapper
+/// @param {Number} $gridWidth - Set the width of the hex grid.
+/// @param {Number} $gridHeight - Set the height of the hex grid.
+/// @param {String} $gridOrient - Set the orientation in which the grid cells will align.
+/// @param {Number} $rowCount - Set the number of rows in the hex grid.
+/// @param {Number} $columnCount - Set the number of columns in the hex grid.
+@mixin hexWrapper($gridWidth, $gridHeight, $gridOrient, $rowCount, $columnCount) {
+    @if $gridOrient == horizontal {
+        @if $gridHeight == auto {
+            $gridHeight: hGridHeight($gridWidth, $rowCount, $columnCount)
+        } @else if $gridWidth == auto {
+            $gridWidth: hGridWidth($gridHeight, $rowCount, $columnCount)
+        }
+    } @else if $gridOrient == vertical {
+        @if $gridHeight == auto {
+            $gridHeight: vGridHeight($gridWidth, $rowCount, $columnCount)
+        } @else if $gridWidth == auto {
+            $gridWidth: vGridWidth($gridHeight, $rowCount, $columnCount)
+        }
+    }
+
+    height: $gridHeight;
+    width: $gridWidth;
+}
+
+/// Hex crop
+/// @param {String} $crop - Set whether the grid will be rectangularly cropped.
+/// @param {Number} $cropFactor - Set the amount the grid will be scaled when it is cropped.
+@mixin hexCrop($crop, $cropFactor) {
+    position: relative;
+    @if $crop == none {
+        overflow: visible;
+    } @else if $crop = crop {
+        overflow: hidden;
+        .hexContainer {
+            transform: scale($cropFactor);
+        }
+    }
+}
+
+/// Hex style
+/// @param {String} $hexShape - Set the shape of the clip-mask on the cells.
+/// @param {String} $gridOrient - Set the orientation in which the grid cells will align.
+/// @param {String} $hexContent - Set the behavior of the cell content.
+/// @param {String} $hexColor - Set the background color of the cells.
+/// @param {Number} $hexMargin - Set the size of the margins on the cells.
+/// @param {Number} $hexSize - Set the size of the cells.
+@mixin hexStyle($hexShape, $gridOrient, $hexContent, $hexColor, $hexMargin, $hexSize){
+    @if $hexContent == center and $hexSize == auto {
+        height: 100%; 
+        width: 100%;
+    }
+    
+    @if $hexShape == circle {
+        -webkit-clip-path: circle(46% at 50% 50%);
+        clip-path: circle(46% at 50% 50%);
+      
+        @if $hexContent == center and $hexSize != auto {
+            @if $gridOrient == vertical {
+                height: $hexSize; 
+                width: hexRatio($hexSize)
+            } @else if $gridOrient == horizontal {
+                height: hexRatio($hexSize); 
+                width: $hexSize
+            }
+        }
+    } @else if $hexShape == hexagon {
+        @if $gridOrient == vertical {
+            @if $hexContent == center and $hexSize != auto {
+                height: $hexSize; 
+                width: hexRatio($hexSize)
+            }
+
+            -webkit-clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+            clip-path: polygon(75% 0, 100% 50%, 75% 100%, 25% 100%, 0 50%, 25% 0);
+        } @else if $gridOrient == horizontal {
+            @if $hexContent == center and $hexSize != auto  {
+                height: hexRatio($hexSize); 
+                width: $hexSize
+            }
+            -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+    }
+    background-color: $hexColor;
+    background-size: cover;
+    @if $gridOrient == vertical {
+        margin: (hexRatioInv($hexMargin)) $hexMargin
+    } @else if $gridOrient == horizontal {
+        margin: $hexMargin (hexRatioInv($hexMargin))
+    }
+}
+
+/// Hex container
+/// @param {Number} $gridWidth - Set the width of the hex grid. Value: `auto` || `<length>`
+/// @param {Number} $gridHeight - Set the height of the hex grid. Value: `auto` || `<length>`
+/// @param {String} $gridOrient - Set the orientation in which the grid cells will align. Value: `vertical` || `horizontal`
+/// @param {Number} $columnCount - Set the number of columns in the hex grid. Value: `auto` || `number`
+/// @param {String} $images - Set a list of files to be passed to the hex cells as background images. The files will be added to the grid according to the order specified by `$gridLayout`.
+/// @param {Number} $rowCount - Set the number of rows in the hex grid. Value: `auto` || `number`
+/// @param {String} $hexLayout - Set the direction the cells will populate the grid. Value: `row` || `column`
+/// @param {String} $hexContent - Set the behavior of the cell content. Value: `auto` || `center`
+/// @param {String} $hexShape - Set the shape of the clip-mask on the cells. Value: `hexagon` || `circle`
+/// @param {String} $hexColor - Set the background color of the cells. Value: `color`
+/// @param {Number} $hexMargin - Set the size of the margins on the cells. Value: number
+/// @param {Number} $hexCount - Set the number of hex cells in the hex grid. Value: `auto` || `number`
+/// @param {Number} $hexSize - Set the size of the cells.Value: `auto` || `number`
+@mixin hexContainer(
+    $gridWidth,
+    $gridHeight,
+    $gridOrient,
+    $columnCount, 
+    $images,$rowCount,
+    $hexLayout,
+    $hexContent,
+    $hexShape,
+    $hexColor,
+    $hexMargin,
+    $hexCount,
+    $hexSize) {
+    display: grid;
+    justify-items: $hexContent;
+    align-items: $hexContent;
+
+    @if $rowCount == auto {
+        $l: ceil($hexCount / $columnCount);
+        $rowCount: $l;
+    } @else if $columnCount == auto {
+        $l: ceil($hexCount / $rowCount);
+        $columnCount: $l;
+    } @else if $hexCount == auto {
+        $hexCount: $rowCount * $columnCount;
+    }
+
+    @if $gridOrient == horizontal {
+        @if $gridHeight == auto {
+            $gridHeight: hGridHeight($gridWidth, $rowCount, $columnCount)
+        } @else if $gridWidth == auto {
+            $gridWidth: hGridWidth($gridHeight, $rowCount, $columnCount)
+        }
+    } @else if $gridOrient == vertical {
+        @if $gridHeight == auto {
+            $gridHeight: vGridHeight($gridWidth, $rowCount, $columnCount)
+        } @else if $gridWidth == auto {
+            $gridWidth: vGridWidth($gridHeight, $rowCount, $columnCount)
+        }
+    }
+    height: $gridHeight;
+    width: $gridWidth;
+    @include gridTemplate($gridOrient, $columnCount, $rowCount, $gridWidth, $hexCount);
+    @include layout($columnCount, $rowCount, $hexLayout, $gridOrient, $hexCount);
+    @include imageAssigner($images, $hexCount, $hexLayout);
+
+    .hex {
+        @include hexStyle($hexShape, $gridOrient, $hexContent, $hexColor, $hexMargin, $hexSize);
+    }
+}
+
+/// Grid template
+/// @param {String} $gridOrient - Set the orientation in which the grid cells will align. Value: `vertical` || `horizontal`
+/// @param {Number} $columnCount - Set the number of columns in the hex grid. Value: `auto` || `number`
+/// @param {Number} $rowCount - Set the number of rows in the hex grid. Value: `auto` || `number`
+/// @param {Number} $gridWidth - Set the width of the hex grid. Value: `auto` || `<length>`
+/// @param {Number} $hexCount - Set the number of hex cells in the hex grid. Value: `auto` || `number`
+@mixin gridTemplate($gridOrient, $columnCount, $rowCount, $gridWidth, $hexCount) {
+    @if $gridOrient == vertical {
+        grid-template-columns: repeat($columnCount, 1fr 2fr) 1fr;
+        grid-template-rows: repeat(($rowCount*2+1), vfr($gridWidth, $columnCount));
+    } @else if $gridOrient == horizontal {
+        grid-template-columns: repeat(($columnCount*2+1), 1fr);
+        grid-template-rows: repeat($rowCount, hfr($gridWidth, $columnCount) (hfr($gridWidth, $columnCount)*2)) hfr($gridWidth, $columnCount);
+    }
+}
+
+/// Layout
+/// @param {Number} $columnCount - Set the number of columns in the hex grid. Value: `auto` || `number`
+/// @param {Number} $rowCount - Set the number of rows in the hex grid. Value: `auto` || `number`
+/// @param {String} $hexLayout - Set the direction the cells will populate the grid. Value: `row` || `column`
+/// @param {String} $gridOrient - Set the orientation in which the grid cells will align. Value: `vertical` || `horizontal`
+/// @param {Number} $hexCount - Set the number of hex cells in the hex grid. Value: `auto` || `number`
+@mixin layout($columnCount, $rowCount, $hexLayout, $gridOrient, $hexCount){
+    @if $hexLayout == strict {
+        @include address($columnCount, $rowCount, $gridOrient);
+    } @else if $hexLayout == column {
+        .hex {
+            display: none;
+        }
+        @include address($columnCount, $rowCount, $gridOrient);
+        
+        $c: 1; $r: 1;
+        @for $i from 1 through ($hexCount) {
+            @if $r > $rowCount {
+                $r: 1; 
+                $c: $c+1
+            }
+
+            .hex:nth-child(#{$i}) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @if $gridOrient == vertical {
+                    @extend .r-#{$r}, .c-#{$c}, .c-#{$c}.r-#{$r};
+                } @else if $gridOrient == horizontal {
+                    @extend .r-#{$r}, .c-#{$c}, .r-#{$r}.c-#{$c};
+                }
+            }
+            $r: $r + 1;
+        }
+    } @else if $hexLayout == row {
+        .hex {
+            display: none;
+        }
+    
+        @include address($columnCount, $rowCount, $gridOrient);
+    
+        $c: 1; $r: 1;
+        @for $i from 1 through ($hexCount) {
+            @if $c > $columnCount {
+                $r: $r + 1; 
+                $c: 1
+            }
+      
+            .hex:nth-child(#{$i}) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+        
+                @if $gridOrient == vertical {
+                    @extend .r-#{$r}, .c-#{$c}, .c-#{$c}.r-#{$r};
+                } @else if $gridOrient == horizontal {
+                    @extend .r-#{$r}, .c-#{$c}, .r-#{$r}.c-#{$c};
+                }
+            }
+        $c: $c + 1;}
+    }
+}
+
+/// Address
+/// @param {Number} $columnCount - Set the number of columns in the hex grid. Value: `auto` || `number`
+/// @param {Number} $rowCount - Set the number of rows in the hex grid. Value: `auto` || `number`
+/// @param {String} $gridOrient - Set the orientation in which the grid cells will align. Value: `vertical` || `horizontal`
+@mixin address($columnCount, $rowCount, $gridOrient) {
+    @if $gridOrient == vertical {
+        @for $ci from 1 to ($columnCount + 1) {
+            $cPos: 1;
+
+            @if $ci > 1 {
+                $cPos: increment($ci, $cPos)
+            }
+      
+            .c-#{$ci} {
+                grid-column-start: $cPos;
+                grid-column-end: span 3
+            }
+
+            @for $ri from 1 to ($rowCount + 1) {
+                $rPos: 1;
+                
+                @if $ci % 2 == 0 {
+                    $rPos: 2;
+                }
+
+                @if $ri > 1 {
+                    $rPos: increment($ri, $rPos)
+                }
+
+            .c-#{$ci}.r-#{$ri} {
+                grid-row-start: $rPos;
+                grid-row-end: span 2}
+            }
+        }
+    } @else if $gridOrient == horizontal {
+    
+        @for $ri from 1 to ($rowCount + 1) {
+            $rPos: 1;
+            @if $ri > 1 {
+                $rPos: increment($ri, $rPos);
+            }
+            .r-#{$ri} {
+                grid-row-start: $rPos;
+                grid-row-end: span 3;
+            }
+
+            @for $ci from 1 to ($columnCount + 1) {
+                $cPos: 1;
+                @if $ri % 2 == 0 {
+                    $cPos: 2;
+                }
+                @if $ci > 1 {
+                    $cPos: increment($ci, $cPos);
+                }
+                .r-#{$ri}.c-#{$ci} {
+                    grid-column-start: $cPos;
+                    grid-column-end: span 2;
+                }
+            }
+        }
+    }
+}
+
+/// image Assigner
+/// @param {String} $images - Set a list of files to be passed to the hex cells as background images. The files will be added to the grid according to the order specified by `$gridLayout`.
+/// @param {String} $hexLayout - Set the direction the cells will populate the grid. Value: `row` || `column`
+/// @param {Number} $hexCount - Set the number of hex cells in the hex grid. Value: `auto` || `number`
+@mixin imageAssigner($images, $hexCount, $hexLayout){
+    @if $hexLayout != strict {
+        @for $i from 1 through length($images) {
+            .hex:nth-child(#{$i}) {
+                background-image: url(nth($images, $i));
+            }
+        }
+    }
+}
