@@ -1,0 +1,26 @@
+@mixin zigzag($count, $height, $start_color, $end_color: $start_color) {
+    $value: 0 0 0;
+
+    @for $c from 0  through $count - 1 {
+        @for $i from 1 through $height {
+            $thiscolor: mixcolor((($c*($height*2))+$i),$count, $height, $start_color, $end_color);
+            $value: $value, (($c*$height*2)+$i)+px ($i)+px 0 $thiscolor, 
+        }
+        @for $i from 1 through $height{
+            $thiscolor: mixcolor((($c*($height*2))+($i*2)),$count, $height, $start_color, $end_color);
+            $value: $value, (($c*$height*2)+($height+$i))+px ($height - $i)+px 0 $thiscolor, 
+        }
+    }
+
+    background: $start_color;
+    margin-bottom:30px+$height;
+    box-shadow: $value;
+  
+    
+    &:after{
+        content:''; display:block;
+        width:calc(100% + #{($height*2)*$count}px);
+        height:calc(100% + #{$height}px);
+    }
+
+}

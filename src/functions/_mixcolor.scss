@@ -1,0 +1,16 @@
+/// 制作z字行下划线
+/// @param {String} $index
+/// @param {Number} $count
+/// @param {Number} $height
+/// @param {String} $start_color
+/// @param {String} $end_color
+/// @author Tony Banik
+/// @link https://codepen.io/tonybanik/pen/qMNGJZ
+
+@function mixcolor($index, $count,$height,$start_color,$end_color: $start_color) {
+    @if $end_color != $start_color {
+        @return mix($end_color, $start_color, percentage($index / (($height * 2) * $count)));
+    } @else {
+        @return $start_color
+    }
+}
