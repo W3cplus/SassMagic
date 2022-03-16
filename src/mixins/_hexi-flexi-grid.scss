@@ -112,7 +112,7 @@
     position: relative;
     @if $crop == none {
         overflow: visible;
-    } @else if $crop = crop {
+    } @else if $crop == crop {
         overflow: hidden;
         .hexContainer {
             transform: scale($cropFactor);
